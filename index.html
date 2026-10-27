@@ -1,28 +1,94 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-root="">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FPCL | UNIST</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 100px 20px;
-            background-color: #f5f7fa;
-        }
-
-        h1 {
-            color: #163b65;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flow Physics and Control Laboratory | UNIST</title>
+<meta name="description" content="Flow Physics and Control Laboratory (FPCL), UNIST">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&amp;family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
-    <h1>Flow Physics and Control Laboratory</h1>
-    <h2>UNIST</h2>
-    <p>Welcome to our laboratory website.</p>
+<div id="site-header"></div>
+
+<main>
+  <div class="intro">
+    <div class="logo" role="img" aria-label="FPCL, Flow Physics and Control Laboratory">
+      <span class="mark">FPCL</span>
+      <span class="full">Flow Physics and<br>Control Laboratory</span>
+    </div>
+    <p class="tagline">Understanding, predicting and controlling flows</p>
+    <figure class="group-photo">
+      <img src="images/main/group.jpg" width="1600" height="900" alt="FPCL members, 2026">
+    </figure>
+  </div>
+
+  <section aria-labelledby="about-h">
+    <h2 id="about-h">About FPCL</h2>
+    <div class="about">
+      <p>About 25% of the total energy used in industry is known to spend in moving vehicles through air or water, or fluids along pipes and canals, and fluids can be a process carrier or material through which transport, separation and conversion processes occur. Thus, understanding of flows is of huge technological importance in aerodynamic and hydrodynamic applications.</p>
+      <p>In this aspect, we perform research on topics of energetic flows both ranging from fundamental to applied engineering to understanding, predicting and controlling flows. The research includes studies of turbulent flows with physical modeling, fluid-structure interaction problems and multi-phase flows with computational modeling, aiming at development of high-efficient energy-generating (or -saving) systems based on numerical simulations and experimental measurement (or visualization).</p>
+    </div>
+  </section>
+
+  <!-- Research Highlights. To change one, replace the picture in images/main/ and edit its title and citation. -->
+  <section aria-labelledby="hl-h">
+    <h2 id="hl-h">Research Highlights</h2>
+    <ul class="highlights">
+      <li>
+        <div class="fig"><img src="images/main/pub1_fins.jpg" alt="Vorticity around two self-propelled fins in 0W, 1W and 2W configurations" loading="lazy"></div>
+        <h3>Flow-mediated interactions between two self-propelled flexible fins near sidewalls</h3>
+        <p class="cite">Young Dal Jeong, <b>Jae Hwa Lee</b> &amp; Sung Goon Park<br><i>Journal of Fluid Mechanics</i>, Vol. 913, A39, 2021</p>
+      </li>
+      <li>
+        <div class="fig"><img src="images/main/pub2_iced_airfoil.jpg" alt="Streamlines over multi-element iced airfoils" loading="lazy"></div>
+        <h3>Large-eddy simulations of complex aerodynamic flows over multi-element iced airfoils</h3>
+        <p class="cite">Young Mo Lee, <b>Jae Hwa Lee</b>, Lawrence Prince Raj, Je Hyun Jo &amp; Rho shin Myong<br><i>Aerospace Science and Technology</i>, Vol. 109, 106417, 2021</p>
+      </li>
+      <li>
+        <div class="fig"><img src="images/main/pub3_vlsm_pipe.jpg" alt="Very-large-scale motions in turbulent pipe flow" loading="lazy"></div>
+        <h3>Space–time formation of very-large-scale motions in turbulent pipe flow</h3>
+        <p class="cite"><b>Jae Hwa Lee</b>, Hyung Jin Sung &amp; Ronald J. Adrian<br><i>Journal of Fluid Mechanics</i>, Vol. 881, pp. 1010-1047, 2019</p>
+      </li>
+      <li>
+        <div class="fig"><img src="images/main/pub4_flexible_foil.jpg" alt="Wake vortices behind heaving flexible foils" loading="lazy"></div>
+        <h3>Wake transitions of flexible foils in a viscous uniform flow</h3>
+        <p class="cite">Min Je Kim &amp; <b>Jae Hwa Lee</b><br><i>Physics of Fluids</i>, Vol. 31, 111906, 2019</p>
+      </li>
+      <li>
+        <div class="fig"><img src="images/main/pub5_couette_rod.jpg" alt="Premultiplied spectra in Couette-Poiseuille flow with a rod-roughened wall" loading="lazy"></div>
+        <h3>Direct numerical simulation of a turbulent Couette-Poiseuille flow with a rod-roughened wall</h3>
+        <p class="cite">Young Mo Lee, Jung Hoon Kim &amp; <b>Jae Hwa Lee</b><br><i>Physics of Fluids</i>, Vol. 30, 105101, 2018</p>
+      </li>
+      <li>
+        <div class="fig"><img src="images/main/pub6_secondary_flow.jpg" alt="Secondary flows over longitudinal surface roughness" loading="lazy"></div>
+        <h3>Secondary flows in turbulent boundary layers over longitudinal surface roughness</h3>
+        <p class="cite">Hyeon Gyu Hwang &amp; <b>Jae Hwa Lee</b><br><i>Physical Review Fluids</i>, Vol. 3, 014608, 2018</p>
+      </li>
+    </ul>
+  </section>
+
+  <div class="pair">
+    <section class="notice" aria-labelledby="notice-h">
+      <h2 id="notice-h">Notice</h2>
+      <div>
+        <h3>[MS, PhD and Post-Doc Positions Available]</h3>
+        <p>MS, PhD and post-doc positions are available in the lab. Person who is interested in pursuing the positions are encouraged to contact Prof. Lee (<a href="mailto:jhlee06@unist.ac.kr">jhlee06@unist.ac.kr</a>).</p>
+      </div>
+    </section>
+    <section aria-labelledby="photo-h">
+      <h2 id="photo-h">Photo</h2>
+      <!-- The three newest posts in data/photos.js appear here automatically. -->
+      <div data-list="photos" data-kind="recent-photos" data-count="3"></div>
+      <a class="more" href="photo.html">All photos</a>
+    </section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="data/photos.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>
