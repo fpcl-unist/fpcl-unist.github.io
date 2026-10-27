@@ -166,7 +166,7 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .subnav a { color: var(--muted); }
 .subnav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
 
-/* Section list fixed at the right edge (built by site.js). Only on screens wide enough to keep it beside the column.
+/* Section list always shown at the right edge (built by site.js). Only on screens wide enough to keep it beside the column.
    The left padding leaves room for an item enlarged on hover; it scrolls if the page has more headings than fit. */
 .side-nav {
   position: fixed;
@@ -183,31 +183,42 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
   flex-direction: column;
   align-items: flex-end;
   gap: 12px;
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.35;
   text-align: right;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .25s, visibility .25s;
 }
-.side-nav.show { opacity: 1; visibility: visible; }
-.side-nav a { color: #a3aab2; transform-origin: right center; transition: transform .15s, color .15s; }
+/* Pages: bold, darker gray. The current page is blue. */
+.side-nav a { color: #6b737c; font-weight: 700; transform-origin: right center; transition: transform .15s, color .15s; }
 .side-nav a:hover, .side-nav a:focus-visible { color: var(--fg); transform: scale(1.2); }
-.side-nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
-/* Headings of the current page, under its name. Long titles stop at two lines; the full title shows on hover. */
+.side-nav a[aria-current="page"] { color: var(--accent); }
+/* Headings of the current page, under its name: smaller, regular weight, light gray, each with a dot on the line
+   at the right. The heading being read is dark with a blue dot. Long titles stop at two lines; the full title
+   shows on hover. */
 .side-sub {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 7px;
-  margin-top: -4px;
-  padding-right: 10px;
+  gap: 8px;
+  margin-top: -2px;
+  padding-right: 12px;
   border-right: 1px solid var(--rule);
   font-size: 12px;
 }
-.side-sub a { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: #b4bac1; }
-.side-sub a.active { color: var(--fg); }
-.side-nav .side-sub a:hover, .side-nav .side-sub a:focus-visible { transform: scale(1.12); }
+.side-nav .side-sub a { position: relative; color: #a7aeb5; font-weight: 400; }
+.side-sub a span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.side-sub a::before {
+  content: '';
+  position: absolute;
+  top: calc(0.675em - 2.5px);
+  right: -15px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #cbd2da;
+}
+.side-nav .side-sub a.active { color: var(--fg); }
+.side-sub a.active::before { background: var(--accent); }
+.side-nav .side-sub a:hover, .side-nav .side-sub a:focus-visible { color: var(--fg); transform: scale(1.12); }
 @media (max-width: 1239px) { .side-nav { display: none; } }
 
 /* Missing image placeholder (shown until the file is added) */

@@ -109,9 +109,8 @@ window.FPCL = window.FPCL || {};
     }).join('');
   }
 
-  // The same section list, fixed at the right edge, with the headings of this page under the current item.
-  // It fades in once the list under the title scrolls out of view. Runs after the data lists are drawn,
-  // so the year headings on the publication pages are included.
+  // The same section list, always shown at the right edge, with the headings of this page under the current item.
+  // Runs after the data lists are drawn, so the year headings on the publication pages are included.
   function buildSideNav() {
     var subnav = document.getElementById('subnav');
     if (!subnav) return;
@@ -126,18 +125,12 @@ window.FPCL = window.FPCL || {};
       list.className = 'side-sub';
       list.innerHTML = heads.map(function (h) {
         var text = esc(h.textContent.trim());
-        return '<a href="#' + h.id + '" title="' + text + '">' + text + '</a>';
+        return '<a href="#' + h.id + '" title="' + text + '"><span>' + text + '</span></a>';
       }).join('');
       current.after(list);
       followHeadings(heads, list.children, side);
     }
     document.body.appendChild(side);
-    if (!('IntersectionObserver' in window)) { side.classList.add('show'); return; }
-    // 57px is the sticky menu bar, so the list counts as hidden once it slides under the bar.
-    new IntersectionObserver(function (entries) {
-      var e = entries[0];
-      side.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 57);
-    }, { rootMargin: '-57px 0px 0px 0px' }).observe(subnav);
   }
 
   // The h2 headings of this page, each given an id to jump to. Headings that only repeat a page name
