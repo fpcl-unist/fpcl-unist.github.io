@@ -111,7 +111,7 @@ window.FPCL = window.FPCL || {};
 
   // The same section list, always shown at the right edge, with the headings of this page under the current item.
   // Runs after the data lists are drawn, so the year headings on the publication pages are included.
-  // The arrow button above it hides the list and brings it back; the choice is kept for the next pages.
+  // The arrow button above it folds the list down to dots and opens it back up; the choice is kept for the next pages.
   // A page whose section list has data-no-side (Research > Overview) gets no list at the right edge.
   function buildSideNav() {
     var subnav = document.getElementById('subnav');
@@ -140,8 +140,8 @@ window.FPCL = window.FPCL || {};
     function setClosed(closed) {
       side.classList.toggle('closed', closed);
       btn.setAttribute('aria-expanded', closed ? 'false' : 'true');
-      btn.setAttribute('aria-label', closed ? 'Show the section list' : 'Hide the section list');
-      btn.title = closed ? 'Show the list' : 'Hide the list';
+      btn.setAttribute('aria-label', closed ? 'Show the names in the section list' : 'Fold the section list to dots');
+      btn.title = closed ? 'Show names' : 'Show dots only';
     }
     var saved = null;
     try { saved = localStorage.getItem('fpcl-side-nav'); } catch (e) { /* storage blocked: start open */ }
