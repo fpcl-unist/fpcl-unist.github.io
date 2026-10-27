@@ -19,7 +19,7 @@
   }
   function collection(name, label, file, fields) {
     return {
-      name:name, label:label, editor:{preview:false},
+      name:name, label:label, format:'fpcl-js', extension:'js', editor:{preview:false},
       files:[{name:name, label:label + ' 편집', file:file, format:'fpcl-js', fields:fields}]
     };
   }
