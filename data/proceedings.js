@@ -1,1437 +1,1422 @@
 window.FPCL = window.FPCL || {};
 
-/* International conference papers. Newest first. The numbers [n] on the page are counted automatically.
-   To add a paper, copy one { ... } block, paste it at the top of the list, and change the text.
-   group   the heading the paper appears under (a year such as "2026", or "Before UNIST")
-   authors J.H.Lee is shown in bold automatically
-   title   <i>, <sub>, <sup> may be used, e.g. Re<sub>&tau;</sub>
-   journal conference name, shown in italics
-   details place, dates and year, e.g. "Jeju, Korea, September 13-16, 2026"
-   link    (optional) DOI or web address; leave the line out when there is none */
+/* Managed through /adm/. Newest items first; order is preserved. */
 FPCL.proceedingsInternational = [
   {
-    group: "2026",
-    authors: "S.M.Lee & J.H.Lee",
-    title: "The effect of the tall roughness element on the turbulent boundary layer over 3D cuboid-roughened walls",
-    journal: "2026 Asian Joint Workshop on Thermophysics and Fluid Science",
-    details: "Jeju, Korea, September 13–16, 2026"
+    "group": "2026",
+    "authors": "S.M.Lee & J.H.Lee",
+    "title": "The effect of the tall roughness element on the turbulent boundary layer over 3D cuboid-roughened walls",
+    "journal": "2026 Asian Joint Workshop on Thermophysics and Fluid Science",
+    "details": "Jeju, Korea, September 13–16, 2026"
   },
   {
-    group: "2026",
-    authors: "M.J.Kang & J.H.Lee",
-    title: "Schooling behavior of mother and calf foils with different body lengths and flapping kinematics",
-    journal: "2026 Asian Joint Workshop on Thermophysics and Fluid Science",
-    details: "Jeju, Korea, September 13–16, 2026"
+    "group": "2026",
+    "authors": "M.J.Kang & J.H.Lee",
+    "title": "Schooling behavior of mother and calf foils with different body lengths and flapping kinematics",
+    "journal": "2026 Asian Joint Workshop on Thermophysics and Fluid Science",
+    "details": "Jeju, Korea, September 13–16, 2026"
   },
   {
-    group: "2026",
-    authors: "J.H.Lee",
-    title: "Reduction of the Pressure Fluctuations in an Incompressible Turbulent Cavity Flow via Multiple Slot Jets",
-    journal: "1st China-Japan-Korea Symposium on Thermal and Fluid Engineering",
-    details: "Hangzhou, China, January 9–12, 2026"
+    "group": "2026",
+    "authors": "J.H.Lee",
+    "title": "Reduction of the Pressure Fluctuations in an Incompressible Turbulent Cavity Flow via Multiple Slot Jets",
+    "journal": "1st China-Japan-Korea Symposium on Thermal and Fluid Engineering",
+    "details": "Hangzhou, China, January 9–12, 2026"
   },
   {
-    group: "2026",
-    authors: "S.M.Lee & J.H.Lee",
-    title: "Direct numerical simulation of a turbulent plane Couette flow over a rod-roughened wall",
-    journal: "14th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Heidelberg, Germany, July 28–31, 2026"
+    "group": "2026",
+    "authors": "S.M.Lee & J.H.Lee",
+    "title": "Direct numerical simulation of a turbulent plane Couette flow over a rod-roughened wall",
+    "journal": "14th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Heidelberg, Germany, July 28–31, 2026"
   },
   {
-    group: "2026",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Reduction of pressure fluctuations in incompressible cavity flows by multiple slot jets",
-    journal: "14th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Heidelberg, Germany, July 28–31, 2026"
+    "group": "2026",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Reduction of pressure fluctuations in incompressible cavity flows by multiple slot jets",
+    "journal": "14th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Heidelberg, Germany, July 28–31, 2026"
   },
   {
-    group: "2025",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Effects of Multiple Slot Jets on the Pressure Oscillations in an Incompressible Cavity Flow",
-    journal: "17th International Conference on Fluid Control, Measurements, and Visualization",
-    details: "Delft, The Netherlands, November 4-7, 2025"
+    "group": "2025",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Effects of Multiple Slot Jets on the Pressure Oscillations in an Incompressible Cavity Flow",
+    "journal": "17th International Conference on Fluid Control, Measurements, and Visualization",
+    "details": "Delft, The Netherlands, November 4-7, 2025"
   },
   {
-    group: "2025",
-    authors: "G.W.Kim, Y.D.Jeong & J.H.Lee",
-    title: "Lift Enhancement at Low Reynolds Numbers using Bio-Inspired Dual-side Covert Feather Flaps",
-    journal: "The 11th JSME-KSME Thermal and Fluid Engineering Conference",
-    details: "Okinawa, Japan, October 22-25, 2025"
+    "group": "2025",
+    "authors": "G.W.Kim, Y.D.Jeong & J.H.Lee",
+    "title": "Lift Enhancement at Low Reynolds Numbers using Bio-Inspired Dual-side Covert Feather Flaps",
+    "journal": "The 11th JSME-KSME Thermal and Fluid Engineering Conference",
+    "details": "Okinawa, Japan, October 22-25, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Active Control of Pressure Fluctuations in an Incompressible Cavity Flow using Multiple Slot Jets",
-    journal: "The 11th JSME-KSME Thermal and Fluid Engineering Conference",
-    details: "Okinawa, Japan, October 22-25, 2025"
+    "group": "2025",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Active Control of Pressure Fluctuations in an Incompressible Cavity Flow using Multiple Slot Jets",
+    "journal": "The 11th JSME-KSME Thermal and Fluid Engineering Conference",
+    "details": "Okinawa, Japan, October 22-25, 2025"
   },
   {
-    group: "2025",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Drag Reduction of Caudal Fin in the Wake Generated by Dorsal Fin via Deep Reinforcement Learning",
-    journal: "The 35th International Symposium on Transport Phonomena",
-    details: "Busan, Korea, September 21-25, 2025"
+    "group": "2025",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Drag Reduction of Caudal Fin in the Wake Generated by Dorsal Fin via Deep Reinforcement Learning",
+    "journal": "The 35th International Symposium on Transport Phonomena",
+    "details": "Busan, Korea, September 21-25, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Reduction of the Pressure Fluctuations in an Incompressible Cavity Flow via Multiple Slot Jets",
-    journal: "The 35th International Symposium on Transport Phonomena",
-    details: "Busan, Korea, September 21-25, 2025"
+    "group": "2025",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Reduction of the Pressure Fluctuations in an Incompressible Cavity Flow via Multiple Slot Jets",
+    "journal": "The 35th International Symposium on Transport Phonomena",
+    "details": "Busan, Korea, September 21-25, 2025"
   },
   {
-    group: "2025",
-    authors: "J.Jeon, J.H.Lee & C.-J.Kim",
-    title: "Plastron Stability on Superhydrophobic Longitudinal Micro-trenches of a Finite Length",
-    journal: "The 18th Asian Congress of Fluid Mechanics",
-    details: "Seoul, Korea, September 10-13, 2025"
+    "group": "2025",
+    "authors": "J.Jeon, J.H.Lee & C.-J.Kim",
+    "title": "Plastron Stability on Superhydrophobic Longitudinal Micro-trenches of a Finite Length",
+    "journal": "The 18th Asian Congress of Fluid Mechanics",
+    "details": "Seoul, Korea, September 10-13, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Enhancement of the Vapor-Air Mixture Bubble Condensation by the Effects of Geometry and Inlet Velocity",
-    journal: "The 18th Asian Congress of Fluid Mechanics",
-    details: "Seoul, Korea, September 10-13, 2025"
+    "group": "2025",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Enhancement of the Vapor-Air Mixture Bubble Condensation by the Effects of Geometry and Inlet Velocity",
+    "journal": "The 18th Asian Congress of Fluid Mechanics",
+    "details": "Seoul, Korea, September 10-13, 2025"
   },
   {
-    group: "2025",
-    authors: "J.Jeon, J.H.Lee & C.-J.Kim",
-    title: "Plastron Stability and Drag Reduction Mechanism on Longitudinal Micro-trench Superhydrophobic Surface",
-    journal: "The 12th International Conference on Multiphase Flow",
-    details: "Toulouse, France, May 12-16, 2025"
+    "group": "2025",
+    "authors": "J.Jeon, J.H.Lee & C.-J.Kim",
+    "title": "Plastron Stability and Drag Reduction Mechanism on Longitudinal Micro-trench Superhydrophobic Surface",
+    "journal": "The 12th International Conference on Multiphase Flow",
+    "details": "Toulouse, France, May 12-16, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Condensation Enhancement of Single Vapor-Air Mixture Bubble in Subcooled Liquid Tube Flow by Inflow and Tube Wall Shape",
-    journal: "The 12th International Conference on Multiphase Flow",
-    details: "Toulouse, France, May 12-16, 2025"
+    "group": "2025",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Condensation Enhancement of Single Vapor-Air Mixture Bubble in Subcooled Liquid Tube Flow by Inflow and Tube Wall Shape",
+    "journal": "The 12th International Conference on Multiphase Flow",
+    "details": "Toulouse, France, May 12-16, 2025"
   },
   {
-    group: "2025",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Drag Reduction of Caudal Fin in the Wake generated by Dorsal Fin via Deep Reinforcement Learning",
-    journal: "6th International Conference on Manufacturing Process & Technology",
-    details: "Bali, Indonesia, February 10-13, 2025"
+    "group": "2025",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Drag Reduction of Caudal Fin in the Wake generated by Dorsal Fin via Deep Reinforcement Learning",
+    "journal": "6th International Conference on Manufacturing Process & Technology",
+    "details": "Bali, Indonesia, February 10-13, 2025"
   },
   {
-    group: "2024",
-    authors: "M.J.Kang, Y.D.Jeong & J.H.Lee",
-    title: "Drag Reduction of a Downstream Cylinder with a Flexible Fin in the Wake Generated by an Upstream Cylinder",
-    journal: "European Drag Reduction and Flow Control Meeting 2024",
-    details: "Turin, Italy, September 10-13, 2024"
+    "group": "2024",
+    "authors": "M.J.Kang, Y.D.Jeong & J.H.Lee",
+    "title": "Drag Reduction of a Downstream Cylinder with a Flexible Fin in the Wake Generated by an Upstream Cylinder",
+    "journal": "European Drag Reduction and Flow Control Meeting 2024",
+    "details": "Turin, Italy, September 10-13, 2024"
   },
   {
-    group: "2024",
-    authors: "S.M.Lee & J.H.Lee",
-    title: "Effects of the Rod-Roughness on a Turbulent Plane Couette Flow",
-    journal: "26th International Congress of Theoretical and Applied Mechanics",
-    details: "Daegu, Korea, August 25-30, 2024"
+    "group": "2024",
+    "authors": "S.M.Lee & J.H.Lee",
+    "title": "Effects of the Rod-Roughness on a Turbulent Plane Couette Flow",
+    "journal": "26th International Congress of Theoretical and Applied Mechanics",
+    "details": "Daegu, Korea, August 25-30, 2024"
   },
   {
-    group: "2024",
-    authors: "M.J.Kang & J.H.Lee",
-    title: "Drag Reduction of a Downstream Cylinder in the Wake of an Upstream Cylinder using an Attached Flexible Fin",
-    journal: "26th International Congress of Theoretical and Applied Mechanics",
-    details: "Daegu, Korea, August 25-30, 2024"
+    "group": "2024",
+    "authors": "M.J.Kang & J.H.Lee",
+    "title": "Drag Reduction of a Downstream Cylinder in the Wake of an Upstream Cylinder using an Attached Flexible Fin",
+    "journal": "26th International Congress of Theoretical and Applied Mechanics",
+    "details": "Daegu, Korea, August 25-30, 2024"
   },
   {
-    group: "2023",
-    authors: "J.Hwang, J.H.Lee & H.J.Sung",
-    title: "An Analysis of Spectral Characteristics of Self-Similar Structures in Canonical Wall-Bounded Turbulent Flow",
-    journal: "6th Symposium of Fluid-Structure-Sound Interactions and Control",
-    details: "Busan, Korea, August 27-31, 2023"
+    "group": "2023",
+    "authors": "J.Hwang, J.H.Lee & H.J.Sung",
+    "title": "An Analysis of Spectral Characteristics of Self-Similar Structures in Canonical Wall-Bounded Turbulent Flow",
+    "journal": "6th Symposium of Fluid-Structure-Sound Interactions and Control",
+    "details": "Busan, Korea, August 27-31, 2023"
   },
   {
-    group: "2023",
-    authors: "S.M.Lee & J.H.Lee",
-    title: "Direct Numerical Simulation of Turbulent Plane Couette flow over a Rod-Roughened Wall",
-    journal: "6th Symposium of Fluid-Structure-Sound Interactions and Control",
-    details: "Busan, Korea, August 27-31, 2023"
+    "group": "2023",
+    "authors": "S.M.Lee & J.H.Lee",
+    "title": "Direct Numerical Simulation of Turbulent Plane Couette flow over a Rod-Roughened Wall",
+    "journal": "6th Symposium of Fluid-Structure-Sound Interactions and Control",
+    "details": "Busan, Korea, August 27-31, 2023"
   },
   {
-    group: "2023",
-    authors: "M.J.Kim, Y.D.Jeong & J.H.Lee",
-    title: "Flow-Induced Vibration of a Freely Movable Cylinder in the Wake of an Oscillating Fin",
-    journal: "6th Symposium of Fluid-Structure-Sound Interactions and Control",
-    details: "Busan, Korea, August 27-31, 2023"
+    "group": "2023",
+    "authors": "M.J.Kim, Y.D.Jeong & J.H.Lee",
+    "title": "Flow-Induced Vibration of a Freely Movable Cylinder in the Wake of an Oscillating Fin",
+    "journal": "6th Symposium of Fluid-Structure-Sound Interactions and Control",
+    "details": "Busan, Korea, August 27-31, 2023"
   },
   {
-    group: "2023",
-    authors: "J.Jeon, J.H.Lee & C.-J.Kim",
-    title: "Stability of a Plastron in Laminar Boundary Layer Flow over a Superhydrophobic Surface",
-    journal: "4th ASME-JSME-KSME Fluids Engineering Division 2023",
-    details: "Osaka, Japan, July 9-13, 2023"
+    "group": "2023",
+    "authors": "J.Jeon, J.H.Lee & C.-J.Kim",
+    "title": "Stability of a Plastron in Laminar Boundary Layer Flow over a Superhydrophobic Surface",
+    "journal": "4th ASME-JSME-KSME Fluids Engineering Division 2023",
+    "details": "Osaka, Japan, July 9-13, 2023"
   },
   {
-    group: "2023",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Single Bubble Condensation in Subcooled Liquid Flow under Wall Effects",
-    journal: "4th ASME-JSME-KSME Fluids Engineering Division 2023",
-    details: "Osaka, Japan, July 9-13, 2023"
+    "group": "2023",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Single Bubble Condensation in Subcooled Liquid Flow under Wall Effects",
+    "journal": "4th ASME-JSME-KSME Fluids Engineering Division 2023",
+    "details": "Osaka, Japan, July 9-13, 2023"
   },
   {
-    group: "2022",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Effects of a Tube Diameter on Single Bubble Condensation in Subcooled Flow",
-    journal: "75th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Indianapolis, USA, November 20-22, 2022"
+    "group": "2022",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Effects of a Tube Diameter on Single Bubble Condensation in Subcooled Flow",
+    "journal": "75th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Indianapolis, USA, November 20-22, 2022"
   },
   {
-    group: "2022",
-    authors: "Y.D.Jeong, M.J.Kim & J.H.Lee",
-    title: "Burst-and-Coast Swimming of Two Self-Propelled Flexible Fins in a Side-by-Side Arrangement",
-    journal: "75th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Indianapolis, USA, November 20-22, 2022"
+    "group": "2022",
+    "authors": "Y.D.Jeong, M.J.Kim & J.H.Lee",
+    "title": "Burst-and-Coast Swimming of Two Self-Propelled Flexible Fins in a Side-by-Side Arrangement",
+    "journal": "75th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Indianapolis, USA, November 20-22, 2022"
   },
   {
-    group: "2022",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Flow Interference between the Oscillating Fin and an Elastically Mounted Cylinder Arranged in Proximity",
-    journal: "13th Asian Computational Fluid Dynamics Conference",
-    details: "Jeju, Korea, October 16-19, 2022"
+    "group": "2022",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Flow Interference between the Oscillating Fin and an Elastically Mounted Cylinder Arranged in Proximity",
+    "journal": "13th Asian Computational Fluid Dynamics Conference",
+    "details": "Jeju, Korea, October 16-19, 2022"
   },
   {
-    group: "2022",
-    authors: "J.Hwang, J.H.Lee & H.J.Sung",
-    title: "Spectral Behavior of Self-Similar Coherent Structures in Canonical Wall-Bounded Turbulent Flows",
-    journal: "12th International Symposium on Turbulence and Shear Flow Phenomena (Online)",
-    details: "Osaka, Japan, July 19-22, 2022"
+    "group": "2022",
+    "authors": "J.Hwang, J.H.Lee & H.J.Sung",
+    "title": "Spectral Behavior of Self-Similar Coherent Structures in Canonical Wall-Bounded Turbulent Flows",
+    "journal": "12th International Symposium on Turbulence and Shear Flow Phenomena (Online)",
+    "details": "Osaka, Japan, July 19-22, 2022"
   },
   {
-    group: "2022",
-    authors: "H.G.Hwang, J.H.Lee, J.Hwang, J.-H.Kang & H.J.Sung",
-    title: "Scaling Laws and Wall-Attached Structures in a Supersonic Turbulent Channel Flow",
-    journal: "12th International Symposium on Turbulence and Shear Flow Phenomena (Online)",
-    details: "Osaka, Japan, July 19-22, 2022"
+    "group": "2022",
+    "authors": "H.G.Hwang, J.H.Lee, J.Hwang, J.-H.Kang & H.J.Sung",
+    "title": "Scaling Laws and Wall-Attached Structures in a Supersonic Turbulent Channel Flow",
+    "journal": "12th International Symposium on Turbulence and Shear Flow Phenomena (Online)",
+    "details": "Osaka, Japan, July 19-22, 2022"
   },
   {
-    group: "2021",
-    authors: "J.H.Lee",
-    title: "Artificial Neural Network-Based Wall-Models for Large-Eddy Simulations of Turbulent Flows",
-    journal: "8th Asian Symposium on Computational Heat Transfer and Fluid Flow-2021 (Online)",
-    details: "Qingdao, China, September 23-26, 2021"
+    "group": "2021",
+    "authors": "J.H.Lee",
+    "title": "Artificial Neural Network-Based Wall-Models for Large-Eddy Simulations of Turbulent Flows",
+    "journal": "8th Asian Symposium on Computational Heat Transfer and Fluid Flow-2021 (Online)",
+    "details": "Qingdao, China, September 23-26, 2021"
   },
   {
-    group: "2021",
-    authors: "Y.D.Jeong, J.H.Lee & S.G.Park",
-    title: "Vortex Interactions between Two Self-Propelled Flexible Plates in Wall Effects",
-    journal: "8th Asian Symposium on Computational Heat Transfer and Fluid Flow-2021 (Online)",
-    details: "Qingdao, China, September 23-26, 2021"
+    "group": "2021",
+    "authors": "Y.D.Jeong, J.H.Lee & S.G.Park",
+    "title": "Vortex Interactions between Two Self-Propelled Flexible Plates in Wall Effects",
+    "journal": "8th Asian Symposium on Computational Heat Transfer and Fluid Flow-2021 (Online)",
+    "details": "Qingdao, China, September 23-26, 2021"
   },
   {
-    group: "2021",
-    authors: "Y.D.Jeong, J.H.Lee & S.G.Park",
-    title: "Wake-Mediated Interactions between Self-Propelled Two Tandem Flexible Fins in Wall Effects",
-    journal: "25th International Congress of Theoretical and Applied Mechanics (Online)",
-    details: "Milano, Italy, August 22-27, 2021"
+    "group": "2021",
+    "authors": "Y.D.Jeong, J.H.Lee & S.G.Park",
+    "title": "Wake-Mediated Interactions between Self-Propelled Two Tandem Flexible Fins in Wall Effects",
+    "journal": "25th International Congress of Theoretical and Applied Mechanics (Online)",
+    "details": "Milano, Italy, August 22-27, 2021"
   },
   {
-    group: "2020",
-    authors: "J.H.Hwang, H.G.Hwang, J.Hwang & J.H.Lee",
-    title: "Wall-Attached Structures of Velocity Fluctuations in Turbulent Couette-Poiseuille Flows",
-    journal: "73rd Annual Meeting of the APS Division of Fluid Dynamics (Online)",
-    details: "Chicago, USA, November 22-24, 2020"
+    "group": "2020",
+    "authors": "J.H.Hwang, H.G.Hwang, J.Hwang & J.H.Lee",
+    "title": "Wall-Attached Structures of Velocity Fluctuations in Turbulent Couette-Poiseuille Flows",
+    "journal": "73rd Annual Meeting of the APS Division of Fluid Dynamics (Online)",
+    "details": "Chicago, USA, November 22-24, 2020"
   },
   {
-    group: "2020",
-    authors: "J.H.Kim, Y.M.Lee & J.H.Lee",
-    title: "Influence of Surface Roughness on Co-Supporting Cycle in a Turbulent Plane Couette-Poiseuille Flow",
-    journal: "73rd Annual Meeting of the APS Division of Fluid Dynamics (Online)",
-    details: "Chicago, USA, November 22-24, 2020"
+    "group": "2020",
+    "authors": "J.H.Kim, Y.M.Lee & J.H.Lee",
+    "title": "Influence of Surface Roughness on Co-Supporting Cycle in a Turbulent Plane Couette-Poiseuille Flow",
+    "journal": "73rd Annual Meeting of the APS Division of Fluid Dynamics (Online)",
+    "details": "Chicago, USA, November 22-24, 2020"
   },
   {
-    group: "2020",
-    authors: "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
-    title: "Roughness Height Effects on Turbulent Boundary Layers over Rod-and Cuboid-Roughened Walls",
-    journal: "73rd Annual Meeting of the APS Division of Fluid Dynamics (Online)",
-    details: "Chicago, USA, November 22-24, 2020"
+    "group": "2020",
+    "authors": "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
+    "title": "Roughness Height Effects on Turbulent Boundary Layers over Rod-and Cuboid-Roughened Walls",
+    "journal": "73rd Annual Meeting of the APS Division of Fluid Dynamics (Online)",
+    "details": "Chicago, USA, November 22-24, 2020"
   },
   {
-    group: "2019",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Hydrodynamic Performance of a Self-Propelled Ray with Oscillatory Locomotion",
-    journal: "72nd Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Seattle, USA, November 23-26, 2019"
+    "group": "2019",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Hydrodynamic Performance of a Self-Propelled Ray with Oscillatory Locomotion",
+    "journal": "72nd Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Seattle, USA, November 23-26, 2019"
   },
   {
-    group: "2019",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Wake Transitions of Flexible Foils in a Viscous Uniform Flow",
-    journal: "72nd Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Seattle, USA, November 23-26, 2019"
+    "group": "2019",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Wake Transitions of Flexible Foils in a Viscous Uniform Flow",
+    "journal": "72nd Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Seattle, USA, November 23-26, 2019"
   },
   {
-    group: "2019",
-    authors: "J.H.Hwang & J.H.Lee",
-    title: "The Moving Wall Effects on Structures in Turbulent Couette-Poiseuille Flows",
-    journal: "72nd Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Seattle, USA, November 23-26, 2019"
+    "group": "2019",
+    "authors": "J.H.Hwang & J.H.Lee",
+    "title": "The Moving Wall Effects on Structures in Turbulent Couette-Poiseuille Flows",
+    "journal": "72nd Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Seattle, USA, November 23-26, 2019"
   },
   {
-    group: "2019",
-    authors: "Y.M.Lee, J.Lee & J.H.Lee",
-    title: "Wall-Modeled Large-Eddy Simulation of a Turbulent Channel Flow based on Artificial Neural Network",
-    journal: "72nd Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Seattle, USA, November 23-26, 2019"
+    "group": "2019",
+    "authors": "Y.M.Lee, J.Lee & J.H.Lee",
+    "title": "Wall-Modeled Large-Eddy Simulation of a Turbulent Channel Flow based on Artificial Neural Network",
+    "journal": "72nd Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Seattle, USA, November 23-26, 2019"
   },
   {
-    group: "2019",
-    authors: "J.H.Lee",
-    title: "Direct Numerical Simulation of a Turbulent Couette-Poiseuille Flow with Surface Roughness",
-    journal: "The 5th Korea-China Joint Workshop on Thermo-Fluids Engineering",
-    details: "Busan, Korea, September 30, 2019"
+    "group": "2019",
+    "authors": "J.H.Lee",
+    "title": "Direct Numerical Simulation of a Turbulent Couette-Poiseuille Flow with Surface Roughness",
+    "journal": "The 5th Korea-China Joint Workshop on Thermo-Fluids Engineering",
+    "details": "Busan, Korea, September 30, 2019"
   },
   {
-    group: "2019",
-    authors: "J.H.Hwang & J.H.Lee",
-    title: "The Moving Wall Effects on Turbulent Couette-Poiseuille Flows",
-    journal: "The 15th Asian Symposium on Visualization",
-    details: "Busan, Korea, September 25-28, 2019"
+    "group": "2019",
+    "authors": "J.H.Hwang & J.H.Lee",
+    "title": "The Moving Wall Effects on Turbulent Couette-Poiseuille Flows",
+    "journal": "The 15th Asian Symposium on Visualization",
+    "details": "Busan, Korea, September 25-28, 2019"
   },
   {
-    group: "2019",
-    authors: "J.H.Lee",
-    title: "Direct Numerical Simulation of a Turbulent Couette-Poiseuille Flow over Rod-Roughened Wall",
-    journal: "2019 Asian Workshop on Theoretical and Applied Mechanics",
-    details: "Hangzhou, China, August 24-27, 2019"
+    "group": "2019",
+    "authors": "J.H.Lee",
+    "title": "Direct Numerical Simulation of a Turbulent Couette-Poiseuille Flow over Rod-Roughened Wall",
+    "journal": "2019 Asian Workshop on Theoretical and Applied Mechanics",
+    "details": "Hangzhou, China, August 24-27, 2019"
   },
   {
-    group: "2019",
-    authors: "J.H.Kim, Y.M.Lee & J.H.Lee",
-    title: "Effects of Surface Roughness in a Turbulent Plane Couette-Poiseuille Flow",
-    journal: "11th International Symposium on Turbulence and Shear Flow Phenomena (TSFP11)",
-    details: "Southampton, UK, July 30-August 2, 2019"
+    "group": "2019",
+    "authors": "J.H.Kim, Y.M.Lee & J.H.Lee",
+    "title": "Effects of Surface Roughness in a Turbulent Plane Couette-Poiseuille Flow",
+    "journal": "11th International Symposium on Turbulence and Shear Flow Phenomena (TSFP11)",
+    "details": "Southampton, UK, July 30-August 2, 2019"
   },
   {
-    group: "2019",
-    authors: "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
-    title: "Direct Numerical Simulations of Rod- and Cuboid-Roughened Turbulent Boundary Layers with Varying Roughness Height",
-    journal: "ASME - JSME - KSME Joints Fluids Engineering Conference",
-    details: "San Francisco, USA, July 28-August 1, 2019"
+    "group": "2019",
+    "authors": "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
+    "title": "Direct Numerical Simulations of Rod- and Cuboid-Roughened Turbulent Boundary Layers with Varying Roughness Height",
+    "journal": "ASME - JSME - KSME Joints Fluids Engineering Conference",
+    "details": "San Francisco, USA, July 28-August 1, 2019"
   },
   {
-    group: "2019",
-    authors: "M.H.Lee, J.H.Lee & J.Moon",
-    title: "A Characterization of Backward Reachable Sets for Nonlinear Dynamical Systems via the Pseudospectral Legendre Method",
-    journal: "2019 European Control Conference",
-    details: "Napoli, Italy, June 25-28, 2019"
+    "group": "2019",
+    "authors": "M.H.Lee, J.H.Lee & J.Moon",
+    "title": "A Characterization of Backward Reachable Sets for Nonlinear Dynamical Systems via the Pseudospectral Legendre Method",
+    "journal": "2019 European Control Conference",
+    "details": "Napoli, Italy, June 25-28, 2019"
   },
   {
-    group: "2019",
-    authors: "J.H.Lee",
-    title: "Coherent Structures in Turbulent Couette-Poiseuille Flows",
-    journal: "The 4th China-Korea Joint Workshop on Thermo-Fluids Engineering",
-    details: "Beijing, China, January 3-5, 2019"
+    "group": "2019",
+    "authors": "J.H.Lee",
+    "title": "Coherent Structures in Turbulent Couette-Poiseuille Flows",
+    "journal": "The 4th China-Korea Joint Workshop on Thermo-Fluids Engineering",
+    "details": "Beijing, China, January 3-5, 2019"
   },
   {
-    group: "2019",
-    authors: "S.Chae, S.Lee, J.Kim & J.H.Lee",
-    title: "Adaptive-Passive Control of Flow over a Sphere for Drag Reduction",
-    journal: "The 4th China-Korea Joint Workshop on Thermo-Fluids Engineering",
-    details: "Beihang, China, January 3-5, 2019"
+    "group": "2019",
+    "authors": "S.Chae, S.Lee, J.Kim & J.H.Lee",
+    "title": "Adaptive-Passive Control of Flow over a Sphere for Drag Reduction",
+    "journal": "The 4th China-Korea Joint Workshop on Thermo-Fluids Engineering",
+    "details": "Beihang, China, January 3-5, 2019"
   },
   {
-    group: "2018",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
-    journal: "71st Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Atlanta, USA, November 18-20, 2018"
+    "group": "2018",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
+    "journal": "71st Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Atlanta, USA, November 18-20, 2018"
   },
   {
-    group: "2018",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Vortex Interaction between Self-Propelled Two Tandem Flexible Fins in Wall Effect",
-    journal: "71st Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Atlanta, USA, November 18-20, 2018"
+    "group": "2018",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Vortex Interaction between Self-Propelled Two Tandem Flexible Fins in Wall Effect",
+    "journal": "71st Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Atlanta, USA, November 18-20, 2018"
   },
   {
-    group: "2018",
-    authors: "Y.M.Lee, H.G.Hwang & J.H.Lee",
-    title: "Large Eddy Simulation of Transitional Boundary Layer Flow with Two-Parameter Mixed Models",
-    journal: "71st Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Atlanta, USA, November 18-20, 2018"
+    "group": "2018",
+    "authors": "Y.M.Lee, H.G.Hwang & J.H.Lee",
+    "title": "Large Eddy Simulation of Transitional Boundary Layer Flow with Two-Parameter Mixed Models",
+    "journal": "71st Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Atlanta, USA, November 18-20, 2018"
   },
   {
-    group: "2018",
-    authors: "J.H.Kim, Y.M.Lee & J.H.Lee",
-    title: "Roughness Effect in Turbulent Couette-Poiseuille Flow over a Rod-Roughened Wall",
-    journal: "71st Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Atlanta, USA, November 18-20, 2018"
+    "group": "2018",
+    "authors": "J.H.Kim, Y.M.Lee & J.H.Lee",
+    "title": "Roughness Effect in Turbulent Couette-Poiseuille Flow over a Rod-Roughened Wall",
+    "journal": "71st Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Atlanta, USA, November 18-20, 2018"
   },
   {
-    group: "2018",
-    authors: "S.Chae, S.Lee, J.Kim & J.H.Lee",
-    title: "Adaptive Drag Reduction using a New Passive Device",
-    journal: "The 5th International Conference on Experimental Fluid Mechanics",
-    details: "Munchen, Germany, July 2-4, 2018"
+    "group": "2018",
+    "authors": "S.Chae, S.Lee, J.Kim & J.H.Lee",
+    "title": "Adaptive Drag Reduction using a New Passive Device",
+    "journal": "The 5th International Conference on Experimental Fluid Mechanics",
+    "details": "Munchen, Germany, July 2-4, 2018"
   },
   {
-    group: "2017",
-    authors: "S.Chae, J.Kim & J.H.Lee",
-    title: "Adaptive-Passive Control of Flow over a Sphere at High Reynolds Numbers",
-    journal: "70th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Denver, USA, November 19-21, 2017"
+    "group": "2017",
+    "authors": "S.Chae, J.Kim & J.H.Lee",
+    "title": "Adaptive-Passive Control of Flow over a Sphere at High Reynolds Numbers",
+    "journal": "70th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Denver, USA, November 19-21, 2017"
   },
   {
-    group: "2017",
-    authors: "H.G.Hwang & J.H.Lee",
-    title: "Spatial Characteristics of Secondary Flow in a Turbulent Boundary Layer over Longitudinal Surface Roughness",
-    journal: "70th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Denver, USA, November 19-21, 2017"
+    "group": "2017",
+    "authors": "H.G.Hwang & J.H.Lee",
+    "title": "Spatial Characteristics of Secondary Flow in a Turbulent Boundary Layer over Longitudinal Surface Roughness",
+    "journal": "70th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Denver, USA, November 19-21, 2017"
   },
   {
-    group: "2017",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Hydrodynamics of a Freely Movable Flexible Fin near the Ground",
-    journal: "70th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Denver, USA, November 19-21, 2017"
+    "group": "2017",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Hydrodynamics of a Freely Movable Flexible Fin near the Ground",
+    "journal": "70th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Denver, USA, November 19-21, 2017"
   },
   {
-    group: "2017",
-    authors: "Y.M.Lee & J.H.Lee",
-    title: "Surface Roughness Effects on Turbulent Couette Flow",
-    journal: "70th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Denver, USA, November 19-21, 2017"
+    "group": "2017",
+    "authors": "Y.M.Lee & J.H.Lee",
+    "title": "Surface Roughness Effects on Turbulent Couette Flow",
+    "journal": "70th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Denver, USA, November 19-21, 2017"
   },
   {
-    group: "2017",
-    authors: "S.Chae, J.Kim & J.H.Lee",
-    title: "Passively Adaptive Control of Flow over a Sphere for Drag Reduction at High Reynolds Numbers",
-    journal: "9th JSME-KSME Thermal and Fluids Engineering Conference",
-    details: "Okinawa, Japan, October 27-30, 2017"
+    "group": "2017",
+    "authors": "S.Chae, J.Kim & J.H.Lee",
+    "title": "Passively Adaptive Control of Flow over a Sphere for Drag Reduction at High Reynolds Numbers",
+    "journal": "9th JSME-KSME Thermal and Fluids Engineering Conference",
+    "details": "Okinawa, Japan, October 27-30, 2017"
   },
   {
-    group: "2017",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Simulation of a Flapping Flexible Vertical Flag in a Uniform Flow by the Immersed Boundary Method",
-    journal: "9th JSME-KSME Thermal and Fluid Engineering Conference",
-    details: "Okinawa, Japan, October 27-30, 2017"
+    "group": "2017",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Simulation of a Flapping Flexible Vertical Flag in a Uniform Flow by the Immersed Boundary Method",
+    "journal": "9th JSME-KSME Thermal and Fluid Engineering Conference",
+    "details": "Okinawa, Japan, October 27-30, 2017"
   },
   {
-    group: "2017",
-    authors: "Y.M.Lee & J.H.Lee",
-    title: "Roughness Effect in Couette Flow with a Rod-Roughened Wall",
-    journal: "9th JSME-KSME Thermal and Fluid Engineering Conference",
-    details: "Okinawa, Japan, October 27-30, 2017"
+    "group": "2017",
+    "authors": "Y.M.Lee & J.H.Lee",
+    "title": "Roughness Effect in Couette Flow with a Rod-Roughened Wall",
+    "journal": "9th JSME-KSME Thermal and Fluid Engineering Conference",
+    "details": "Okinawa, Japan, October 27-30, 2017"
   },
   {
-    group: "2017",
-    authors: "H.J.Im & J.H.Lee",
-    title: "Super-Hydrophobic Drag Reduction in Turbulent Channel and Pipe Flows",
-    journal: "10th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Chicago, USA, July 6-9, 2017"
+    "group": "2017",
+    "authors": "H.J.Im & J.H.Lee",
+    "title": "Super-Hydrophobic Drag Reduction in Turbulent Channel and Pipe Flows",
+    "journal": "10th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Chicago, USA, July 6-9, 2017"
   },
   {
-    group: "2017",
-    authors: "H.J.Im, J.H.Lee & J. Kim",
-    title: "Drag Reduction in Turbulent Pipe and Channel Flows over Superhydrophobic Surfaces",
-    journal: "10th International Symposium on Nature-Inspired Technology",
-    details: "Cebu, Philippine, June 28-July 1, 2017"
+    "group": "2017",
+    "authors": "H.J.Im, J.H.Lee & J. Kim",
+    "title": "Drag Reduction in Turbulent Pipe and Channel Flows over Superhydrophobic Surfaces",
+    "journal": "10th International Symposium on Nature-Inspired Technology",
+    "details": "Cebu, Philippine, June 28-July 1, 2017"
   },
   {
-    group: "2017",
-    authors: "S.Chae, S.Lee, J.Kim & J.H.Lee",
-    title: "Passively Adaptive Control of Flow over a Sphere for Drag Reduction at High Reynolds Numbers",
-    journal: "European Drag Reduction and Flow Control Meeting",
-    details: "Rome, Italy, April 3-6, 2017"
+    "group": "2017",
+    "authors": "S.Chae, S.Lee, J.Kim & J.H.Lee",
+    "title": "Passively Adaptive Control of Flow over a Sphere for Drag Reduction at High Reynolds Numbers",
+    "journal": "European Drag Reduction and Flow Control Meeting",
+    "details": "Rome, Italy, April 3-6, 2017"
   },
   {
-    group: "2016",
-    authors: "W.Jeong, H.J.Im & J.H.Lee",
-    title: "Turbulent Pipe Flows subjected to Temporal Decelerations",
-    journal: "69th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Portland, USA, November 20-22, 2016"
+    "group": "2016",
+    "authors": "W.Jeong, H.J.Im & J.H.Lee",
+    "title": "Turbulent Pipe Flows subjected to Temporal Decelerations",
+    "journal": "69th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Portland, USA, November 20-22, 2016"
   },
   {
-    group: "2016",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Large-Scale Structures in Turbulent Couette Flow",
-    journal: "69th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Portland, USA, November 20-22, 2016"
+    "group": "2016",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Large-Scale Structures in Turbulent Couette Flow",
+    "journal": "69th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Portland, USA, November 20-22, 2016"
   },
   {
-    group: "2015",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Long Structures in a Turbulent Boundary Layer with a Rod-Roughened Wall",
-    journal: "68th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Boston, USA, November 22-24, 2015"
+    "group": "2015",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Long Structures in a Turbulent Boundary Layer with a Rod-Roughened Wall",
+    "journal": "68th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Boston, USA, November 22-24, 2015"
   },
   {
-    group: "2015",
-    authors: "J.Ahn, J.H.Lee, J.Lee & H.J.Sung",
-    title: "Wall Scaling Laws for a High-Reynolds-Number Turbulent Pipe Flow at Re=3008",
-    journal: "9th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Melbourne, Australia, June 30-July 3, 2015"
+    "group": "2015",
+    "authors": "J.Ahn, J.H.Lee, J.Lee & H.J.Sung",
+    "title": "Wall Scaling Laws for a High-Reynolds-Number Turbulent Pipe Flow at Re=3008",
+    "journal": "9th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Melbourne, Australia, June 30-July 3, 2015"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee",
-    title: "Transition of a Turbulent Boundary Layer from Smooth to Rough Surface",
-    journal: "67th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "San Francisco, USA, November 23-25, 2014, (Gallery of Fluid Motion)"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee",
+    "title": "Transition of a Turbulent Boundary Layer from Smooth to Rough Surface",
+    "journal": "67th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "San Francisco, USA, November 23-25, 2014, (Gallery of Fluid Motion)"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Ahn, J.H.Lee, J.Lee & H.J.Sung",
-    title: "Large-Scale Motions for a High-Reynolds-Number Turbulent Pipe Flow at Re=3008",
-    journal: "67th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "San Francisco, USA, November 23-25, 2014"
+    "group": "Before UNIST",
+    "authors": "J.Ahn, J.H.Lee, J.Lee & H.J.Sung",
+    "title": "Large-Scale Motions for a High-Reynolds-Number Turbulent Pipe Flow at Re=3008",
+    "journal": "67th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "San Francisco, USA, November 23-25, 2014"
   },
   {
-    group: "Before UNIST",
-    authors: "R.J.Adrian & J.H.Lee",
-    title: "Non-Equilibrium Accelerating Turbulence in Round Tubes: Inhibition of Reynolds Stress",
-    journal: "Turbulent Mixing and Beyond",
-    details: "Trieste, Italy, August 04-09, 2014"
+    "group": "Before UNIST",
+    "authors": "R.J.Adrian & J.H.Lee",
+    "title": "Non-Equilibrium Accelerating Turbulence in Round Tubes: Inhibition of Reynolds Stress",
+    "journal": "Turbulent Mixing and Beyond",
+    "details": "Trieste, Italy, August 04-09, 2014"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & R.J.Adrian",
-    title: "Mechanism for Skin Friction Reduction in Temporally Accelerated Turbulent Pipe Flow",
-    journal: "66th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Pittsburgh, USA, November 24-26, 2013"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & R.J.Adrian",
+    "title": "Mechanism for Skin Friction Reduction in Temporally Accelerated Turbulent Pipe Flow",
+    "journal": "66th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Pittsburgh, USA, November 24-26, 2013"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Lee, J.H.Lee & H.J.Sung",
-    title: "Statistics and Large Scales in Turbulent Pipe and Channel Flows",
-    journal: "66th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Pittsburgh, USA, November 24-26, 2013"
+    "group": "Before UNIST",
+    "authors": "J.Lee, J.H.Lee & H.J.Sung",
+    "title": "Statistics and Large Scales in Turbulent Pipe and Channel Flows",
+    "journal": "66th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Pittsburgh, USA, November 24-26, 2013"
   },
   {
-    group: "Before UNIST",
-    authors: "M.Nadeem, J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulation of Turbulent Boundary Layer over Sparsely Spaced Rod Roughened Wall",
-    journal: "8th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Poitiers, France, August 28-30, 2013"
+    "group": "Before UNIST",
+    "authors": "M.Nadeem, J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulation of Turbulent Boundary Layer over Sparsely Spaced Rod Roughened Wall",
+    "journal": "8th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Poitiers, France, August 28-30, 2013"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Lee, J.H.Lee, J.-I.Choi & H.J.Sung",
-    title: "Very-Large-Scale Motions in a Turbulent Channel Flow",
-    journal: "8th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Poitiers, France, August 28-30, 2013"
+    "group": "Before UNIST",
+    "authors": "J.Lee, J.H.Lee, J.-I.Choi & H.J.Sung",
+    "title": "Very-Large-Scale Motions in a Turbulent Channel Flow",
+    "journal": "8th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Poitiers, France, August 28-30, 2013"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Ahn, J.H.Lee & H.J.Sung",
-    title: "Inner-Scaled Turbulent Statistics of Turbulent Pipe Flows",
-    journal: "8th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Poitiers, France, August 28-30, 2013"
+    "group": "Before UNIST",
+    "authors": "J.Ahn, J.H.Lee & H.J.Sung",
+    "title": "Inner-Scaled Turbulent Statistics of Turbulent Pipe Flows",
+    "journal": "8th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Poitiers, France, August 28-30, 2013"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Study of Very-Large-Scale Motions in Turbulent Pipe Flow",
-    journal: "65th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "San Diego, USA, November 18-20, 2012"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Study of Very-Large-Scale Motions in Turbulent Pipe Flow",
+    "journal": "65th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "San Diego, USA, November 18-20, 2012"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Ahn, J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulations in Turbulent Boundary Layers over Cube-roughened walls with Varying Spanwise Spacing",
-    journal: "65th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "San Diego,USA, November 18-20, 2012"
+    "group": "Before UNIST",
+    "authors": "J.Ahn, J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulations in Turbulent Boundary Layers over Cube-roughened walls with Varying Spanwise Spacing",
+    "journal": "65th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "San Diego,USA, November 18-20, 2012"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Comparison of Turbulent Pipe and Boundary Layer Flows",
-    journal: "23rd International Congress of Theoretical and Applied Mechanics",
-    details: "Beijing, China, August 19-24, 2012"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Comparison of Turbulent Pipe and Boundary Layer Flows",
+    "journal": "23rd International Congress of Theoretical and Applied Mechanics",
+    "details": "Beijing, China, August 19-24, 2012"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee, J.Lee & H.J.Sung",
-    title: "Large-Scale Structures of the Turbulent Boundary Layer in Wall-Normal/Spanwise Plane",
-    journal: "64th American Physical Society Annual DFD Meeting",
-    details: "Baltimore, USA, November 20-22, 2011"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee, J.Lee & H.J.Sung",
+    "title": "Large-Scale Structures of the Turbulent Boundary Layer in Wall-Normal/Spanwise Plane",
+    "journal": "64th American Physical Society Annual DFD Meeting",
+    "details": "Baltimore, USA, November 20-22, 2011"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee, S.J.Jang & H.J.Sung",
-    title: "Very Large-Scale Motions in a Turbulent Pipe Flow",
-    journal: "64th American Physical Society Annual DFD Meeting",
-    details: "Baltimore, USA, November 20-22, 2011"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee, S.J.Jang & H.J.Sung",
+    "title": "Very Large-Scale Motions in a Turbulent Pipe Flow",
+    "journal": "64th American Physical Society Annual DFD Meeting",
+    "details": "Baltimore, USA, November 20-22, 2011"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Ahn, J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulation Study in Turbulent Boundary Layers with the Cube-Roughened Walls",
-    journal: "64th Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Baltimore, USA, November 20-22, 2011"
+    "group": "Before UNIST",
+    "authors": "J.Ahn, J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulation Study in Turbulent Boundary Layers with the Cube-Roughened Walls",
+    "journal": "64th Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Baltimore, USA, November 20-22, 2011"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulations of Turbulent Boundary Layers over Square-Edged 2-D and 3-D Rough Walls",
-    journal: "7th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Ottawa, Canada, July 28-31, 2011 (selected as TSFP-7 focus issue)"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulations of Turbulent Boundary Layers over Square-Edged 2-D and 3-D Rough Walls",
+    "journal": "7th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Ottawa, Canada, July 28-31, 2011 (selected as TSFP-7 focus issue)"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulation for Very Large-Scale Motions in a Turbulent Boundary Layer",
-    journal: "7th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Ottawa, Canada, July 28-31, 2011"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulation for Very Large-Scale Motions in a Turbulent Boundary Layer",
+    "journal": "7th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Ottawa, Canada, July 28-31, 2011"
   },
   {
-    group: "Before UNIST",
-    authors: "H.J.Sung & J.H.Lee",
-    title: "Very Large-Scale Motions in a Turbulent Boundary Layer",
-    journal: "63rd Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Long Beach, USA, November 21-23, 2010"
+    "group": "Before UNIST",
+    "authors": "H.J.Sung & J.H.Lee",
+    "title": "Very Large-Scale Motions in a Turbulent Boundary Layer",
+    "journal": "63rd Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Long Beach, USA, November 21-23, 2010"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Hairpin Packet Structure of a Turbulent Boundary Layer in Inclined Wall-Normal/Spanwise Planes",
-    journal: "62nd Annual Meeting of the APS Division of Fluid Dynamics",
-    details: "Minneapolis, USA, November 22-24, 2009"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Hairpin Packet Structure of a Turbulent Boundary Layer in Inclined Wall-Normal/Spanwise Planes",
+    "journal": "62nd Annual Meeting of the APS Division of Fluid Dynamics",
+    "details": "Minneapolis, USA, November 22-24, 2009"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee, S.-H.Lee, K.Kim & H.J.Sung",
-    title: "Structures of the Turbulent Boundary Layer over a Rod-Roughened Wall",
-    journal: "6th International Symposium on Turbulence and Shear Flow Phenomena",
-    details: "Seoul, Korea, June 22-24, 2009"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee, S.-H.Lee, K.Kim & H.J.Sung",
+    "title": "Structures of the Turbulent Boundary Layer over a Rod-Roughened Wall",
+    "journal": "6th International Symposium on Turbulence and Shear Flow Phenomena",
+    "details": "Seoul, Korea, June 22-24, 2009"
   }
 ];
 
-/* Domestic conference papers. Newest first. The numbers [n] on the page are counted automatically.
-   To add a paper, copy one { ... } block, paste it at the top of the list, and change the text.
-   group   the heading the paper appears under (a year such as "2026", or "Before UNIST")
-   authors J.H.Lee is shown in bold automatically
-   title   <i>, <sub>, <sup> may be used, e.g. Re<sub>&tau;</sub>
-   journal conference name, shown in italics
-   details place, dates and year
-   link    (optional) DOI or web address; leave the line out when there is none */
 FPCL.proceedingsDomestic = [
   {
-    group: "2026",
-    authors: "M.J.Kang & J.H.Lee",
-    title: "Stable Schooling Formation Of Mother and Calf Foils with Different Body Lengths",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Pohang, Korea, Oct 21-23, 2026"
+    "group": "2026",
+    "authors": "M.J.Kang & J.H.Lee",
+    "title": "Stable Schooling Formation Of Mother and Calf Foils with Different Body Lengths",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Pohang, Korea, Oct 21-23, 2026"
   },
   {
-    group: "2026",
-    authors: "S.W.Hwang, M.J.Kang, J.H.Lee, J.Kim, J.Park & J.Song",
-    title: "Aerodynamic Design Optimization of a Paraglider Canopy via Artificial Neural Network",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Pohang, Korea, Oct 21-23, 2026"
+    "group": "2026",
+    "authors": "S.W.Hwang, M.J.Kang, J.H.Lee, J.Kim, J.Park & J.Song",
+    "title": "Aerodynamic Des Optimization of a Paraglider Canopy via Artificial Neural Network",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Pohang, Korea, Oct 21-23, 2026"
   },
   {
-    group: "2026",
-    authors: "X.Li & J.H.Lee",
-    title: "Super-Resolution Reconstruction of Wall-Modeled LES Data for Turbulent Channel Flow based on Deep Learning",
-    journal: "14th National Congress of Fluids Engineering",
-    details: "Pyeongchang, Koera, July 8-11, 2026"
+    "group": "2026",
+    "authors": "X.Li & J.H.Lee",
+    "title": "Super-Resolution Reconstruction of Wall-Modeled LES Data for Turbulent Channel Flow based on Deep Learning",
+    "journal": "14th National Congress of Fluids Engineering",
+    "details": "Pyeongchang, Koera, July 8-11, 2026"
   },
   {
-    group: "2026",
-    authors: "S.Y.Lee, C.T.Ha & J.H.Lee",
-    title: "Enhancement of Vapor-Air Mixture Bubble Condensation Using Sinusoidal Tube Wall Geometry",
-    journal: "14th National Congress of Fluids Engineering",
-    details: "Pyeongchang, Korea, July 8-11, 2026"
+    "group": "2026",
+    "authors": "S.Y.Lee, C.T.Ha & J.H.Lee",
+    "title": "Enhancement of Vapor-Air Mixture Bubble Condensation Using Sinusoidal Tube Wall Geometry",
+    "journal": "14th National Congress of Fluids Engineering",
+    "details": "Pyeongchang, Korea, July 8-11, 2026"
   },
   {
-    group: "2026",
-    authors: "G.Hwangbo, J.H.Lee, S.Shin, J. Park, J.S.Roh & S.Park",
-    title: "Enhancing Thermal Uniformity during Semi-Solid Processing via Dual Electromagnetic Stirring",
-    journal: "Korean Society of Visualization, Spring Annual Meeting",
-    details: "Chuncheon, Korea, May 20-22, 2026"
+    "group": "2026",
+    "authors": "G.Hwangbo, J.H.Lee, S.Shin, J. Park, J.S.Roh & S.Park",
+    "title": "Enhancing Thermal Uniformity during Semi-Solid Processing via Dual Electromagnetic Stirring",
+    "journal": "Korean Society of Visualization, Spring Annual Meeting",
+    "details": "Chuncheon, Korea, May 20-22, 2026"
   },
   {
-    group: "2026",
-    authors: "J.Jeon, J.H.Lee & C.-J.Kim",
-    title: "Stability of Air Pocket and Slip Characteristics on Finite-Length Longitudinal Micro-Trench Superhydrophobic Surfaces with Streamwise Repetition",
-    journal: "Korean Society of Visualization, Spring Annual Meeting",
-    details: "Chuncheon, Korea, May 20-22, 2026"
+    "group": "2026",
+    "authors": "J.Jeon, J.H.Lee & C.-J.Kim",
+    "title": "Stability of Air Pocket and Slip Characteristics on Finite-Length Longitudinal Micro-Trench Superhydrophobic Surfaces with Streamwise Repetition",
+    "journal": "Korean Society of Visualization, Spring Annual Meeting",
+    "details": "Chuncheon, Korea, May 20-22, 2026"
   },
   {
-    group: "2026",
-    authors: "M.J.Kang & J.H.Lee",
-    title: "Schooling Behavior of Two Self-Propelled Flexible Foils with Unidentical Body Lengths",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jecheon, Korea, April 08-10, 2026"
+    "group": "2026",
+    "authors": "M.J.Kang & J.H.Lee",
+    "title": "Schooling Behavior of Two Self-Propelled Flexible Foils with Unidentical Body Lengths",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jecheon, Korea, April 08-10, 2026"
   },
   {
-    group: "2026",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Reduction of Pressure Fluctuations in an Incompressible Cavity Flow using Multiple Slot Jets",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jecheon, Korea, April 08-10, 2026"
+    "group": "2026",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Reduction of Pressure Fluctuations in an Incompressible Cavity Flow using Multiple Slot Jets",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jecheon, Korea, April 08-10, 2026"
   },
   {
-    group: "2026",
-    authors: "G.Hwangbo, J.H.Lee, S.Shin, J.Par, H.Bang, J.S.Roh & S.Park",
-    title: "Mechanism of Stirring-Flow-Topology-Driven Heat Transport using Dual Electromagnetic Stirring",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jecheon, Korea, April 08-10, 2026"
+    "group": "2026",
+    "authors": "G.Hwangbo, J.H.Lee, S.Shin, J.Par, H.Bang, J.S.Roh & S.Park",
+    "title": "Mechanism of Stirring-Flow-Topology-Driven Heat Transport using Dual Electromagnetic Stirring",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jecheon, Korea, April 08-10, 2026"
   },
   {
-    group: "2026",
-    authors: "S.W.Hwang, M.J.Kang, J.H.Lee, J.Kim, J.Park & J.Song",
-    title: "Aerodynamic Design Optimization for Paraglider Canopy via Artificial Neural Network",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jecheon, Korea, April 08-10, 2026"
+    "group": "2026",
+    "authors": "S.W.Hwang, M.J.Kang, J.H.Lee, J.Kim, J.Park & J.Song",
+    "title": "Aerodynamic Design Optimization for Paraglider Canopy via Artificial Neural Network",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jecheon, Korea, April 08-10, 2026"
   },
   {
-    group: "2025",
-    authors: "G.W.Kim, Y.D.Jeong & J.H.Lee",
-    title: "Lift Enhancement of an Airfoil using Covert-inspired Dual-side Flaps",
-    journal: "80th Anniversary Conference of KSME",
-    details: "Jeongseon, Korea, December 10-13, 2025"
+    "group": "2025",
+    "authors": "G.W.Kim, Y.D.Jeong & J.H.Lee",
+    "title": "Lift Enhancement of an Airfoil using Covert-inspired Dual-side Flaps",
+    "journal": "80th Anniversary Conference of KSME",
+    "details": "Jeongseon, Korea, December 10-13, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Condensation Enhancement of Vapor-Air Mixture Bubble by the Changes of Tube Geometry",
-    journal: "80th Anniversary Conference of KSME",
-    details: "Jeongseon, Korea, December 10-13, 2025"
+    "group": "2025",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Condensation Enhancement of Vapor-Air Mixture Bubble by the Changes of Tube Geometry",
+    "journal": "80th Anniversary Conference of KSME",
+    "details": "Jeongseon, Korea, December 10-13, 2025"
   },
   {
-    group: "2025",
-    authors: "J.Jeon, J.H.Lee & C.-J.Kim",
-    title: "Air Pocket Stability and Skin-Friction Drag Reduction in Finite Longitudinal Micro-Trench Superhydrophobic Surface",
-    journal: "30th Anniversary Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Busan, Korea, November 19-21, 2025"
+    "group": "2025",
+    "authors": "J.Jeon, J.H.Lee & C.-J.Kim",
+    "title": "Air Pocket Stability and Skin-Friction Drag Reduction in Finite Longitudinal Micro-Trench Superhydrophobic Surface",
+    "journal": "30th Anniversary Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Busan, Korea, November 19-21, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Active Flow Control of an Incompressible Turbulent Cavity Flow using Multiple Slot Jets",
-    journal: "30th Anniversary Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Busan, Korea, November 19-21, 2025"
+    "group": "2025",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Active Flow Control of an Incompressible Turbulent Cavity Flow using Multiple Slot Jets",
+    "journal": "30th Anniversary Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Busan, Korea, November 19-21, 2025"
   },
   {
-    group: "2025",
-    authors: "J.Jeon, J.H.Lee & C.-J.Kim",
-    title: "Air Pocket Stability and Drag Reduction Characteristics of Finite-Length Micro-Trench Superhydrophobic Surfaces",
-    journal: "The Society of Naval Architects of Korea, Fall Annual Meeting",
-    details: "Changwon, Korea, November 13-14, 2025"
+    "group": "2025",
+    "authors": "J.Jeon, J.H.Lee & C.-J.Kim",
+    "title": "Air Pocket Stability and Drag Reduction Characteristics of Finite-Length Micro-Trench Superhydrophobic Surfaces",
+    "journal": "The Society of Naval Architects of Korea, Fall Annual Meeting",
+    "details": "Changwon, Korea, November 13-14, 2025"
   },
   {
-    group: "2025",
-    authors: "S.M.Lee, G.W.Kim, H.J.Lee, Y.S.Shin, S.W.Jeong, J.H.Lee, H.S.Son, & J.H.Kim",
-    title: "CFD 시뮬레이션 기반 UAM 동역학 제어 시뮬레이션을 이용한 UAM 특화 난류 진단 지수 개발 방안 연구",
-    journal: "Korean Meteorological Society, Fall Annual Meeting",
-    details: "Changwon, Korea, November 04-07, 2025"
+    "group": "2025",
+    "authors": "S.M.Lee, G.W.Kim, H.J.Lee, Y.S.Shin, S.W.Jeong, J.H.Lee, H.S.Son, & J.H.Kim",
+    "title": "CFD 시뮬레이션 기반 UAM 동역학 제어 시뮬레이션을 이용한 UAM 특화 난류 진단 지수 개발 방안 연구",
+    "journal": "Korean Meteorological Society, Fall Annual Meeting",
+    "details": "Changwon, Korea, November 04-07, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Control of Pressure Fluctuations in an Incompressible Turbulent Cavity Flow using Multiple Slot Jets",
-    journal: "Transactions of the Korea Soc. Mech. Eng. B, Ulsan Branch Spring Meeting",
-    details: "Ulsan, Korea, May 16, 2025"
+    "group": "2025",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Control of Pressure Fluctuations in an Incompressible Turbulent Cavity Flow using Multiple Slot Jets",
+    "journal": "Transactions of the Korea Soc. Mech. Eng. B, Ulsan Branch Spring Meeting",
+    "details": "Ulsan, Korea, May 16, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Yoo & J.H.Lee",
-    title: "Suppression of Pressure Fluctuations in an Incompressible Turbulent Cavity Flow Using Multiple Slot Jets",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Iksan, Korea, April 9-11, 2025"
+    "group": "2025",
+    "authors": "S.Yoo & J.H.Lee",
+    "title": "Suppression of Pressure Fluctuations in an Incompressible Turbulent Cavity Flow Using Multiple Slot Jets",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Iksan, Korea, April 9-11, 2025"
   },
   {
-    group: "2025",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Effects of Tube Geometry and Inlet Velocity on Vapor-Air Mixture Bubble Condensation",
-    journal: "KSME Fluid Engineering Division 2025 Spring Conference",
-    details: "Seoul, Korea, April 2-4, 2025"
+    "group": "2025",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Effects of Tube Geometry and Inlet Velocity on Vapor-Air Mixture Bubble Condensation",
+    "journal": "KSME Fluid Engineering Division 2025 Spring Conference",
+    "details": "Seoul, Korea, April 2-4, 2025"
   },
   {
-    group: "2025",
-    authors: "M.J.Kim, Y.D.Jeong & J.H.Lee",
-    title: "Deep Reinforcement Learning-Based Heat Transfer Enhancement in Channel Flow using a Wall-Mounted Flexible Vortex Generator",
-    journal: "KSME Fluid Engineering Division 2025 Spring Conference",
-    details: "Seoul, Korea, April 2-4, 2025"
+    "group": "2025",
+    "authors": "M.J.Kim, Y.D.Jeong & J.H.Lee",
+    "title": "Deep Reinforcement Learning-Based Heat Transfer Enhancement in Channel Flow using a Wall-Mounted Flexible Vortex Generator",
+    "journal": "KSME Fluid Engineering Division 2025 Spring Conference",
+    "details": "Seoul, Korea, April 2-4, 2025"
   },
   {
-    group: "2024",
-    authors: "S.H.Kim & J.H.Lee",
-    title: "Artificial-Neural-Network-based Wall-Modeled Large-Eddy Simulation with Eddy-Viscosity Correction",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeju, Korea, November 06-08, 2024"
+    "group": "2024",
+    "authors": "S.H.Kim & J.H.Lee",
+    "title": "Artificial-Neural-Network-based Wall-Modeled Large-Eddy Simulation with Eddy-Viscosity Correction",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeju, Korea, November 06-08, 2024"
   },
   {
-    group: "2024",
-    authors: "G.W.Hwangbo, S.Shin, J.-Y.Park, J.S.Roh, S.R.Park & J.H.Lee",
-    title: "Numerical Study for Optimization of Operating Conditions of Electromagnetic Stirring for Semi-Solid A356 Slurry Preparation",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeju, Korea, November 06-08, 2024"
+    "group": "2024",
+    "authors": "G.W.Hwangbo, S.Shin, J.-Y.Park, J.S.Roh, S.R.Park & J.H.Lee",
+    "title": "Numerical Study for Optimization of Operating Conditions of Electromagnetic Stirring for Semi-Solid A356 Slurry Preparation",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeju, Korea, November 06-08, 2024"
   },
   {
-    group: "2024",
-    authors: "S.H.Kim & J.H.Lee",
-    title: "Artificial-Neural-Network-based Wall-Modeled Large-Eddy Simulation with Eddy-Viscosity Correction",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Yeosu, Korea, Oct 31 - Nov 1, 2024"
+    "group": "2024",
+    "authors": "S.H.Kim & J.H.Lee",
+    "title": "Artificial-Neural-Network-based Wall-Modeled Large-Eddy Simulation with Eddy-Viscosity Correction",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Yeosu, Korea, Oct 31 - Nov 1, 2024"
   },
   {
-    group: "2024",
-    authors: "S.M.Lee & J.H.Lee",
-    title: "Influence of the Surface Roughness on the Turbulent Structure in the Turbulent Plane Couette Flow",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Yeosu, Korea, Oct 31 - Nov 1, 2024"
+    "group": "2024",
+    "authors": "S.M.Lee & J.H.Lee",
+    "title": "Influence of the Surface Roughness on the Turbulent Structure in the Turbulent Plane Couette Flow",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Yeosu, Korea, Oct 31 - Nov 1, 2024"
   },
   {
-    group: "2024",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Drag Reduction of Caudal Fin in the Wake by Dorsal Fin through Deep Reinforcement Learning",
-    journal: "13th National Congress on Fluids Engineering, Spring Annual Meeting",
-    details: "Daejeon, Korea, July 24-26, 2024"
+    "group": "2024",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Drag Reduction of Caudal Fin in the Wake by Dorsal Fin through Deep Reinforcement Learning",
+    "journal": "13th National Congress on Fluids Engineering, Spring Annual Meeting",
+    "details": "Daejeon, Korea, July 24-26, 2024"
   },
   {
-    group: "2024",
-    authors: "M.J.Kang & J.H.Lee",
-    title: "Drag Reduction of the Cylinder in the Tandem Arrangement Using an Attached Flexible Fin",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jeju, Korea, May 30-31, 2024"
+    "group": "2024",
+    "authors": "M.J.Kang & J.H.Lee",
+    "title": "Drag Reduction of the Cylinder in the Tandem Arrangement Using an Attached Flexible Fin",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 30-31, 2024"
   },
   {
-    group: "2024",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Drag Reduction of a Downstream Fin in the Wake by an Upstream Fin through Deep Reinforcement Learning",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jeju, Korea, May 30-31, 2024"
+    "group": "2024",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Drag Reduction of a Downstream Fin in the Wake by an Upstream Fin through Deep Reinforcement Learning",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 30-31, 2024"
   },
   {
-    group: "2024",
-    authors: "M.J.Kang & J.H.Lee",
-    title: "Drag Reduction of a Downstream Cylinder in the Wake of an Upstream Cylinder Using an Attached Flexible Fin",
-    journal: "Korean Society of Visualization, Spring Annual Meeting",
-    details: "Ansan, Korea, May 2-3, 2024"
+    "group": "2024",
+    "authors": "M.J.Kang & J.H.Lee",
+    "title": "Drag Reduction of a Downstream Cylinder in the Wake of an Upstream Cylinder Using an Attached Flexible Fin",
+    "journal": "Korean Society of Visualization, Spring Annual Meeting",
+    "details": "Ansan, Korea, May 2-3, 2024"
   },
   {
-    group: "2023",
-    authors: "S.M.Lee & J.H.Lee",
-    title: "Effect of the Rod-Roughness on the Plane Turbulent Couette Flow",
-    journal: "Korean Society of Visualization, Fall Annual Meeting",
-    details: "Gwangju, Korea, November 16-17, 2023"
+    "group": "2023",
+    "authors": "S.M.Lee & J.H.Lee",
+    "title": "Effect of the Rod-Roughness on the Plane Turbulent Couette Flow",
+    "journal": "Korean Society of Visualization, Fall Annual Meeting",
+    "details": "Gwangju, Korea, November 16-17, 2023"
   },
   {
-    group: "2023",
-    authors: "J.Jeon, J.H.Lee, & C.-J.Kim",
-    title: "Plastron Stability on Superhydrophobic Surface in Laminar Boundary Layer Flow",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Incheon, Korea, November 01-04, 2023"
+    "group": "2023",
+    "authors": "J.Jeon, J.H.Lee, & C.-J.Kim",
+    "title": "Plastron Stability on Superhydrophobic Surface in Laminar Boundary Layer Flow",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Incheon, Korea, November 01-04, 2023"
   },
   {
-    group: "2023",
-    authors: "M.J.Kim, Y.D.Jeong, & J.H.Lee",
-    title: "Vibration of a Freely Movable Circular Cylinder in the Wake of an Oscillating Fin",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Incheon, Korea, November 01-04, 2023"
+    "group": "2023",
+    "authors": "M.J.Kim, Y.D.Jeong, & J.H.Lee",
+    "title": "Vibration of a Freely Movable Circular Cylinder in the Wake of an Oscillating Fin",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Incheon, Korea, November 01-04, 2023"
   },
   {
-    group: "2023",
-    authors: "S.H.Kim & J.H.Lee",
-    title: "Artificial Neural Network-Based Wall-Modeled Large-Eddy Simulation for Turbulent Channel Flow",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Gyeongju, Korea, September 12-13, 2023"
+    "group": "2023",
+    "authors": "S.H.Kim & J.H.Lee",
+    "title": "Artificial Neural Network-Based Wall-Modeled Large-Eddy Simulation for Turbulent Channel Flow",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Gyeongju, Korea, September 12-13, 2023"
   },
   {
-    group: "2023",
-    authors: "S.M.Lee & J.H.Lee",
-    title: "Direct Numerical Simulation of Turbulent Plane Couette Flow with Surface Roughness",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Seoul, Korea, May 17-19, 2023"
+    "group": "2023",
+    "authors": "S.M.Lee & J.H.Lee",
+    "title": "Direct Numerical Simulation of Turbulent Plane Couette Flow with Surface Roughness",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Seoul, Korea, May 17-19, 2023"
   },
   {
-    group: "2023",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Hydrodynamic Benefit of a Self-Propelled Oscillatory Ray with Passive Flexibility",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Seoul, Korea, May 17-19, 2023"
+    "group": "2023",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Hydrodynamic Benefit of a Self-Propelled Oscillatory Ray with Passive Flexibility",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Seoul, Korea, May 17-19, 2023"
   },
   {
-    group: "2023",
-    authors: "S.H.Kim & J.H.Lee",
-    title: "FIK Identity Based Wall-Modeled Large-Eddy Simulation",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Busan, Korea, May 11-12, 2023"
+    "group": "2023",
+    "authors": "S.H.Kim & J.H.Lee",
+    "title": "FIK Identity Based Wall-Modeled Large-Eddy Simulation",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Busan, Korea, May 11-12, 2023"
   },
   {
-    group: "2023",
-    authors: "J.N.Choi & J.H.Lee",
-    title: "Suppression of Pressure Fluctuations in an Incompressible Turbulent Cavity Flow using Wall-Normal Steady Blowing",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Busan, Korea, May 11-12, 2023"
+    "group": "2023",
+    "authors": "J.N.Choi & J.H.Lee",
+    "title": "Suppression of Pressure Fluctuations in an Incompressible Turbulent Cavity Flow using Wall-Normal Steady Blowing",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Busan, Korea, May 11-12, 2023"
   },
   {
-    group: "2023",
-    authors: "J.N.Choi & J.H.Lee",
-    title: "Active Control of Flow-Induced Pressure Fluctuations in Turbulent Cavity Flow",
-    journal: "Transactions of the Korea Soc. Mech. Eng. B, Ulsan Branch Spring Meeting",
-    details: "Ulsan, Korea, April 13, 2023"
+    "group": "2023",
+    "authors": "J.N.Choi & J.H.Lee",
+    "title": "Active Control of Flow-Induced Pressure Fluctuations in Turbulent Cavity Flow",
+    "journal": "Transactions of the Korea Soc. Mech. Eng. B, Ulsan Branch Spring Meeting",
+    "details": "Ulsan, Korea, April 13, 2023"
   },
   {
-    group: "2022",
-    authors: "J.Jeon, S.Y.Lee, J.H.Lee & C.-J.Kim",
-    title: "Interaction between Laminar Boundary Layer and Plastron over a Superhydrophobic Surface",
-    journal: "Korean Society of Visualization, Fall Annual Meeting",
-    details: "Daejeon, Korea, December 01-02, 2022"
+    "group": "2022",
+    "authors": "J.Jeon, S.Y.Lee, J.H.Lee & C.-J.Kim",
+    "title": "Interaction between Laminar Boundary Layer and Plastron over a Superhydrophobic Surface",
+    "journal": "Korean Society of Visualization, Fall Annual Meeting",
+    "details": "Daejeon, Korea, December 01-02, 2022"
   },
   {
-    group: "2022",
-    authors: "J.N.Choi & J.H.Lee",
-    title: "Active Control of Pressure Oscillations for Incompressible Turbulent Cavity Flow",
-    journal: "Transactions of Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeju, Korea, November 09-12, 2022"
+    "group": "2022",
+    "authors": "J.N.Choi & J.H.Lee",
+    "title": "Active Control of Pressure Oscillations for Incompressible Turbulent Cavity Flow",
+    "journal": "Transactions of Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeju, Korea, November 09-12, 2022"
   },
   {
-    group: "2022",
-    authors: "J.Jeon, S.Y.Lee, J.H.Lee & C.-J.Kim",
-    title: "Laminar Boundary Layer over a Superhydrophobic Surface",
-    journal: "Transactions of Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeju, Korea, November 09-12, 2022"
+    "group": "2022",
+    "authors": "J.Jeon, S.Y.Lee, J.H.Lee & C.-J.Kim",
+    "title": "Laminar Boundary Layer over a Superhydrophobic Surface",
+    "journal": "Transactions of Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeju, Korea, November 09-12, 2022"
   },
   {
-    group: "2022",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Effects of a Tube Diameter on Single Condensing Bubble in Subcooled Liquid Flow",
-    journal: "12th National Congress on Fluids Engineering",
-    details: "Changwon, Korea, June 22-24, 2022"
+    "group": "2022",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Effects of a Tube Diameter on Single Condensing Bubble in Subcooled Liquid Flow",
+    "journal": "12th National Congress on Fluids Engineering",
+    "details": "Changwon, Korea, June 22-24, 2022"
   },
   {
-    group: "2022",
-    authors: "Y.D.Jeong, M.J.Kim & J.H.Lee",
-    title: "Burst-and-Coast Swimming of Two Self-Propelled Flexible Fins in a Side-by-Side Configuration",
-    journal: "12th National Congress on Fluids Engineering",
-    details: "Changwon, Korea, June 22-24, 2022"
+    "group": "2022",
+    "authors": "Y.D.Jeong, M.J.Kim & J.H.Lee",
+    "title": "Burst-and-Coast Swimming of Two Self-Propelled Flexible Fins in a Side-by-Side Configuration",
+    "journal": "12th National Congress on Fluids Engineering",
+    "details": "Changwon, Korea, June 22-24, 2022"
   },
   {
-    group: "2022",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Flow-Induced Vibration of a Freely Movable Cylinder in the Wake of an Oscillating Fin",
-    journal: "Korean Society of Visualization, Spring Annual Meeting",
-    details: "Incheon, Korea, May 19-20, 2022"
+    "group": "2022",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Flow-Induced Vibration of a Freely Movable Cylinder in the Wake of an Oscillating Fin",
+    "journal": "Korean Society of Visualization, Spring Annual Meeting",
+    "details": "Incheon, Korea, May 19-20, 2022"
   },
   {
-    group: "2021",
-    authors: "Y.D.Jeong, K.Ahn, M.J.Kim & J.H.Lee",
-    title: "Heat Transfer Enhancement to Channel Flow past a Confined Cylinder by Two Wall-Mounted Flexible Flags",
-    journal: "Korea Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Siheung, Korea, November 11-12, 2021"
+    "group": "2021",
+    "authors": "Y.D.Jeong, K.Ahn, M.J.Kim & J.H.Lee",
+    "title": "Heat Transfer Enhancement to Channel Flow past a Confined Cylinder by Two Wall-Mounted Flexible Flags",
+    "journal": "Korea Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Siheung, Korea, November 11-12, 2021"
   },
   {
-    group: "2021",
-    authors: "S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Effect of a Tube Diameter on Condensing Bubble in Subcooled Flow",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Gwangju, Korea, November 03-06, 2021"
+    "group": "2021",
+    "authors": "S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Effect of a Tube Diameter on Condensing Bubble in Subcooled Flow",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Gwangju, Korea, November 03-06, 2021"
   },
   {
-    group: "2021",
-    authors: "H.G.Hwang, J.Hwang, J.-H.Kang, H.J.Sung & J.H.Lee",
-    title: "Wall-Attached Structures of Velocity Fluctuations in Compressible Turbulent Channel Flow",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Online, Korea, August 18-19, 2021"
+    "group": "2021",
+    "authors": "H.G.Hwang, J.Hwang, J.-H.Kang, H.J.Sung & J.H.Lee",
+    "title": "Wall-Attached Structures of Velocity Fluctuations in Compressible Turbulent Channel Flow",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Online, Korea, August 18-19, 2021"
   },
   {
-    group: "2021",
-    authors: "C.G.Lee, S.Y. Lee, C.-T.Ha & J.H.Lee",
-    title: "Numerical Study of Bursting Jet in Two Tandem Bubbles",
-    journal: "Korean Society of Visualization, Spring Annual Meeting",
-    details: "Daejeon, Korea, May 20-21, 2021"
+    "group": "2021",
+    "authors": "C.G.Lee, S.Y. Lee, C.-T.Ha & J.H.Lee",
+    "title": "Numerical Study of Bursting Jet in Two Tandem Bubbles",
+    "journal": "Korean Society of Visualization, Spring Annual Meeting",
+    "details": "Daejeon, Korea, May 20-21, 2021"
   },
   {
-    group: "2021",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Burst-and-Coast Locomotion of Two Self-Propelled Fins in a Side-by-Side Arrangement",
-    journal: "Korean Society of Visualization, Spring Annual Meeting",
-    details: "Daejeon, Korea, May 20-21, 2021"
+    "group": "2021",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Burst-and-Coast Locomotion of Two Self-Propelled Fins in a Side-by-Side Arrangement",
+    "journal": "Korean Society of Visualization, Spring Annual Meeting",
+    "details": "Daejeon, Korea, May 20-21, 2021"
   },
   {
-    group: "2021",
-    authors: "S.Y.Lee, C.G.Lee, C.-T.Ha & J.H.Lee",
-    title: "Effects of Tube Diameter on a Single Bubble Condensation in Subcooled Liquid Flow",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Online, May 06-07, 2021"
+    "group": "2021",
+    "authors": "S.Y.Lee, C.G.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Effects of Tube Diameter on a Single Bubble Condensation in Subcooled Liquid Flow",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Online, May 06-07, 2021"
   },
   {
-    group: "2021",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Flow-Induced Vibration of a Freely Movable Cylinder in the Wake of an Oscillating Fin",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Online, May 06-07, 2021"
+    "group": "2021",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Flow-Induced Vibration of a Freely Movable Cylinder in the Wake of an Oscillating Fin",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Online, May 06-07, 2021"
   },
   {
-    group: "2021",
-    authors: "Y.M.Lee, J.Lee & J.H.Lee",
-    title: "Artificial Neural Networks-Based Wall-Model for Large-Eddy Simulations of Turbulent Channel and Separated Boundary Layer Flows",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Online, May 06-07, 2021"
+    "group": "2021",
+    "authors": "Y.M.Lee, J.Lee & J.H.Lee",
+    "title": "Artificial Neural Networks-Based Wall-Model for Large-Eddy Simulations of Turbulent Channel and Separated Boundary Layer Flows",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Online, May 06-07, 2021"
   },
   {
-    group: "2020",
-    authors: "C.G.Lee, S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Numerical Study of Bursting Jet in Two Tandem Bubbles",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting (Online)",
-    details: "Jeongseon, Korea, December 16-24, 2020"
+    "group": "2020",
+    "authors": "C.G.Lee, S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Numerical Study of Bursting Jet in Two Tandem Bubbles",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting (Online)",
+    "details": "Jeongseon, Korea, December 16-24, 2020"
   },
   {
-    group: "2020",
-    authors: "C.W.Joung, H.G.Hwang, J.H.Lee & Y.B.Park",
-    title: "Progressive Failure Analysis of Fiber-reinforced Composite Laminate Subjected to Acoustic Loading",
-    journal: "Korean Soc. Composite Materials, Fall Annual Meeting",
-    details: "Kyoungju, Korea, November 5-6, 2020"
+    "group": "2020",
+    "authors": "C.W.Joung, H.G.Hwang, J.H.Lee & Y.B.Park",
+    "title": "Progressive Failure Analysis of Fiber-reinforced Composite Laminate Subjected to Acoustic Loading",
+    "journal": "Korean Soc. Composite Materials, Fall Annual Meeting",
+    "details": "Kyoungju, Korea, November 5-6, 2020"
   },
   {
-    group: "2020",
-    authors: "J.H.Hwang, H.G.Hwang, J.Hwang & J.H.Lee",
-    title: "Self-Similar Structures in Turbulent Couette-Poiseuille Flows",
-    journal: "Korean Society for Computational Fluids Engineering, 25th Conference",
-    details: "Jeju, Korea, October 18-21, 2020"
+    "group": "2020",
+    "authors": "J.H.Hwang, H.G.Hwang, J.Hwang & J.H.Lee",
+    "title": "Self-Similar Structures in Turbulent Couette-Poiseuille Flows",
+    "journal": "Korean Society for Computational Fluids Engineering, 25th Conference",
+    "details": "Jeju, Korea, October 18-21, 2020"
   },
   {
-    group: "2020",
-    authors: "Y.M.Lee, J.H.Lee, L.P.Raj, J.H.Jo & R.S.Myong",
-    title: "Numerical Simulation of Flows over Multi-Element Iced Airfoils using LES",
-    journal: "Korean Society for Computational Fluids Engineering, 25th Conference",
-    details: "Jeju, Korea, October 18-21, 2020"
+    "group": "2020",
+    "authors": "Y.M.Lee, J.H.Lee, L.P.Raj, J.H.Jo & R.S.Myong",
+    "title": "Numerical Simulation of Flows over Multi-Element Iced Airfoils using LES",
+    "journal": "Korean Society for Computational Fluids Engineering, 25th Conference",
+    "details": "Jeju, Korea, October 18-21, 2020"
   },
   {
-    group: "2020",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Wake Transitions of Flexible Foils in a Viscous Uniform Flow",
-    journal: "Korean Society for Computational Fluids Engineering, 25th Conference",
-    details: "Jeju, Korea, October 18-21, 2020"
+    "group": "2020",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Wake Transitions of Flexible Foils in a Viscous Uniform Flow",
+    "journal": "Korean Society for Computational Fluids Engineering, 25th Conference",
+    "details": "Jeju, Korea, October 18-21, 2020"
   },
   {
-    group: "2020",
-    authors: "J.H.Kim, Y.M.Lee & J.H.Lee",
-    title: "Effect of Surface Roughness in a Turbulent Couette-Poiseuille Flow",
-    journal: "Korean Society for Computational Fluids Engineering, 25th Conference",
-    details: "Jeju, Korea, October 18-21, 2020"
+    "group": "2020",
+    "authors": "J.H.Kim, Y.M.Lee & J.H.Lee",
+    "title": "Effect of Surface Roughness in a Turbulent Couette-Poiseuille Flow",
+    "journal": "Korean Society for Computational Fluids Engineering, 25th Conference",
+    "details": "Jeju, Korea, October 18-21, 2020"
   },
   {
-    group: "2020",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Intermittent Swimming of Two Self-Propelled Fins in a Side-by-Side Configuration",
-    journal: "Korean Society for Computational Fluids Engineering, 25th Conference",
-    details: "Jeju, Korea, October 18-21, 2020"
+    "group": "2020",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Intermittent Swimming of Two Self-Propelled Fins in a Side-by-Side Configuration",
+    "journal": "Korean Society for Computational Fluids Engineering, 25th Conference",
+    "details": "Jeju, Korea, October 18-21, 2020"
   },
   {
-    group: "2020",
-    authors: "C.G.Lee, S.Y.Lee, C.-T.Ha & J.H.Lee",
-    title: "Numerical Study on Bursting Jet in Two Tandem Bubbles",
-    journal: "Korean Society for Computational Fluids Engineering, 25th Conference",
-    details: "Jeju, Korea, October 18-21, 2020"
+    "group": "2020",
+    "authors": "C.G.Lee, S.Y.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Numerical Study on Bursting Jet in Two Tandem Bubbles",
+    "journal": "Korean Society for Computational Fluids Engineering, 25th Conference",
+    "details": "Jeju, Korea, October 18-21, 2020"
   },
   {
-    group: "2020",
-    authors: "S.Y.Lee, C.G.Lee, C.-T.Ha & J.H.Lee",
-    title: "Numerical Simulation of a Single Condensing Bubble in Subcooled Flows: Effects of Tube Diameter",
-    journal: "Korean Society for Computational Fluids Engineering, 25th Conference",
-    details: "Jeju, Korea, October 18-21, 2020"
+    "group": "2020",
+    "authors": "S.Y.Lee, C.G.Lee, C.-T.Ha & J.H.Lee",
+    "title": "Numerical Simulation of a Single Condensing Bubble in Subcooled Flows: Effects of Tube Diameter",
+    "journal": "Korean Society for Computational Fluids Engineering, 25th Conference",
+    "details": "Jeju, Korea, October 18-21, 2020"
   },
   {
-    group: "2020",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Intermittent Swimming of Two Self-Propelled Flexible Fins in Schooling Formations",
-    journal: "11th National Congress on Fluids Engineering",
-    details: "Jeju, Korea, August 12-14, 2020"
+    "group": "2020",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Intermittent Swimming of Two Self-Propelled Flexible Fins in Schooling Formations",
+    "journal": "11th National Congress on Fluids Engineering",
+    "details": "Jeju, Korea, August 12-14, 2020"
   },
   {
-    group: "2020",
-    authors: "Y.M.Lee, J.Lee & J.H.Lee",
-    title: "Wall-Modeled Large-Eddy Simulations of Turbulent Channel and Separated Boundary Layer Flows using Artificial Neural Network",
-    journal: "11th National Congress on Fluids Engineering",
-    details: "Jeju, Korea, August 12-14, 2020"
+    "group": "2020",
+    "authors": "Y.M.Lee, J.Lee & J.H.Lee",
+    "title": "Wall-Modeled Large-Eddy Simulations of Turbulent Channel and Separated Boundary Layer Flows using Artificial Neural Network",
+    "journal": "11th National Congress on Fluids Engineering",
+    "details": "Jeju, Korea, August 12-14, 2020"
   },
   {
-    group: "2019",
-    authors: "J.H.Kim, Y.M.Lee & J.H.Lee",
-    title: "Turbulent Plane Couette-Poiseuille Flow over a 2D Rod-Roughened Wall",
-    journal: "Korean Soc. Visualization, Fall Annual Meeting",
-    details: "Daegu, Korea, December 5-6, 2019"
+    "group": "2019",
+    "authors": "J.H.Kim, Y.M.Lee & J.H.Lee",
+    "title": "Turbulent Plane Couette-Poiseuille Flow over a 2D Rod-Roughened Wall",
+    "journal": "Korean Soc. Visualization, Fall Annual Meeting",
+    "details": "Daegu, Korea, December 5-6, 2019"
   },
   {
-    group: "2019",
-    authors: "H.G.Hwang, J.H.Lee, Y.B.Cho & S.H.Kang",
-    title: "Improvement of Return Duct Geometry and F-Fan Location in a F/D Refrigerator",
-    journal: "Korean Soc. Visualization, Fall Annual Meeting",
-    details: "Daegu, Korea, December 5-6, 2019"
+    "group": "2019",
+    "authors": "H.G.Hwang, J.H.Lee, Y.B.Cho & S.H.Kang",
+    "title": "Improvement of Return Duct Geometry and F-Fan Location in a F/D Refrigerator",
+    "journal": "Korean Soc. Visualization, Fall Annual Meeting",
+    "details": "Daegu, Korea, December 5-6, 2019"
   },
   {
-    group: "2019",
-    authors: "Y.M.Lee, J.Lee & J.H.Lee",
-    title: "Large-Eddy Simulation with Wall-Model based on Artificial Neural Network",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeju, Korea, November 13-16, 2019"
+    "group": "2019",
+    "authors": "Y.M.Lee, J.Lee & J.H.Lee",
+    "title": "Large-Eddy Simulation with Wall-Model based on Artificial Neural Network",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeju, Korea, November 13-16, 2019"
   },
   {
-    group: "2019",
-    authors: "Y.M.Lee, L.P.Raj, J.H.Jo, J.H.Lee & R.S.Myong",
-    title: "Large-Eddy Simulatin of Flow over Multi-Element Iced Airfoils",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Gunsan, Korea, October 31-November 1, 2019"
+    "group": "2019",
+    "authors": "Y.M.Lee, L.P.Raj, J.H.Jo, J.H.Lee & R.S.Myong",
+    "title": "Large-Eddy Simulatin of Flow over Multi-Element Iced Airfoils",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Gunsan, Korea, October 31-November 1, 2019"
   },
   {
-    group: "2019",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Schooling Behavior of Two Tandem Self-Propelled Foils in Wall Effects",
-    journal: "Korean Soc. Visualization, Spring Annual Meeting",
-    details: "Seoul, Korea, June 28, 2019"
+    "group": "2019",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Schooling Behavior of Two Tandem Self-Propelled Foils in Wall Effects",
+    "journal": "Korean Soc. Visualization, Spring Annual Meeting",
+    "details": "Seoul, Korea, June 28, 2019"
   },
   {
-    group: "2019",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jeju, Korea, May 9-10, 2019"
+    "group": "2019",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 9-10, 2019"
   },
   {
-    group: "2019",
-    authors: "J.H.Hwang & J.H.Lee",
-    title: "The Moving Wall Effects on Turbulent Structures in Couette-Poiseuille Flows",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jeju, Korea, May 9-10, 2019"
+    "group": "2019",
+    "authors": "J.H.Hwang & J.H.Lee",
+    "title": "The Moving Wall Effects on Turbulent Structures in Couette-Poiseuille Flows",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 9-10, 2019"
   },
   {
-    group: "2019",
-    authors: "Y.M.Lee & J.H.Lee",
-    title: "Wall-Modeled Large Eddy Simulation of a Turbulent Channel Flow using an Artificial Neural Network",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Gangneung, Korea, April 18-19, 2019"
+    "group": "2019",
+    "authors": "Y.M.Lee & J.H.Lee",
+    "title": "Wall-Modeled Large Eddy Simulation of a Turbulent Channel Flow using an Artificial Neural Network",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Gangneung, Korea, April 18-19, 2019"
   },
   {
-    group: "2019",
-    authors: "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
-    title: "Direct Numerical Simulations of Rod- and Cube-Roughened Turbulent Boundary Layers with Varying Roughness Height",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Gangneung, Korea, April 18-19, 2019"
+    "group": "2019",
+    "authors": "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
+    "title": "Direct Numerical Simulations of Rod- and Cube-Roughened Turbulent Boundary Layers with Varying Roughness Height",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Gangneung, Korea, April 18-19, 2019"
   },
   {
-    group: "2018",
-    authors: "S.Chae, S.Lee, J.Kim & J.H.Lee",
-    title: "자가적응 항력 저감을 위한 구 주위 유동의 수동제어",
-    journal: "Transactions of the KSME B, Fall Annual Meeting",
-    details: "Ulsan, Korea, April 19-20, 2018"
+    "group": "2018",
+    "authors": "S.Chae, S.Lee, J.Kim & J.H.Lee",
+    "title": "자가적응 항력 저감을 위한 구 주위 유동의 수동제어",
+    "journal": "Transactions of the KSME B, Fall Annual Meeting",
+    "details": "Ulsan, Korea, April 19-20, 2018"
   },
   {
-    group: "2018",
-    authors: "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
-    title: "Direct Numerical Simulations of Rod-Roughened Turbulent Boundary Layers: Effects of Roughness Heights",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeongseon, Korea, December 12-15, 2018"
+    "group": "2018",
+    "authors": "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
+    "title": "Direct Numerical Simulations of Rod-Roughened Turbulent Boundary Layers: Effects of Roughness Heights",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeongseon, Korea, December 12-15, 2018"
   },
   {
-    group: "2018",
-    authors: "Y.M.Lee, H.G.Hwang & J.H.Lee",
-    title: "Dynamic Mixed Models for Large Eddy Simulation of Transitional Flow",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Seoul, Korea, November 1-2, 2018"
+    "group": "2018",
+    "authors": "Y.M.Lee, H.G.Hwang & J.H.Lee",
+    "title": "Dynamic Mixed Models for Large Eddy Simulation of Transitional Flow",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Seoul, Korea, November 1-2, 2018"
   },
   {
-    group: "2018",
-    authors: "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
-    title: "Direct Numerical Simulations of Rod-roughened Turbulent Boundary Layers with Varying Roughness Height",
-    journal: "10th National Congress on Fluids Engineering",
-    details: "Yeosu, Korea, August 22-24. 2018"
+    "group": "2018",
+    "authors": "Y.K.Choi, H.G.Hwang, Y.M.Lee & J.H.Lee",
+    "title": "Direct Numerical Simulations of Rod-roughened Turbulent Boundary Layers with Varying Roughness Height",
+    "journal": "10th National Congress on Fluids Engineering",
+    "details": "Yeosu, Korea, August 22-24. 2018"
   },
   {
-    group: "2018",
-    authors: "Y.M.Lee, J.H.Lee, L.P.Raj & R.S.Myong",
-    title: "Large Eddy Simulation of Iced Multi-Element Airfoil",
-    journal: "10th National Congress on Fluids Engineering",
-    details: "Yeosu, Korea, August 22-24. 2018"
+    "group": "2018",
+    "authors": "Y.M.Lee, J.H.Lee, L.P.Raj & R.S.Myong",
+    "title": "Large Eddy Simulation of Iced Multi-Element Airfoil",
+    "journal": "10th National Congress on Fluids Engineering",
+    "details": "Yeosu, Korea, August 22-24. 2018"
   },
   {
-    group: "2018",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
-    journal: "10th National Congress on Fluids Engineering",
-    details: "Yeosu, Korea, August 22-24. 2018"
+    "group": "2018",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
+    "journal": "10th National Congress on Fluids Engineering",
+    "details": "Yeosu, Korea, August 22-24. 2018"
   },
   {
-    group: "2018",
-    authors: "J.H.Kim, Y.M.Lee & J.H.Lee",
-    title: "Direct Numerical Simulation of Plane Couette-Poiseuille Flow with Rod-Roughened Wall",
-    journal: "10th National Congress on Fluids Engineering",
-    details: "Yeosu, Korea, August 22-24. 2018"
+    "group": "2018",
+    "authors": "J.H.Kim, Y.M.Lee & J.H.Lee",
+    "title": "Direct Numerical Simulation of Plane Couette-Poiseuille Flow with Rod-Roughened Wall",
+    "journal": "10th National Congress on Fluids Engineering",
+    "details": "Yeosu, Korea, August 22-24. 2018"
   },
   {
-    group: "2018",
-    authors: "J.H.Hwang & J.H.Lee",
-    title: "Turbulence Characteristics of Couette-Poiseuille Flow",
-    journal: "10th National Congress on Fluids Engineering",
-    details: "Yeosu, Korea, August 22-24. 2018"
+    "group": "2018",
+    "authors": "J.H.Hwang & J.H.Lee",
+    "title": "Turbulence Characteristics of Couette-Poiseuille Flow",
+    "journal": "10th National Congress on Fluids Engineering",
+    "details": "Yeosu, Korea, August 22-24. 2018"
   },
   {
-    group: "2018",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Simulation of Flexible Foils Propelled between Walls",
-    journal: "10th National Congress on Fluids Engineering",
-    details: "Yeosu, Korea, August 22-24. 2018"
+    "group": "2018",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Simulation of Flexible Foils Propelled between Walls",
+    "journal": "10th National Congress on Fluids Engineering",
+    "details": "Yeosu, Korea, August 22-24. 2018"
   },
   {
-    group: "2018",
-    authors: "Y.M.Lee, H.G.Hwang & J.H.Lee",
-    title: "외재필터 큰에디모사를 위한 동적 혼합 모델",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jeju, Korea, May 3-4, 2018"
+    "group": "2018",
+    "authors": "Y.M.Lee, H.G.Hwang & J.H.Lee",
+    "title": "외재필터 큰에디모사를 위한 동적 혼합 모델",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 3-4, 2018"
   },
   {
-    group: "2018",
-    authors: "J.H.Kim, Y.M.Lee & J.H.Lee",
-    title: "표면조도가 있는 난류 평면 Couette-Poiseuille 유동의 직접수치해석",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jeju, Korea, May 3-4, 2018"
+    "group": "2018",
+    "authors": "J.H.Kim, Y.M.Lee & J.H.Lee",
+    "title": "표면조도가 있는 난류 평면 Couette-Poiseuille 유동의 직접수치해석",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 3-4, 2018"
   },
   {
-    group: "2018",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
-    journal: "Korean Soc. Visualization, Spring Annual Meeting",
-    details: "Seoul, Korea, April 26-27, 2018"
+    "group": "2018",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "Vortex Wakes of a Flapping Foil in a Viscous Uniform Flow",
+    "journal": "Korean Soc. Visualization, Spring Annual Meeting",
+    "details": "Seoul, Korea, April 26-27, 2018"
   },
   {
-    group: "2018",
-    authors: "J.H.Hwang & J.H.Lee",
-    title: "Couette-Poiseuille 유동의 직접수치모사",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Ulsan, Korea, April 19-20, 2018"
+    "group": "2018",
+    "authors": "J.H.Hwang & J.H.Lee",
+    "title": "Couette-Poiseuille 유동의 직접수치모사",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Ulsan, Korea, April 19-20, 2018"
   },
   {
-    group: "2018",
-    authors: "H.J.Im & J.H.Lee",
-    title: "초소수성 표면에서 난류파이프 유동 및 채널 유동의 항력감소 비교",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Ulsan, Korea, April 19-20, 2018"
+    "group": "2018",
+    "authors": "H.J.Im & J.H.Lee",
+    "title": "초소수성 표면에서 난류파이프 유동 및 채널 유동의 항력감소 비교",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Ulsan, Korea, April 19-20, 2018"
   },
   {
-    group: "2018",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "벽 사이에 나란히 위치한 자체 추진하는 유연한 포일들 사이의 와류 상호 작용",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Ulsan, Korea, April 19-20, 2018"
+    "group": "2018",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "벽 사이에 나란히 위치한 자체 추진하는 유연한 포일들 사이의 와류 상호 작용",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Ulsan, Korea, April 19-20, 2018"
   },
   {
-    group: "2017",
-    authors: "J.H.Hwang & J.H.Lee",
-    title: "Numerical Investigation of Moving Wall Effects in the Turbulent Channel Flow",
-    journal: "Korean Soc. Visualization, Fall Annual Meeting",
-    details: "Ulsan, Korea, December 1, 2017"
+    "group": "2017",
+    "authors": "J.H.Hwang & J.H.Lee",
+    "title": "Numerical Investigation of Moving Wall Effects in the Turbulent Channel Flow",
+    "journal": "Korean Soc. Visualization, Fall Annual Meeting",
+    "details": "Ulsan, Korea, December 1, 2017"
   },
   {
-    group: "2017",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Passive Locomotion of a Freely Movable Flexible Fin near the Ground",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Seoul, Korea, November 10, 2017"
+    "group": "2017",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Passive Locomotion of a Freely Movable Flexible Fin near the Ground",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Seoul, Korea, November 10, 2017"
   },
   {
-    group: "2017",
-    authors: "S.J.Lee, J.H.Lee & B.J.Kim",
-    title: "수평관 난류 기포류 해석을 위한 2-유체 모델 평가",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Busan, Korea, May 25-26, 2017"
+    "group": "2017",
+    "authors": "S.J.Lee, J.H.Lee & B.J.Kim",
+    "title": "수평관 난류 기포류 해석을 위한 2-유체 모델 평가",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Busan, Korea, May 25-26, 2017"
   },
   {
-    group: "2017",
-    authors: "Y.M.Lee & J.H.Lee",
-    title: "막대형 표면조도가 있는 평면 Couette 유동에 대한 직접수치모사",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Busan, Korea, May 25-26, 2017"
+    "group": "2017",
+    "authors": "Y.M.Lee & J.H.Lee",
+    "title": "막대형 표면조도가 있는 평면 Couette 유동에 대한 직접수치모사",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Busan, Korea, May 25-26, 2017"
   },
   {
-    group: "2016",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Couette 유동 내의 난류응집구조",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeongseon, Korea, December 14-16, 2016"
+    "group": "2016",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Couette 유동 내의 난류응집구조",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeongseon, Korea, December 14-16, 2016"
   },
   {
-    group: "2016",
-    authors: "M.J.Kim & J.H.Lee",
-    title: "균일점성유동 내 수직으로 고정된 깃발의 플래핑 운동",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeongseon, Korea, December 14-16, 2016,"
+    "group": "2016",
+    "authors": "M.J.Kim & J.H.Lee",
+    "title": "균일점성유동 내 수직으로 고정된 깃발의 플래핑 운동",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeongseon, Korea, December 14-16, 2016,"
   },
   {
-    group: "2016",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Interaction of a Flexible Flag with the Vortex of Two Side-by-Side Flags",
-    journal: "Korean Soc. Visualization, Fall Annual Meeting",
-    details: "Daegu, Korea, December 2, 2016"
+    "group": "2016",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Interaction of a Flexible Flag with the Vortex of Two Side-by-Side Flags",
+    "journal": "Korean Soc. Visualization, Fall Annual Meeting",
+    "details": "Daegu, Korea, December 2, 2016"
   },
   {
-    group: "2016",
-    authors: "H.G.Hwang & J.H.Lee",
-    title: "난류경계층 내의 표면조도에 따른 이차적 유동의 형성",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Busan, Korea, November 10-11. 2016"
+    "group": "2016",
+    "authors": "H.G.Hwang & J.H.Lee",
+    "title": "난류경계층 내의 표면조도에 따른 이차적 유동의 형성",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Busan, Korea, November 10-11. 2016"
   },
   {
-    group: "2016",
-    authors: "H.J.Im & J.H.Lee",
-    title: "초소수성 표면에서 난류파이프 유동 및 채널 유동의 항력 감소",
-    journal: "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    details: "Busan, Korea, November 10-11. 2016"
+    "group": "2016",
+    "authors": "H.J.Im & J.H.Lee",
+    "title": "초소수성 표면에서 난류파이프 유동 및 채널 유동의 항력 감소",
+    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
+    "details": "Busan, Korea, November 10-11. 2016"
   },
   {
-    group: "2016",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Scale Growth of Structures in Turbulent Couette Flow",
-    journal: "9th National Congress on Fluids Engineering",
-    details: "Daegu, Korea, August 10-12. 2016"
+    "group": "2016",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Scale Growth of Structures in Turbulent Couette Flow",
+    "journal": "9th National Congress on Fluids Engineering",
+    "details": "Daegu, Korea, August 10-12. 2016"
   },
   {
-    group: "2016",
-    authors: "Y.D.Jeong & J.H.Lee",
-    title: "Interaction of a Flexible Flag with the Wake of Two Side-by-Side Flags",
-    journal: "9th National Congress on Fluids Engineering",
-    details: "Daegu, Korea, August 10-12. 2016"
+    "group": "2016",
+    "authors": "Y.D.Jeong & J.H.Lee",
+    "title": "Interaction of a Flexible Flag with the Wake of Two Side-by-Side Flags",
+    "journal": "9th National Congress on Fluids Engineering",
+    "details": "Daegu, Korea, August 10-12. 2016"
   },
   {
-    group: "2016",
-    authors: "W.Jung & J.H.Lee",
-    title: "Effect of Temporal Deceleration on Turbulent Pipe Flow",
-    journal: "9th National Congress on Fluids Engineering",
-    details: "Daegu, Korea, August 10-12. 2016"
+    "group": "2016",
+    "authors": "W.Jung & J.H.Lee",
+    "title": "Effect of Temporal Deceleration on Turbulent Pipe Flow",
+    "journal": "9th National Congress on Fluids Engineering",
+    "details": "Daegu, Korea, August 10-12. 2016"
   },
   {
-    group: "2016",
-    authors: "H.J.Im & J.H.Lee",
-    title: "Turbulent Drag Reduction in Channel and Pipe Flows over Super-Hydrophobic Surfaces",
-    journal: "9th National Congress on Fluids Engineering",
-    details: "Daegu, Korea, August 10-12. 2016"
+    "group": "2016",
+    "authors": "H.J.Im & J.H.Lee",
+    "title": "Turbulent Drag Reduction in Channel and Pipe Flows over Super-Hydrophobic Surfaces",
+    "journal": "9th National Congress on Fluids Engineering",
+    "details": "Daegu, Korea, August 10-12. 2016"
   },
   {
-    group: "2016",
-    authors: "H.G.Hwang & J.H.Lee",
-    title: "Secondary Flow Generation in a Rough-Wall Turbulent Boundary Layer",
-    journal: "9th National Congress on Fluids Engineering",
-    details: "Daegu, Korea, August 10-12. 2016"
+    "group": "2016",
+    "authors": "H.G.Hwang & J.H.Lee",
+    "title": "Secondary Flow Generation in a Rough-Wall Turbulent Boundary Layer",
+    "journal": "9th National Congress on Fluids Engineering",
+    "details": "Daegu, Korea, August 10-12. 2016"
   },
   {
-    group: "2016",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Turbulent Skin-Friction Drag Reduction in Channel Flow using Wall Shear-Free Control",
-    journal: "Korean Soc. Visualization, Spring Annual Meeting",
-    details: "Yongin, Korea, April 29, 2016"
+    "group": "2016",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Turbulent Skin-Friction Drag Reduction in Channel Flow using Wall Shear-Free Control",
+    "journal": "Korean Soc. Visualization, Spring Annual Meeting",
+    "details": "Yongin, Korea, April 29, 2016"
   },
   {
-    group: "2015",
-    authors: "H.J.Im & J.H.Lee",
-    title: "Drag Reduction in Turbulent Channel and Pipe Flows over Super-Hydrophobic Surfaces",
-    journal: "Korean Soc. Visualization, Fall Annual Meeting",
-    details: "Busan, Korea, December 4, 2015"
+    "group": "2015",
+    "authors": "H.J.Im & J.H.Lee",
+    "title": "Drag Reduction in Turbulent Channel and Pipe Flows over Super-Hydrophobic Surfaces",
+    "journal": "Korean Soc. Visualization, Fall Annual Meeting",
+    "details": "Busan, Korea, December 4, 2015"
   },
   {
-    group: "2015",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Drag Reduction in Turbulent Channel Flow with Streamwise Wall Shear Free Condition",
-    journal: "Korean Soc. Visualization, Fall Annual Meeting",
-    details: "Busan, Korea, December 4, 2015"
+    "group": "2015",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Drag Reduction in Turbulent Channel Flow with Streamwise Wall Shear Free Condition",
+    "journal": "Korean Soc. Visualization, Fall Annual Meeting",
+    "details": "Busan, Korea, December 4, 2015"
   },
   {
-    group: "2015",
-    authors: "J.H.Lee",
-    title: "Turbulent Coherent Structures in Wall-Bounded Flow",
-    journal: "Transactions of the Korea Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeju, Korea, November 10-14, 2015"
+    "group": "2015",
+    "authors": "J.H.Lee",
+    "title": "Turbulent Coherent Structures in Wall-Bounded Flow",
+    "journal": "Transactions of the Korea Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeju, Korea, November 10-14, 2015"
   },
   {
-    group: "2015",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Long Structures in a Turbulent Boundary Layer with Rod-Roughened Wall",
-    journal: "Korean Society of Computational Fluids Engineering, Spring Annual Meeting",
-    details: "Jeju, Korea, May 13-15, 2015"
+    "group": "2015",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Long Structures in a Turbulent Boundary Layer with Rod-Roughened Wall",
+    "journal": "Korean Society of Computational Fluids Engineering, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 13-15, 2015"
   },
   {
-    group: "2015",
-    authors: "J.H.Kim & J.H.Lee",
-    title: "Structures over Turbulent Boundary Layer with Rod-Roughened Wall",
-    journal: "Korean Soc. Visualization, Spring Annual Meeting",
-    details: "Seoul, Korea, May 1, 2015 (received best paper award)"
+    "group": "2015",
+    "authors": "J.H.Kim & J.H.Lee",
+    "title": "Structures over Turbulent Boundary Layer with Rod-Roughened Wall",
+    "journal": "Korean Soc. Visualization, Spring Annual Meeting",
+    "details": "Seoul, Korea, May 1, 2015 (received best paper award)"
   },
   {
-    group: "2014",
-    authors: "J.H.Lee",
-    title: "Turbulent Boundary Layer Flow with a Step Change from Smooth to Rough Surface",
-    journal: "Korean Soc. Visualization, Fall Annual Meeting",
-    details: "Daegu, Korea, December 5, 2014 (received best paper award)"
+    "group": "2014",
+    "authors": "J.H.Lee",
+    "title": "Turbulent Boundary Layer Flow with a Step Change from Smooth to Rough Surface",
+    "journal": "Korean Soc. Visualization, Fall Annual Meeting",
+    "details": "Daegu, Korea, December 5, 2014 (received best paper award)"
   },
   {
-    group: "2014",
-    authors: "J.H.Lee",
-    title: "Temporal Acceleration of Fully Developed Turbulent Pipe Flow",
-    journal: "8th National Congress on Fluids Engineering",
-    details: "Buyeo, Korea, August 27-29, 2014"
+    "group": "2014",
+    "authors": "J.H.Lee",
+    "title": "Temporal Acceleration of Fully Developed Turbulent Pipe Flow",
+    "journal": "8th National Congress on Fluids Engineering",
+    "details": "Buyeo, Korea, August 27-29, 2014"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Ahn, J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulations of Turbulent Pipe Flow",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Jeju, Korea, May 9-10, 2013"
+    "group": "Before UNIST",
+    "authors": "J.Ahn, J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulations of Turbulent Pipe Flow",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Jeju, Korea, May 9-10, 2013"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Ahn, J.H.Lee & H.J.Sung",
-    title: "Effects of Cubic Roughness Arrays on Turbulent Boundary Layers",
-    journal: "Korean Society for Computational Fluids Engineering, Spring Meeting",
-    details: "Jeju, Korea, May 24-25, 2012"
+    "group": "Before UNIST",
+    "authors": "J.Ahn, J.H.Lee & H.J.Sung",
+    "title": "Effects of Cubic Roughness Arrays on Turbulent Boundary Layers",
+    "journal": "Korean Society for Computational Fluids Engineering, Spring Meeting",
+    "details": "Jeju, Korea, May 24-25, 2012"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Ahn, J.H.Lee & H.J.Sung",
-    title: "Numerical Study of Turbulent Boundary Layers over Cubic Roughness Array",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Daegu, Korea, November 2-4, 2011"
+    "group": "Before UNIST",
+    "authors": "J.Ahn, J.H.Lee & H.J.Sung",
+    "title": "Numerical Study of Turbulent Boundary Layers over Cubic Roughness Array",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Daegu, Korea, November 2-4, 2011"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulations of the Turbulent Boundary Layers over the Rough Walls",
-    journal: "7th National Congress on Fluids Engineering",
-    details: "Jeju, Korea, May 26-27, 2011"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulations of the Turbulent Boundary Layers over the Rough Walls",
+    "journal": "7th National Congress on Fluids Engineering",
+    "details": "Jeju, Korea, May 26-27, 2011"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Effects of the Streamwise Spacing over Rough-wall Turbulent Boundary Layers",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
-    details: "Pohang, Korea, April 15-16, 2011"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Effects of the Streamwise Spacing over Rough-wall Turbulent Boundary Layers",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Spring Annual Meeting",
+    "details": "Pohang, Korea, April 15-16, 2011"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Large-Scale Motions in the Turbulent Boundary Layer",
-    journal: "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
-    details: "Jeju, Korea, November 3-5, 2010"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Large-Scale Motions in the Turbulent Boundary Layer",
+    "journal": "Transactions of the Korean Soc. Mech. Eng. B, Fall Annual Meeting",
+    "details": "Jeju, Korea, November 3-5, 2010"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Direct Numerical Simulation of the Turbulent Boundary Layer with a Cube-Roughened Wall",
-    journal: "Proceedings of KSME Fluid Engineering Division, Spring Annual Meeting",
-    details: "Mokpo, Korea, April 22-24, 2010 (received best paper award)"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Direct Numerical Simulation of the Turbulent Boundary Layer with a Cube-Roughened Wall",
+    "journal": "Proceedings of KSME Fluid Engineering Division, Spring Annual Meeting",
+    "details": "Mokpo, Korea, April 22-24, 2010 (received best paper award)"
   },
   {
-    group: "Before UNIST",
-    authors: "J.Lee, J.H.Lee, J.-H.Lee & H.J.Sung",
-    title: "Population Trends of Spanwise Vortices in Turbulent Boundary Layers with Adverse Pressure Gradients",
-    journal: "Proceedings of KSME Fluid Engineering Division, Spring Annual Meeting",
-    details: "Mokpo, Korea, April 22-24, 2010"
+    "group": "Before UNIST",
+    "authors": "J.Lee, J.H.Lee, J.-H.Lee & H.J.Sung",
+    "title": "Population Trends of Spanwise Vortices in Turbulent Boundary Layers with Adverse Pressure Gradients",
+    "journal": "Proceedings of KSME Fluid Engineering Division, Spring Annual Meeting",
+    "details": "Mokpo, Korea, April 22-24, 2010"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee & H.J.Sung",
-    title: "Streamwise-Coherence of Hairpin Packet Motions in Turbulent Boundary Layer",
-    journal: "Proceedings of KSME Fluid Engineering Division, Spring Annual Meeting",
-    details: "Pusan, Korea, May 20-22, 2009"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee & H.J.Sung",
+    "title": "Streamwise-Coherence of Hairpin Packet Motions in Turbulent Boundary Layer",
+    "journal": "Proceedings of KSME Fluid Engineering Division, Spring Annual Meeting",
+    "details": "Pusan, Korea, May 20-22, 2009"
   },
   {
-    group: "Before UNIST",
-    authors: "J.H.Lee, S.-H.Lee, K.Kim & H.J.Sung",
-    title: "Organized Structure of Turbulent Boundary Layer with Rod-Roughened Wall",
-    journal: "5th National Congress on Fluids Engineering",
-    details: "Jeju, Korea, March 26-28. 2008"
+    "group": "Before UNIST",
+    "authors": "J.H.Lee, S.-H.Lee, K.Kim & H.J.Sung",
+    "title": "Organized Structure of Turbulent Boundary Layer with Rod-Roughened Wall",
+    "journal": "5th National Congress on Fluids Engineering",
+    "details": "Jeju, Korea, March 26-28. 2008"
   }
 ];
