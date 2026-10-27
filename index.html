@@ -15,30 +15,19 @@
 
 <main>
   <div class="intro">
-    <div class="logo" role="img" aria-label="FPCL, Flow Physics and Control Laboratory">
-      <span class="mark">FPCL</span>
-      <span class="full">Flow Physics and<br>Control Laboratory</span>
+    <div class="lab-heading">
+      <h1>Flow Physics and Control Laboratory</h1>
+      <p class="university">UNIST</p>
     </div>
     <p class="tagline">Understanding, predicting and controlling flows</p>
-    <figure class="group-photo">
-      <img src="images/main/group.jpg" width="1600" height="900" alt="FPCL members, 2026">
-    </figure>
   </div>
 
-  <section aria-labelledby="about-h">
-    <h2 id="about-h">About FPCL</h2>
-    <div class="about">
-      <p>About 25% of the total energy used in industry is known to spend in moving vehicles through air or water, or fluids along pipes and canals, and fluids can be a process carrier or material through which transport, separation and conversion processes occur. Thus, understanding of flows is of huge technological importance in aerodynamic and hydrodynamic applications.</p>
-      <p>In this aspect, we perform research on topics of energetic flows both ranging from fundamental to applied engineering to understanding, predicting and controlling flows. The research includes studies of turbulent flows with physical modeling, fluid-structure interaction problems and multi-phase flows with computational modeling, aiming at development of high-efficient energy-generating (or -saving) systems based on numerical simulations and experimental measurement (or visualization).</p>
-    </div>
-  </section>
-
   <!-- Research Highlights. To change one, replace the picture in images/main/ and edit its title and citation. -->
-  <section aria-labelledby="hl-h">
+  <section class="highlight-carousel" aria-labelledby="hl-h" aria-roledescription="carousel" data-interval="5000">
     <h2 id="hl-h">Research Highlights</h2>
-    <ul class="highlights">
+    <ul class="highlights" id="highlight-slides">
       <li>
-        <div class="fig"><img src="images/main/pub1_fins.jpg" alt="Vorticity around two self-propelled fins in 0W, 1W and 2W configurations" loading="lazy"></div>
+        <div class="fig"><img src="images/main/pub1_fins.gif" alt="Vorticity around two self-propelled fins in 0W, 1W and 2W configurations" loading="lazy"></div>
         <h3>Flow-mediated interactions between two self-propelled flexible fins near sidewalls</h3>
         <p class="cite">Young Dal Jeong, <b>Jae Hwa Lee</b> &amp; Sung Goon Park<br><i>Journal of Fluid Mechanics</i>, Vol. 913, A39, 2021</p>
       </li>
@@ -53,7 +42,7 @@
         <p class="cite"><b>Jae Hwa Lee</b>, Hyung Jin Sung &amp; Ronald J. Adrian<br><i>Journal of Fluid Mechanics</i>, Vol. 881, pp. 1010-1047, 2019</p>
       </li>
       <li>
-        <div class="fig"><img src="images/main/pub4_flexible_foil.jpg" alt="Wake vortices behind heaving flexible foils" loading="lazy"></div>
+        <div class="fig"><img src="images/main/pub4_flexible_foil.gif" alt="Wake vortices behind heaving flexible foils" loading="lazy"></div>
         <h3>Wake transitions of flexible foils in a viscous uniform flow</h3>
         <p class="cite">Min Je Kim &amp; <b>Jae Hwa Lee</b><br><i>Physics of Fluids</i>, Vol. 31, 111906, 2019</p>
       </li>
@@ -69,6 +58,16 @@
       </li>
     </ul>
   </section>
+
+
+  <section aria-labelledby="about-h">
+    <h2 id="about-h">About FPCL</h2>
+    <div class="about">
+      <p>About 25% of the total energy used in industry is known to spend in moving vehicles through air or water, or fluids along pipes and canals, and fluids can be a process carrier or material through which transport, separation and conversion processes occur. Thus, understanding of flows is of huge technological importance in aerodynamic and hydrodynamic applications.</p>
+      <p>In this aspect, we perform research on topics of energetic flows both ranging from fundamental to applied engineering to understanding, predicting and controlling flows. The research includes studies of turbulent flows with physical modeling, fluid-structure interaction problems and multi-phase flows with computational modeling, aiming at development of high-efficient energy-generating (or -saving) systems based on numerical simulations and experimental measurement (or visualization).</p>
+    </div>
+  </section>
+
 
   <div class="pair">
     <section class="notice" aria-labelledby="notice-h">
@@ -90,5 +89,6 @@
 <div id="site-footer"></div>
 <script src="data/photos.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/highlights.js"></script>
 </body>
 </html>
