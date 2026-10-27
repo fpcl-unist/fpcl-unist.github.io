@@ -379,7 +379,7 @@
   /* ---------- Entry bar: move, copy, add, details, delete ---------- */
 
   var tools = el('div', { id: 'fpcl-tools', hidden: '' });
-  var target = null, hideTimer = null;
+  var target = null, hideTimer = null, switchTimer = null;
 
   function button(label, title, action, danger) {
     var b = el('button', { type: 'button', title: title }, label);
@@ -482,11 +482,13 @@
       picture ? [button('사진 바꾸기', '새 사진 올리기', function () { replaceImage(node); })] : regionTools(node.getAttribute('data-region'));
     tools.replaceChildren.apply(tools, picture ? rotateButtons(node).concat(list) : list);
     tools.hidden = false;
-    var r = node.getBoundingClientRect();
-    var top = r.top + scrollY - tools.offsetHeight - 4;
-    if (r.top - tools.offsetHeight < 64) top = r.top + scrollY + 4; // under the sticky menu bar: put it inside
-    tools.style.top = Math.max(0, top) + 'px';
-    tools.style.left = Math.max(scrollX + 4, r.right + scrollX - tools.offsetWidth) + 'px';
+    // The bar touches its entry, so the pointer can reach it without crossing anything else: on a picture it
+    // sits inside the top right corner, elsewhere it overlaps the top edge (or goes inside under the menu bar).
+    var r = node.getBoundingClientRect(), h = tools.offsetHeight, w = tools.offsetWidth, inset = picture && r.height > h + 16;
+    var top = inset ? r.top + 8 : r.top - h + 3;
+    if (!inset && top < 64) top = r.top + 4;
+    tools.style.top = Math.max(0, top + scrollY) + 'px';
+    tools.style.left = Math.max(scrollX + 4, r.right + scrollX - w - (inset ? 8 : 0)) + 'px';
   }
   function hideTools() {
     clearTimeout(hideTimer);
@@ -496,7 +498,7 @@
       tools.hidden = true;
     }, 350);
   }
-  tools.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+  tools.addEventListener('mouseenter', function () { clearTimeout(hideTimer); clearTimeout(switchTimer); });
   tools.addEventListener('mouseleave', hideTools);
 
   /* ---------- Details form (values not shown as text) ---------- */
@@ -637,8 +639,11 @@
   document.addEventListener('mouseover', function (e) {
     if (!state.on || tools.contains(e.target)) return;
     var node = e.target.closest && e.target.closest('main [data-type="image"], main [data-item], main [data-region]');
-    if (node) showTools(node);
-    else if (target) hideTools();
+    clearTimeout(switchTimer);
+    if (!node) { if (target) hideTools(); return; }
+    if (!target || node === target) { showTools(node); return; }
+    // Passing over another entry on the way to the bar should not swap the bar: wait a moment first.
+    switchTimer = setTimeout(function () { showTools(node); }, 300);
   });
   document.addEventListener('click', function (e) {
     if (!state.on || !e.target.closest || e.target.closest('#fpcl-tools, #fpcl-bar, .fpcl-dialog')) return;
