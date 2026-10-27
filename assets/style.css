@@ -167,7 +167,7 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .subnav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
 
 /* Section list always shown at the right edge (built by site.js). Only on screens wide enough to keep it beside the column.
-   The left padding leaves room for an item enlarged on hover; it scrolls if the page has more headings than fit. */
+   The round arrow button on top hides the list (it slides out to the right) and brings it back. */
 .side-nav {
   position: fixed;
   top: 50%;
@@ -175,7 +175,34 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
   z-index: 10;
   transform: translateY(-50%);
   width: min(260px, calc((100vw - var(--column)) / 2 - 32px));
-  max-height: calc(100vh - 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.side-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.side-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.side-toggle svg { display: block; transition: transform .25s; }
+.side-nav.closed .side-toggle svg { transform: rotate(180deg); }
+/* The left padding leaves room for an item enlarged on hover; the list scrolls if the page has more headings than fit.
+   A closed list keeps its place, so the button does not move. */
+.side-list {
+  width: 100%;
+  max-height: calc(100vh - 176px); /* keeps the button clear of the sticky menu bar on short screens */
   overflow: hidden auto;
   scrollbar-width: thin;
   padding: 4px 8px 4px 28px;
@@ -186,7 +213,9 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
   font-size: 13.5px;
   line-height: 1.35;
   text-align: right;
+  transition: opacity .25s, transform .25s, visibility .25s;
 }
+.side-nav.closed .side-list { opacity: 0; visibility: hidden; transform: translateX(16px); }
 /* Pages: bold, darker gray. The current page is blue. */
 .side-nav a { color: #6b737c; font-weight: 700; transform-origin: right center; transition: transform .15s, color .15s; }
 .side-nav a:hover, .side-nav a:focus-visible { color: var(--fg); transform: scale(1.2); }

@@ -111,15 +111,20 @@ window.FPCL = window.FPCL || {};
 
   // The same section list, always shown at the right edge, with the headings of this page under the current item.
   // Runs after the data lists are drawn, so the year headings on the publication pages are included.
+  // The arrow button above it hides the list and brings it back; the choice is kept for the next pages.
   function buildSideNav() {
     var subnav = document.getElementById('subnav');
     if (!subnav) return;
     var side = document.createElement('nav');
     side.className = 'side-nav';
     side.setAttribute('aria-label', 'Section shortcuts');
-    side.innerHTML = subnav.innerHTML;
+    side.innerHTML =
+      '<button class="side-toggle" type="button" aria-controls="side-list">' +
+      '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      '</button><div class="side-list" id="side-list">' + subnav.innerHTML + '</div>';
+    var box = side.querySelector('.side-list');
     var heads = pageHeadings(subnav);
-    var current = side.querySelector('[aria-current="page"]');
+    var current = box.querySelector('[aria-current="page"]');
     if (current && heads.length > 1) {
       var list = document.createElement('div');
       list.className = 'side-sub';
@@ -128,8 +133,23 @@ window.FPCL = window.FPCL || {};
         return '<a href="#' + h.id + '" title="' + text + '"><span>' + text + '</span></a>';
       }).join('');
       current.after(list);
-      followHeadings(heads, list.children, side);
+      followHeadings(heads, list.children, box);
     }
+    var btn = side.querySelector('.side-toggle');
+    function setClosed(closed) {
+      side.classList.toggle('closed', closed);
+      btn.setAttribute('aria-expanded', closed ? 'false' : 'true');
+      btn.setAttribute('aria-label', closed ? 'Show the section list' : 'Hide the section list');
+      btn.title = closed ? 'Show the list' : 'Hide the list';
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('fpcl-side-nav'); } catch (e) { /* storage blocked: start open */ }
+    setClosed(saved === 'closed');
+    btn.addEventListener('click', function () {
+      var closed = !side.classList.contains('closed');
+      setClosed(closed);
+      try { localStorage.setItem('fpcl-side-nav', closed ? 'closed' : 'open'); } catch (e) { /* not remembered */ }
+    });
     document.body.appendChild(side);
   }
 
