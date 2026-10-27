@@ -2,7 +2,8 @@
    is kept in this browser), so visitors never see it.
    - "편집" at the bottom turns it on. Click a text to change it; click a picture to replace it.
    - Pointing at an entry shows a small bar: move it up or down, copy it, add a new one, open its details
-     (links, dates, picture descriptions and other values not shown as text) or delete it.
+     (links, dates, picture descriptions and other values not shown as text) or delete it. On a picture the
+     bar also turns it a quarter turn left or right.
    - "저장" commits each changed data file to GitHub, after checking that nobody changed it in the meantime.
    - "로그아웃" forgets the login in this browser.
      The data format and its checks are the ones the /admin screen uses (adm/format.js, adm/config.js).
@@ -247,6 +248,41 @@
       box.replaceWith(img);
     });
   }
+  // Turns a picture a quarter turn (turn 1 = clockwise, -1 = counterclockwise) as it appears on the page,
+  // and uploads the result as a new file. GIF (the animation would be lost) and SVG are not turned.
+  async function rotateImage(target, turn) {
+    var path = target.getAttribute('data-field'), current = get(path) || '';
+    if (target.tagName !== 'IMG') { toast('아직 사진이 없어요. 사진을 클릭해 먼저 올려 주세요.'); return; }
+    if (/\.(gif|svg)$/i.test(current)) { toast('GIF와 SVG는 돌릴 수 없어요. 돌린 파일을 만들어 사진을 바꿔 주세요.', true); return; }
+    try {
+      toast('사진을 돌리는 중이에요…');
+      var blob = await fetch(target.currentSrc || target.src).then(function (r) {
+        if (!r.ok) throw new Error('사진을 불러오지 못했어요.');
+        return r.blob();
+      });
+      var picture = await createImageBitmap(blob); // as shown, with the camera's orientation applied
+      var canvas = el('canvas');
+      canvas.width = picture.height;
+      canvas.height = picture.width;
+      var ctx = canvas.getContext('2d');
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      ctx.rotate(turn * Math.PI / 2);
+      ctx.drawImage(picture, -picture.width / 2, -picture.height / 2);
+      var type = blob.type === 'image/png' ? 'image/png' : 'image/jpeg';
+      var turned = await new Promise(function (resolve) { canvas.toBlob(resolve, type, 0.92); });
+      var base = (current.split('/').pop() || 'photo').replace(/\.[^.]*$/, '').replace(/^\d{14}-/, '').replace(/(-rotated)+$/, '');
+      var up = await upload(new File([turned], base + '-rotated.' + (type === 'image/png' ? 'png' : 'jpg'), { type: type }));
+      put(path, up.path);
+      target.src = up.preview;
+      toast('사진을 돌렸어요. "저장"을 눌러야 페이지에 반영돼요.');
+    } catch (e) { toast(e.message, true); }
+  }
+  function rotateButtons(node) {
+    return [
+      button('↺', '왼쪽으로 돌리기', function () { rotateImage(node, -1); }),
+      button('↻', '오른쪽으로 돌리기', function () { rotateImage(node, 1); })
+    ];
+  }
   async function replaceImage(target) {
     var picked = await pick(false);
     if (!picked.length) return;
@@ -440,8 +476,11 @@
     if (target) target.classList.remove('fpcl-target');
     target = node;
     target.classList.add('fpcl-target');
-    var path = node.getAttribute('data-item') || node.getAttribute('data-region');
-    tools.replaceChildren.apply(tools, node.hasAttribute('data-item') ? itemTools(path) : regionTools(path));
+    // A picture gets turn buttons; one that is a list entry (photo board, figures) also gets the entry tools.
+    var picture = node.getAttribute('data-type') === 'image';
+    var list = node.hasAttribute('data-item') ? itemTools(node.getAttribute('data-item')) :
+      picture ? [button('사진 바꾸기', '새 사진 올리기', function () { replaceImage(node); })] : regionTools(node.getAttribute('data-region'));
+    tools.replaceChildren.apply(tools, picture ? rotateButtons(node).concat(list) : list);
     tools.hidden = false;
     var r = node.getBoundingClientRect();
     var top = r.top + scrollY - tools.offsetHeight - 4;
@@ -597,7 +636,7 @@
   document.addEventListener('paste', function (e) { if (state.on) onPaste(e); });
   document.addEventListener('mouseover', function (e) {
     if (!state.on || tools.contains(e.target)) return;
-    var node = e.target.closest && e.target.closest('main [data-item], main [data-region]');
+    var node = e.target.closest && e.target.closest('main [data-type="image"], main [data-item], main [data-region]');
     if (node) showTools(node);
     else if (target) hideTools();
   });
