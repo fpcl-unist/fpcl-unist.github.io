@@ -112,9 +112,10 @@ window.FPCL = window.FPCL || {};
   // The same section list, always shown at the right edge, with the headings of this page under the current item.
   // Runs after the data lists are drawn, so the year headings on the publication pages are included.
   // The arrow button above it hides the list and brings it back; the choice is kept for the next pages.
+  // A page whose section list has data-no-side (Research > Overview) gets no list at the right edge.
   function buildSideNav() {
     var subnav = document.getElementById('subnav');
-    if (!subnav) return;
+    if (!subnav || subnav.hasAttribute('data-no-side')) return;
     var side = document.createElement('nav');
     side.className = 'side-nav';
     side.setAttribute('aria-label', 'Section shortcuts');
@@ -123,7 +124,7 @@ window.FPCL = window.FPCL || {};
       '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
       '</button><div class="side-list" id="side-list">' + subnav.innerHTML + '</div>';
     var box = side.querySelector('.side-list');
-    var heads = pageHeadings(subnav);
+    var heads = pageHeadings();
     var current = box.querySelector('[aria-current="page"]');
     if (current && heads.length > 1) {
       var list = document.createElement('div');
@@ -153,13 +154,12 @@ window.FPCL = window.FPCL || {};
     document.body.appendChild(side);
   }
 
-  // The h2 headings of this page, each given an id to jump to. Headings that only repeat a page name
-  // in the section list (as on Research > Overview) are left out.
-  function pageHeadings(subnav) {
-    var names = [].map.call(subnav.children, function (a) { return a.textContent.trim(); });
+  // The h2 headings of this page, each given an id to jump to. A heading that already has an id in the HTML
+  // keeps it (links from Research > Overview point at those).
+  function pageHeadings() {
     return [].filter.call(document.querySelectorAll('main h2'), function (h) {
       var text = h.textContent.trim();
-      if (!text || names.indexOf(text) !== -1) return false;
+      if (!text) return false;
       if (!h.id) {
         var base = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'section';
         var id = base, n = 2;
@@ -190,6 +190,36 @@ window.FPCL = window.FPCL || {};
       if (!waiting) { waiting = true; requestAnimationFrame(update); }
     }, { passive: true });
     update();
+  }
+
+  // After a jump to a heading (a #link from another page or from the side list), pictures above it that load
+  // late push it down. For a few seconds, put it back just under the menu bar, until the reader scrolls.
+  function holdHeading() {
+    var target = null, until = 0;
+    function place() {
+      if (!target || Date.now() > until) return;
+      var gap = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+      var off = target.getBoundingClientRect().top - gap;
+      if (Math.abs(off) <= 2) return;
+      var html = document.documentElement;
+      html.style.scrollBehavior = 'auto'; // jump straight there instead of the usual smooth scroll
+      scrollTo(0, scrollY + off);
+      html.style.scrollBehavior = '';
+    }
+    function hold() {
+      target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+      until = Date.now() + 3000;
+    }
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (type) {
+      addEventListener(type, function () { until = 0; }, { passive: true });
+    });
+    addEventListener('hashchange', hold);
+    // Pictures fire load or error (a missing one becomes a gray box right after), so wait a moment and re-place.
+    ['load', 'error'].forEach(function (type) {
+      document.addEventListener(type, function (e) { if (e.target.tagName === 'IMG') setTimeout(place, 0); }, true);
+    });
+    addEventListener('load', place);
+    hold();
   }
 
   function buildFooter() {
@@ -334,5 +364,6 @@ window.FPCL = window.FPCL || {};
   buildFooter();
   renderLists();
   buildSideNav();
+  holdHeading();
   watchImages();
 })();
