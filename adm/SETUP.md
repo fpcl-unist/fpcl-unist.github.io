@@ -4,7 +4,7 @@
 
 ## 1. 홈페이지 저장소 생성
 
-현재 홈페이지 저장소 하나를 그대로 사용합니다. `adm/` 폴더도 그 안에 올립니다. 관리자 편집 대상은 `data/publications.js`, `data/proceedings.js`, `data/photos.js`, `data/members.js`, `data/highlights.js`입니다. 마지막 파일은 기존 메인 HTML에서 분리한 슬라이드 데이터로, 함께 업로드해야 합니다. 현재 `.github.io` 주소를 쓰는 동안에는 `CNAME` 파일을 업로드하지 않습니다.
+현재 홈페이지 저장소 하나를 그대로 사용합니다. `adm/` 폴더도 그 안에 올립니다. 관리자 편집 대상은 `data/` 폴더의 파일 전체입니다: `highlights.js`(메인 슬라이드), `home.js`(메인 소개글·공지), `research/*.js`(연구 페이지 5개), `professor.js`, `members.js`, `publications.js`, `proceedings.js`, `photos.js`, `lectures.js`, `equipment.js`, `links.js`. Research Overview 페이지만 HTML(`research/overview.html`)로 남아 있습니다. 현재 `.github.io` 주소를 쓰는 동안에는 `CNAME` 파일을 업로드하지 않습니다.
 
 관리자에게 해당 저장소의 Write 권한을 부여합니다. 로그인은 GitHub 계정으로 하며, 별도 홈페이지 비밀번호를 만드는 방식은 아닙니다. 여러 관리자가 같은 목록을 동시에 수정하지 않도록 합니다. 서버에서 충돌이 발생하면 새로 불러온 후 다시 편집합니다.
 
@@ -37,7 +37,7 @@ GitHub Pages 자체는 서버 코드를 실행하지 않으므로 OAuth 인증�
 ## 3. 실제 접속 및 저장 확인
 
 1. GitHub Pages 배포 후 `/adm/`에 접속합니다. 학교 도메인 연결은 먼저 할 필요가 없습니다.
-2. GitHub 로그인 후 People, Research Highlights, Publication, Proceeding, Photo 중 하나를 선택합니다.
+2. GitHub 로그인 후 왼쪽 목록에서 편집할 항목(Home, Research, People, Publication, Proceeding, Photo, Lectures, Equipment, Link 등)을 선택합니다.
 3. 국내/국제 목록에서 항목을 펼쳐 수정하거나 추가·삭제·순서를 변경합니다.
 4. Photo, People, Research Highlights에서 사진/GIF를 첨부할 수 있습니다. 새 파일은 `images/uploads/`에 저장됩니다. 기존 사진 경로는 그대로 사용합니다. 자동 리사이즈 기능은 없으므로 큰 사진은 업로드 전에 줄입니다. GIF는 원본을 업로드하면 애니메이션이 유지됩니다.
 5. 게시/저장하면 GitHub에 커밋됩니다. GitHub Pages 배포가 완료되면 실제 홈페이지에서 확인합니다. 즉시 GitHub에 저장되지만 공개 화면은 배포 완료까지 시간이 걸립니다.
@@ -46,7 +46,11 @@ GitHub Pages 자체는 서버 코드를 실행하지 않으므로 OAuth 인증�
 
 이 편집기는 파일 단위로 저장합니다. 여러 게시물 변경을 한 번에 저장하며, 개별 게시물 전용 URL이나 별도 DB는 만들지 않습니다.
 
-People의 Student는 과정 선택값에 따라 Ph.D. → Combined M.S./Ph.D. → M.S. 구역에 표시됩니다. 과정 안의 순서는 목록에서 조절합니다. LG전자 일반장학생 표시도 유지할 수 있습니다. 졸업 처리 시 학생 목록에서 삭제하고 Alumni 목록에 새 항목을 추가한 뒤 한 번에 게시합니다. Professor 소개는 이번 관리 범위에 포함되지 않습니다.
+People의 Student는 과정 선택값에 따라 Ph.D. → Combined M.S./Ph.D. → M.S. 구역에 표시됩니다. 과정 안의 순서는 목록에서 조절합니다. LG전자 일반장학생 표시도 유지할 수 있습니다. 졸업 처리 시 학생 목록에서 삭제하고 Alumni 목록에 새 항목을 추가한 뒤 한 번에 게시합니다. Professor 소개는 "People · 교수 소개"에서 기본 정보(이름·사진·연락처)와 Education, Experience 등 구역별 목록을 편집합니다.
+
+Research 페이지는 주제마다 제목과 "내용" 목록으로 되어 있습니다. 내용에는 문단과 그림을 원하는 순서로 추가하고, 그림 하나에 파일을 여러 개 넣으면 한 줄에 나란히 표시됩니다. "링크용 이름"은 Research Overview의 항목이 그 주제로 바로 가는 데 쓰이므로, 값이 있으면 바꾸지 않습니다.
+
+Home의 Notice는 위에서부터 표시되며, 내용에 적은 이메일·웹 주소는 자동으로 링크가 됩니다. Equipment는 페이지마다 목록(필요하면 아래 작은 목록)과 사진을 편집합니다.
 
 Research Highlights에서는 제목, 이미지/GIF, 이미지 설명, 저자, 저널, 논문 정보를 편집합니다. 자동 전환 간격은 밀리초 단위이며 5000 = 5초, 10000 = 10초입니다. 2~60초 범위로 설정합니다. 이제 HTML의 `data-interval` 대신 `data/highlights.js`의 `highlightSettings.interval`을 사용합니다.
 

@@ -1,7 +1,8 @@
 /* FPCL site script. One file for every page.
    1) Builds the top menu, the section list (under the title and at the right edge) and the footer
       (edit MENU and FOOTER below to change them on every page).
-   2) Draws the lists kept in the data/ folder (publications, proceedings, members, photos).
+   2) Draws the content kept in the data/ folder (publications, proceedings, members, photos, home text,
+      lectures, links, professor, equipment and research pages). All of it can also be edited at /admin.
    3) Shows a gray box in place of any image file that has not been added yet. */
 
 window.FPCL = window.FPCL || {};
@@ -319,6 +320,83 @@ window.FPCL = window.FPCL || {};
     }).join('');
   }
 
+  // Plain text with e-mail and web addresses made into links (the text is escaped first).
+  function linkify(text) {
+    return esc(text).replace(/([\w.+-]+@[\w-]+(?:\.[\w-]+)+)|(https?:\/\/[^\s<]*[^\s<.,;:)])/g, function (m, mail, web) {
+      return mail ? '<a href="mailto:' + mail + '">' + mail + '</a>' :
+        '<a href="' + web + '" target="_blank" rel="noopener">' + web + '</a>';
+    });
+  }
+
+  // Home: the About paragraphs and the Notice box (data/home.js).
+  function renderAbout(el, list) {
+    el.outerHTML = '<div class="about">' + list.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>';
+  }
+  function renderNotices(el, list) {
+    el.outerHTML = list.map(function (n) {
+      return '<div><h3>' + esc(n.title) + '</h3><p>' + linkify(n.text) + '</p></div>';
+    }).join('');
+  }
+
+  function renderLectures(el, list) {
+    el.outerHTML = '<div class="table-wrap"><table class="plain"><thead><tr><th>Semester</th><th>Course</th></tr></thead><tbody>' +
+      list.map(function (l) {
+        return '<tr><td class="nowrap">' + esc(l.semester) + '</td><td>' + esc(l.courses) + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+  }
+
+  function renderLinks(el, list) {
+    el.outerHTML = list.map(function (g) {
+      return '<section><h2>' + esc(g.group) + '</h2><ul class="plain-list">' + g.items.map(function (l) {
+        return '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.title) + '</a></li>';
+      }).join('') + '</ul></section>';
+    }).join('');
+  }
+
+  // Professor page: the photo and contact block, then the CV sections (data/professor.js).
+  function renderProfessor(el, p) {
+    el.outerHTML = '<div class="prof"><div class="prof-photo"><img src="' + esc(url(p.photo)) + '" alt="' + esc(p.name) + '"></div>' +
+      '<div class="prof-info"><p class="prof-name">' + esc(p.name) + ' <span>' + esc(p.degree) + '</span></p>' +
+      '<p>' + esc(p.position) + '</p><p>' + esc(p.department) + '</p>' +
+      '<dl class="facts">' + (p.facts || []).map(function (f) {
+        return '<dt>' + esc(f.label) + '</dt><dd>' + esc(f.value) + '</dd>';
+      }).join('') + '</dl></div></div>';
+  }
+  function renderCv(el, list) {
+    el.outerHTML = list.map(function (s) {
+      return '<section><h2>' + esc(s.heading) + '</h2><ul class="cv-list">' +
+        s.items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul></section>';
+    }).join('');
+  }
+
+  // Equipment pages: the list (with its smaller lists) and the pictures. One picture fills the width;
+  // several sit side by side (data/equipment.js).
+  function renderEquipment(el, page) {
+    var imgs = (page.images || []).map(function (i) {
+      return '<img src="' + esc(url(i.image)) + '" alt="' + esc(i.alt || '') + '" loading="lazy">';
+    });
+    el.outerHTML = '<ul class="plain-list">' + page.items.map(function (i) {
+      var sub = (i.sub || []).length ? '<ul>' + i.sub.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>' : '';
+      return '<li>' + esc(i.text) + sub + '</li>';
+    }).join('') + '</ul>' +
+      (imgs.length === 1 ? '<figure class="wide-figure">' + imgs[0] + '</figure>' :
+       imgs.length ? '<div class="fig-row">' + imgs.join('') + '</div>' : '');
+  }
+
+  // Research pages: each topic is a heading followed by paragraphs and figures in order (data/research/*.js).
+  // Titles, paragraphs and captions may hold <i>, <sub>, <sup> and <br>, so they are used as written.
+  function renderTopics(el, list) {
+    el.outerHTML = list.map(function (t) {
+      return '<section class="topic"><h2' + (t.id ? ' id="' + esc(t.id) + '"' : '') + '>' + t.title + '</h2>' +
+        (t.blocks || []).map(function (b) {
+          if (b.type === 'text') return '<p>' + b.text + '</p>';
+          return '<figure class="figure"><div class="imgs">' + (b.images || []).map(function (src) {
+            return '<img src="' + esc(url(src)) + '" alt="" loading="lazy">';
+          }).join('') + '</div>' + (b.caption ? '<figcaption>' + b.caption + '</figcaption>' : '') + '</figure>';
+        }).join('') + '</section>';
+    }).join('');
+  }
+
   function renderLists() {
     var D = window.FPCL;
     document.querySelectorAll('[data-list]').forEach(function (el) {
@@ -338,6 +416,14 @@ window.FPCL = window.FPCL || {};
       else if (kind === 'alumni') renderAlumni(el, list);
       else if (kind === 'photos') renderPhotos(el, list);
       else if (kind === 'recent-photos') renderRecentPhotos(el, list, +(el.getAttribute('data-count') || 3));
+      else if (kind === 'about') renderAbout(el, list);
+      else if (kind === 'notices') renderNotices(el, list);
+      else if (kind === 'lectures') renderLectures(el, list);
+      else if (kind === 'links') renderLinks(el, list);
+      else if (kind === 'professor') renderProfessor(el, list);
+      else if (kind === 'cv') renderCv(el, list);
+      else if (kind === 'equipment') renderEquipment(el, list);
+      else if (kind === 'topics') renderTopics(el, list);
     });
   }
 

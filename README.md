@@ -23,11 +23,12 @@
 | `data/proceedings.js` | 학회 발표 (International, Domestic) | 학회 다녀올 때마다 |
 | `data/members.js` | 학생, 연구원, 졸업생 | 학기마다 |
 | `data/photos.js` | Photo 게시물 (메인 페이지에 최신 3개가 자동으로 나와요) | 행사 때마다 |
-| `lectures.html` | 강의 목록 | 학기마다 |
-| `index.html` | 메인 페이지 (소개글, Research Highlights, Notice) | 가끔 |
-| `research/*.html` | 연구 소개 페이지 6개 | 가끔 |
-| `people/professor.html` | 교수님 소개 (학력, 경력, 수상) | 가끔 |
-| `equipment/*.html`, `links.html` | 장비, 링크 | 드물게 |
+| `data/lectures.js` | 강의 목록 | 학기마다 |
+| `data/home.js`, `data/highlights.js` | 메인 페이지 소개글과 Notice, Research Highlights 슬라이드 | 가끔 |
+| `data/research/*.js` | 연구 소개 페이지 5개 (주제별 제목, 문단, 그림) | 가끔 |
+| `research/overview.html` | 연구 분야 개요 (이 페이지만 HTML로 직접 고쳐요) | 가끔 |
+| `data/professor.js` | 교수님 소개 (학력, 경력, 수상) | 가끔 |
+| `data/equipment.js`, `data/links.js` | 장비, 링크 | 드물게 |
 | `assets/site.js` | 상단 메뉴, 하단 연락처, 목록 그리는 코드 | 메뉴를 바꿀 때만 |
 | `assets/style.css` | 디자인 (색, 글꼴, 간격) | 거의 안 고침 |
 | `images/` | 모든 그림 | 그림 추가할 때 |
@@ -55,7 +56,7 @@ python tools/fetch_images.py
 
 ## 4. 자주 하는 업데이트
 
-**관리 화면 사용:** `https://flow.unist.ac.kr/adm/`에서 GitHub 로그인 후 Publication, Proceeding, Photo를 폼으로 편집할 수 있도록 관리 화면을 추가했습니다. 현재 GitHub 저장소와 인증 서비스는 아직 연결되지 않았습니다. 최초 연결 방법은 [adm/SETUP.md](adm/SETUP.md)를 보세요. 연결 후에는 아래처럼 `.js` 파일을 직접 고칠 필요 없이 관리 화면에서 게시하면 됩니다. 공개 사이트 반영까지는 GitHub Pages 배포 시간이 필요합니다. 구성원·강의·연구 페이지는 아래 파일 편집 방식을 유지합니다.
+**관리 화면 사용:** `https://flow.unist.ac.kr/adm/`에서 GitHub 로그인 후 메인 소개글·공지, Research Highlights, Research, People(교수·구성원), Publication, Proceeding, Photo, Lectures, Equipment, Link를 폼으로 편집할 수 있습니다. `/admin`으로 들어가도 같은 화면이 열립니다. 최초 연결 방법은 [adm/SETUP.md](adm/SETUP.md)를 보세요. 연결 후에는 아래처럼 `.js` 파일을 직접 고칠 필요 없이 관리 화면에서 게시하면 됩니다. 공개 사이트 반영까지는 GitHub Pages 배포 시간이 필요합니다. Research Overview 페이지만 HTML 파일을 직접 고칩니다.
 
 모든 data 파일은 같은 모양이에요. **블록 `{ ... },` 하나를 복사해서 붙여 넣고 글자만 바꾸면 돼요.** 파일 맨 위 주석에 각 칸의 뜻이 적혀 있어요.
 
@@ -116,17 +117,17 @@ python tools/fetch_images.py
 
 메인 페이지의 Photo 칸에는 맨 위 3개가 자동으로 나와요.
 
-### 강의 추가 (`lectures.html`)
+### 강의 추가 (`data/lectures.js`)
 
-`<tr>...</tr>` 한 줄을 복사해서 맨 위에 붙여 넣어요.
+관리 화면의 Lectures에서 학기를 추가하거나, 파일에서 `{ ... },` 블록 하나를 복사해 맨 위에 붙여 넣어요.
 
 ### 메뉴, 하단 연락처 변경 (`assets/site.js`)
 
 파일 맨 위의 `MENU`와 `FOOTER`만 고치면 모든 페이지에 한 번에 반영돼요. 새 페이지를 만들 때는 비슷한 페이지 하나를 복사해서 가운데 내용만 바꾸고, `MENU`에 한 줄 추가해요.
 
-### 연구, 장비, 교수님 페이지
+### 연구, 장비, 교수님, 링크, 메인 소개글·공지
 
-해당 html 파일을 메모장이나 VS Code로 열어 글을 직접 고쳐요. 연구 페이지는 주제 하나가 `<section class="topic"> ... </section>` 한 덩어리예요.
+관리 화면(`/admin`)에서 고치는 것이 가장 쉬워요. 파일로 고칠 때는 `data/research/*.js`(연구 페이지, 주제 하나가 `{ title, blocks }` 한 덩어리), `data/equipment.js`, `data/professor.js`, `data/links.js`, `data/home.js`를 열어요. Research Overview만 `research/overview.html`을 직접 고쳐요.
 
 ---
 
@@ -170,6 +171,6 @@ flow.unist.ac.kr은 unist.ac.kr의 하위 도메인이라 DNS 설정은 학교 �
 
 새로 쓴 글은 없어요. 아래는 기존 사이트에 원래 있던 것인데, 교수님께 여쭤보고 정리하면 좋아요.
 
-- **제목만 있고 설명이 없는 연구 주제 4개.** Temporally Decelerating Turbulent Pipe Flow, Shock-Turbulence Interaction in a Turbulent Channel Flow (`research/turbulent-flow.html`), Compressible Flow, Interface-Sharpening Procedure for Incompressible Multi-Phase Flows (`research/numerical-methods.html`).
-- **오래된 링크.** `links.html`의 Web of Knowledge 주소는 오류 페이지 주소로 저장되어 있고, Conference 항목 4개는 2015~2017년 행사예요.
+- **제목만 있고 설명이 없는 연구 주제 4개.** Temporally Decelerating Turbulent Pipe Flow, Shock-Turbulence Interaction in a Turbulent Channel Flow (`data/research/turbulent-flow.js`), Compressible Flow, Interface-Sharpening Procedure for Incompressible Multi-Phase Flows (`data/research/numerical-methods.js`).
+- **오래된 링크.** `data/links.js`의 Web of Knowledge 주소는 오류 페이지 주소로 저장되어 있고, Conference 항목 4개는 2015~2017년 행사예요.
 - **메인 페이지에서 새로 정한 것.** 단체 사진은 Photo 게시판의 "2026년 스승의 날" 사진을 잘랐고, 한 줄 소개 "Understanding, predicting and controlling flows"는 About FPCL 글에 있는 구절이에요. Research Highlights 6편은 기존 메인 페이지의 6편이에요.

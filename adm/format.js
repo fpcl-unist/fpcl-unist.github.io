@@ -6,17 +6,63 @@
     ['proceedingsInternational', 'proceedingsDomestic'],
     ['photos'],
     ['students', 'researchers', 'alumni'],
-    ['highlightSettings', 'highlights']
+    ['highlightSettings', 'highlights'],
+    ['about', 'notices'],
+    ['lectures'],
+    ['links'],
+    ['professor', 'professorCv'],
+    ['equipmentServers', 'equipmentSoftware', 'equipmentWindTunnel', 'equipmentMeasurement'],
+    ['topics']
   ];
+  // These hold one block of settings or one page, not a list.
+  var objects = ['highlightSettings', 'professor', 'equipmentServers', 'equipmentSoftware', 'equipmentWindTunnel', 'equipmentMeasurement'];
+  function isObject(v) { return v && typeof v === 'object' && !Array.isArray(v); }
+  function isText(v) { return typeof v === 'string'; }
+  function maybeText(v) { return v == null || typeof v === 'string'; }
+  function texts(v) { return Array.isArray(v) && v.every(isText); }
+  function each(list, test, message) {
+    if (!Array.isArray(list) || !list.every(function (item) { return isObject(item) && test(item); })) throw new Error(message);
+  }
+  // Checks for the pages added to the editor later (home text, lectures, links, professor, equipment, research).
+  var pages = {
+    about: function (v) { if (!texts(v)) throw new Error('소개글 문단을 확인해 주세요.'); },
+    notices: function (v) { each(v, function (n) { return isText(n.title) && isText(n.text); }, '공지의 제목과 내용을 확인해 주세요.'); },
+    lectures: function (v) { each(v, function (l) { return isText(l.semester) && isText(l.courses); }, '강의의 학기와 과목을 확인해 주세요.'); },
+    links: function (v) {
+      each(v, function (g) {
+        return isText(g.group) && Array.isArray(g.items) && g.items.every(function (l) { return isObject(l) && isText(l.title) && isText(l.url); });
+      }, '링크 묶음의 제목, 링크 이름과 주소를 확인해 주세요.');
+    },
+    professor: function (v) {
+      if (!['name', 'photo'].every(function (f) { return isText(v[f]); }) ||
+          !['degree', 'position', 'department'].every(function (f) { return maybeText(v[f]); }) ||
+          (v.facts != null && !Array.isArray(v.facts))) throw new Error('교수 소개의 이름·사진·연락처를 확인해 주세요.');
+      each(v.facts || [], function (f) { return isText(f.label) && isText(f.value); }, '연락처 항목의 이름과 내용을 확인해 주세요.');
+    },
+    professorCv: function (v) { each(v, function (s) { return isText(s.heading) && texts(s.items); }, '교수 소개 각 구역의 제목과 목록을 확인해 주세요.'); },
+    equipment: function (v) {
+      each(v.items, function (i) { return isText(i.text) && (i.sub == null || texts(i.sub)); }, '장비 목록을 확인해 주세요.');
+      each(v.images || [], function (i) { return isText(i.image) && maybeText(i.alt); }, '장비 사진을 확인해 주세요.');
+    },
+    topics: function (v) {
+      each(v, function (t) {
+        return isText(t.title) && maybeText(t.id) && (t.blocks == null || (Array.isArray(t.blocks) && t.blocks.every(function (b) {
+          return isObject(b) && (b.type === 'text' ? isText(b.text) :
+            b.type === 'figure' && texts(b.images) && maybeText(b.caption));
+        })));
+      }, '연구 주제의 제목, 문단, 그림을 확인해 주세요.');
+    }
+  };
   function check(value) {
     var keys = Object.keys(value);
     if (!groups.some(function (group) {
       return group.length === keys.length && group.every(function (key) {
-        return keys.includes(key) && (key === 'highlightSettings' ?
-          value[key] && typeof value[key] === 'object' && !Array.isArray(value[key]) : Array.isArray(value[key]));
+        return keys.includes(key) && (objects.includes(key) ? isObject(value[key]) : Array.isArray(value[key]));
       });
     })) throw new Error('데이터 항목이 맞지 않습니다. 저장을 중단했습니다.');
     keys.forEach(function (key) {
+      var page = pages[key] || (/^equipment/.test(key) && pages.equipment);
+      if (page) { page(value[key]); return; }
       if (key === 'highlightSettings') {
         if (!Number.isInteger(value[key].interval) || value[key].interval < 2000 || value[key].interval > 60000) {
           throw new Error('슬라이드 전환 시간은 2000~60000 밀리초로 입력해 주세요.');

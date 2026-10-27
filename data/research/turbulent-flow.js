@@ -1,0 +1,183 @@
+window.FPCL = window.FPCL || {};
+
+/* Research page: one block per topic, in page order. Also editable at /admin.
+   title   the topic heading. id (optional) is the name used in links such as overview.html -> page.html#id
+   blocks  what comes under the heading, in order: { type: "text", text } is a paragraph and
+           { type: "figure", images: [...], caption } is a row of pictures with its caption.
+           <i>, <sub>, <sup> and <br> may be used in titles, paragraphs and captions. */
+
+FPCL.topics = [
+  {
+    title: "Turbulent Coherent Structures in Wall-Bounded Turbulent Flows",
+    blocks: [
+      {
+        type: "text",
+        text: "Turbulent boundary layers (TBLs) are observed in many fluid dynamic engineering applications, such as automobiles, ships, airplanes and heat-exchangers, and the fundamental mechanisms of heat and momentum transfer are controlled by the dynamics of turbulent structures. In particular, it has been known that very-large-scale motions or superstructures observed in turbulent flows are prominent and these motions typically account for half of the streamwise turbulent kinetic energy and more than half of the Reynolds shear stress in canonical wall-bounded turbulent flows of pipes, channels and boundary layers. Thus, understanding the fundamental nature of the structures will improve modeling and control in these important applications."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-01.jpg"
+        ],
+        caption: "[Figure 1] Very large-scale motion in a turbulent pipe flow"
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-02.gif"
+        ],
+        caption: "[Figure 2] Time evolution of a single vortical structure"
+      }
+    ]
+  },
+  {
+    title: "Rough-Wall Turbulent Boundary Layer Flows",
+    blocks: [
+      {
+        type: "text",
+        text: "Turbulent boundary layers (TBLs) are observed in numerous fluid dynamic engineering applications, and many experimental and numerical studies have examined, spatial features of TBLs. In engineering applications involving wall-bounded boundary layer flow (e.g. automobiles, ships, airplanes and heat exchangers), the roughness of the wall surface is an important design parameter because it influences flow characteristics such as the transport of heat, mass and momentum. Although effects of surface roughness on a TBL have been examined in many experimental and numerical studies, knowledge of these effects remains incomplete."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-03.jpg"
+        ],
+        caption: "[Figure 3] Direct numerical simulation of a turbulent boundary layer with surface change from smooth to rough walls"
+      }
+    ]
+  },
+  {
+    title: "Adverse-Pressure Gradient Turbulent Boundary Layer Flows",
+    blocks: [
+      {
+        type: "text",
+        text: "Turbulent boundary layers (TBLs) are subjected to adverse pressure gradients (APGs) in numerous engineering applications, such as diffusers, turbine blades and the trailing edges of aerofoils. Because the upper limit of the efficiency of such devices is almost always determined by the APGs, the behavior of the APG flow is of practical importance. A literature survey reveals many studies dealing with pressure gradient effects in turbulent boundary layers, but most of them have focused only on statistical properties, and little has been known about coherent structures in TBL with APG."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-04.jpg"
+        ],
+        caption: "[Figure 4] Mean velocity and streamwise turbulent intensity profiles of turbulent boundary layers subjected <br>to zero- and adverse-pressure gradients. <i>m</i> denotes the exponent of the APG."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-05.jpg"
+        ],
+        caption: "[Figure 5] Premultiplied spanwise energy spectrum maps of the streamwise velocity fluctuations<br> (a) ZPG, (b) mild APG, (c) moderate APG and (d) strong APG"
+      }
+    ]
+  },
+  {
+    title: "Temporally Decelerating Turbulent Pipe Flow",
+    blocks: []
+  },
+  {
+    title: "Turbulent Plane Couette-Poiseuille Flow",
+    blocks: [
+      {
+        type: "text",
+        text: "For several decades, turbulent Couette or Couette-Poiseuille flows have been received much attention in the area of fluid mechanics, because they are present whenever a wall moves to the flow direction (e.g., turbulent bearing films). These flows are known to be beneficial for more efficient diffusion, less resistance and greater turbulence kinetic energy than those in Poiseuille flows. Because the fundamental mechanisms of heat and mass transfer in turbulent Couette-like flows are mostly attributed to dynamics of turbulent coherent structures, study of turbulent structures in Couette-like flows with simple flow geometry will contribute to further advances for flow control, turbulent modeling and understanding of turbulent structures in Poiseuille flows."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-06.jpg"
+        ],
+        caption: "[Figure 6] Schematic of turbulent Couette-Poiseuille flow with moving wall at the top.<br>The bottom wall is stationary with no-slip condition."
+      }
+    ]
+  },
+  {
+    title: "Temporally Accelerating Turbulent Pipe Flow",
+    blocks: [
+      {
+        type: "text",
+        text: "Flow acceleration or deceleration in wall-bounded turbulent flows is frequently encountered not only in engineering applications (e.g., turbo-machinery and heat exchanager) but also in biomedical application (e.g., airflow in human lungs and blood flow in large arteries). Earlier studies for unsteady and non-periodic turbulent flows (Kline et al. 1967; Narasimha & Sreenivasan 1973; Warnack & Ferholz 1998) have shown that decelerating the flow enhances turbulence with more frequent and violent bursting event, and large-scale structures emerge more prominently in the outer layer. In contrast, when the flow is accelerated, the bursting process ceases, and relaminarization or 'reverse transition' occurs, thereby resulting in skin friction drag reduction, although kinetic energy of mean flow is increased by the acceleration."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-07.gif"
+        ],
+        caption: "[Figure 7] Temporal evolution of the streamwise velocity fluctuation on the horizontal plane in a temporally accelerating turbulent pipe flow"
+      }
+    ]
+  },
+  {
+    title: "Super-Hydrophobic Drag Reduction in Turbulent Pipe and Channel Flows",
+    id: "super-hydrophobic-drag-reduction",
+    blocks: [
+      {
+        type: "text",
+        text: "Super-hydrophobic surfaces are patterned rough surfaces covered with a hydrophobic coating with micro-scale structures and large contact angle. Upon contact of liquids with these surfaces, small bubbles are created in between the surface roughness tips, producing a slip velocity over a gas/liquid menisci. This slippage generally leads to drag reduction, and it has been paid great attention for drag reduction in this society."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-08.jpg"
+        ],
+        caption: "[Figure 8] Schematic of turbulent channel and pipe flows over super-hydrophobic surface"
+      }
+    ]
+  },
+  {
+    title: "Active Control of Turbulent boundary Channel Flow using Wall Shear Free Control",
+    blocks: [
+      {
+        type: "text",
+        text: "Over several decades, significant efforts have been devoted to reduction of skin-friction drag in wall-bounded turbulent flows due to limited natural resources and environmental deterioration (Kasagi et al. 2009). Because decreasing the drag also induces reduction of structural vibrations, noise and surface heat transfer generated by turbulent flows (Kim & Bewley 2007), it is desirable to develop effective and reliable flow control strategies for drag reduction in many engineering applications. Here, we have revised a new flow control concept for active drag reduction using streamwise mean velocity free condition. Because the method only requires velocity information at the wall and achieves a large drag reduction rate even over a limited area, the active flow control suggested here could be a more practical and efficient method in real application."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-09.jpg"
+        ],
+        caption: "[Figure 9] Schematic of turbulent channel flow with spanwise alternating patterns.<br> The black and white colors indicate no-control (no-slip) and control (slip) surfaces at the wall."
+      }
+    ]
+  },
+  {
+    title: "Shock-Turbulence Interaction in a Turbulent Channel Flow",
+    blocks: []
+  },
+  {
+    title: "Active Control of Pressure Fluctuations in Turbulent Cavity Flow",
+    blocks: [
+      {
+        type: "text",
+        text: "Large-eddy simulations of turbulent boundary layer flows over an open cavity are conducted to investigate the effects of wall-normal steady blowing on the surpression of pressure fluctuations on the cavity walls."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-10.gif",
+          "images/research/turbulent-flow-11.gif",
+          "images/research/turbulent-flow-12.gif"
+        ],
+        caption: "[Figure 10] Time evolution of the instantaneuos spanwise vorticity with swirling strength on the <i>xy</i>-plane: (a) base line, (b) Cμ = 0.015, (c) Cμ = 0.050"
+      }
+    ]
+  },
+  {
+    title: "Deep Reinforcement Learning (DRL)-based Control of Turbulent Cavity Flows",
+    blocks: [
+      {
+        type: "text",
+        text: "While numerous flow control methods have been explored for both turbulent and laminar flow scenarios, they often encounter limitations when dealing with chaotic flows characterized by nonlinearity and high dimensionality. With the advent of machine learning, Deep Reinforcement Learning (DRL) has emerged as a promising approach for addressing various flow control challenges."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/turbulent-flow-13.jpg"
+        ],
+        caption: "[Figure 11] Schematic of the deep reinforcement learning (DRL)-based model for controlling turbulent cavity flow to reduce cavity oscillations"
+      },
+      {
+        type: "text",
+        text: "Additionally, DRL-based control methods, particularly those using the PPO algorithm, have been successfully applied to active flow control in turbulent cavity flows under various conditions. The PPO algorithm, which consists of actor and critic neural networks, uses flow field data as states (inputs to both networks; in this case, pressure data within the recirculation zone and along the wall) to train these networks. It provides actions (specifically, the intensity of the synthetic jet upstream of the cavity) to the flow field as a form of control. Due to its efficiency in handling high-dimensional flows and its stability, the PPO algorithm shows great promise for controlling unsteady, high-dimensional flows (Vignon et al., 2023)."
+      }
+    ]
+  }
+];

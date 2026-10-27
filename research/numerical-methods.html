@@ -19,56 +19,12 @@
     <nav class="subnav" id="subnav" aria-label="Section"></nav>
   </div>
 
-  <section class="topic">
-    <h2 id="two-parameter-mixed-model">Two-Parameter Mixed Model for Large-Eddy Simulations</h2>
-    <p>In an effort to improve prediction performance of large-eddy simulation in a transitional boundary layer flow, two-parameter mixed models (i.e., combination of scale-similarity model and sub-grid stress model) have been developed and assessed.</p>
-  </section>
-
-  <section class="topic">
-    <h2>Compressible Flow</h2>
-  </section>
-
-  <section class="topic">
-    <h2>Wall-Modeled Large-Eddy Simulations</h2>
-    <p>Although large-eddy simulation (LES) has come to play an important engineering tool in the prediction and analysis of complex turbulent flows for past several decades, application of LES approach in an engineering environment is still very difficult due to the huge computational cost in the near-wall region at high Reynolds numbers. Thus, various wall-modeled LESs (hereafter, WMLES) have been proposed so far, and these methods are generally classified into three types such as equilibrium wall-stress model, non-equilibrium wall-stress model and hybrid RANS/LES model.</p>
-    <figure class="figure">
-      <div class="imgs">
-        <img src="../images/research/numerical-methods-01.png" alt="" loading="lazy">
-      </div>
-      <figcaption>[Figure 1] Classification of wall-modeled LES (WMLES) techniques</figcaption>
-    </figure>
-    <p>Because most previous WMLES methods either use equilibrium assumption or require quite fine grids along the wall-normal direction, we have proposed an artificial neural network (ANN)-based wall-stress model.</p>
-    <figure class="figure">
-      <div class="imgs">
-        <img src="../images/research/numerical-methods-02.png" alt="" loading="lazy">
-      </div>
-      <figcaption>[Figure 2] Schematic of artificial neural network (ANN)-based wall-stress model. Input parameters of ANN are extracted using outer layer information, and wall-shear stress τ<sub>w</sub> is obtained by ANN with the input parameters. The wall-shear stress τ<sub>w</sub> is imposed at the wall</figcaption>
-    </figure>
-  </section>
-
-  <section class="topic">
-    <h2>Interface-Sharpening Procedure for Incompressible Multi-Phase Flows</h2>
-  </section>
-
-  <section class="topic">
-    <h2 id="machine-learning">Machine Learning in Turbulent Flows</h2>
-    <p>Time-varying turbulent flows are ubiquitous in engineering field and in the life sciences, such as biological propulsion, bio-inspired engineering, automobiles, ships, airplanes. It is observed that the control of unsteady turbulent flow can improve the efficiency, thrust, lift, maneuverability. Machine learning aims to categorize on such dominant patterns of unsteady turbulent flow. In particular, artificial neural networks are one of the types in machine learning. As the "neural" of word suggests, they are human brain-inspired systems. They are excellent tools for finding patterns which are far too complex, such as unsteady turbulent flow.</p>
-    <figure class="figure">
-      <div class="imgs">
-        <img src="../images/research/numerical-methods-03.png" alt="" loading="lazy">
-      </div>
-      <figcaption>[Figure 3] Types of machine learning algorithm</figcaption>
-    </figure>
-    <figure class="figure">
-      <div class="imgs">
-        <img src="../images/research/numerical-methods-04.png" alt="" loading="lazy">
-      </div>
-      <figcaption>[Figure 4] Schematic of the fully connected artificial neural network (ANN). Left, network structure; right, single neuron</figcaption>
-    </figure>
-  </section>
+  <!-- The topics come from data/research/numerical-methods.js (or /admin). -->
+  <div data-list="topics" data-kind="topics"></div>
 </main>
 
 <div id="site-footer"></div>
+<script src="../data/research/numerical-methods.js"></script>
 <script src="../assets/site.js"></script>
 </body>
 </html>
