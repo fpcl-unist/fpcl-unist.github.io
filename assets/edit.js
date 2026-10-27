@@ -4,6 +4,7 @@
    - Pointing at an entry shows a small bar: move it up or down, copy it, add a new one, open its details
      (links, dates, picture descriptions and other values not shown as text) or delete it.
    - "저장" commits each changed data file to GitHub, after checking that nobody changed it in the meantime.
+   - "로그아웃" forgets the login in this browser.
      The data format and its checks are the ones the /admin screen uses (adm/format.js, adm/config.js).
    Unsaved changes stay in this browser tab (sessionStorage "fpcl-edit") until they are saved or dropped. */
 (function () {
@@ -539,11 +540,20 @@
     status.textContent = list.length ? '저장 안 된 변경: ' + list.map(function (f) { return files[f].label; }).join(', ') : '바뀐 내용 없음';
     bar.classList.toggle('dirty', !!list.length);
   }
+  // Signing out forgets the GitHub login in this browser (the same one /admin uses), so the page goes back
+  // to what visitors see. Changes not saved yet are dropped.
+  function logout() {
+    if (dirtyFiles().length && !confirm('저장하지 않은 변경이 있어요. 버리고 로그아웃할까요?')) return;
+    try { localStorage.removeItem('decap-cms-user'); } catch (e) { /* nothing kept */ }
+    try { sessionStorage.removeItem(STORE); } catch (e) { /* nothing kept */ }
+    reload();
+  }
   function buildBar() {
     bar.replaceChildren();
     if (!state.on) {
       bar.className = 'off';
       bar.appendChild(button('✎ 편집', '이 페이지를 화면에서 바로 고치기', function () { state.on = true; store(); enable(); }));
+      bar.appendChild(button('로그아웃', '이 브라우저에서 로그아웃', logout));
       return;
     }
     bar.className = '';
@@ -566,6 +576,7 @@
     }));
     var admin = el('a', { href: ROOT + 'adm/', title: '폼으로 편집하는 관리 화면' }, '관리 화면');
     bar.appendChild(admin);
+    bar.appendChild(button('로그아웃', '이 브라우저에서 로그아웃', logout));
     refreshBar();
   }
 
