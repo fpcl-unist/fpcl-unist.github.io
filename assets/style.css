@@ -187,20 +187,11 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 
 /* ---------- Home ---------- */
 .intro { display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center; }
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.32em;
-  font-family: var(--logo);
-  font-size: clamp(52px, 11vw, 92px);
-  line-height: 1;
-}
-.logo .mark { font-weight: 700; color: var(--accent); letter-spacing: -0.01em; }
-.logo .full { font-weight: 500; color: var(--logo-gray); font-size: 0.27em; line-height: 1.22; text-align: left; }
+.lab-heading { font-family: Arial, sans-serif; text-align: center; }
+.lab-heading h1 { color: #163b65; font-size: clamp(26px, 4vw, 32px); }
+.lab-heading .university { margin-top: 16px; color: #2c3035; font-size: 24px; font-weight: 700; line-height: 1.25; }
 .tagline { font-style: italic; font-weight: 700; font-size: clamp(18px, 2.6vw, 22px); line-height: 1.4; text-wrap: balance; }
-.group-photo { margin: 0; width: 100%; }
-.group-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-.about { display: flex; flex-direction: column; gap: 14px; max-width: 68ch; }
+.about { display: flex; flex-direction: column; gap: 14px; max-width: 68ch; text-align: justify; }
 .highlights {
   list-style: none;
   margin: 0;
@@ -224,6 +215,29 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .highlights h3 { font-size: 15.5px; text-wrap: balance; }
 .cite { font-size: 13.5px; line-height: 1.5; color: var(--muted); }
 .cite b { color: var(--fg); }
+.highlight-carousel.is-carousel .highlights { display: block; }
+.highlight-carousel.is-carousel .highlights li { text-align: center; align-items: center; }
+.highlight-carousel.is-carousel .highlights li[hidden] { display: none; }
+.highlight-carousel.is-carousel .fig { width: 100%; aspect-ratio: 16 / 8; padding: 16px; }
+.highlight-carousel.is-carousel .fig .img-missing { width: 100%; }
+.highlight-carousel.is-carousel h3 { max-width: 68ch; font-size: clamp(17px, 2.4vw, 21px); min-height: 2.8em; }
+.highlight-carousel.is-carousel .cite { min-height: 4.5em; }
+.highlight-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; }
+.highlight-controls button { min-width: 40px; min-height: 40px; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 6px; background: white; color: var(--fg); font: inherit; cursor: pointer; }
+.highlight-controls button:hover { border-color: var(--accent); color: var(--accent); }
+.highlight-dots { display: flex; gap: 4px; }
+.highlight-dots button { min-width: 28px; min-height: 40px; padding: 6px; border: 0; background: transparent; }
+.highlight-dots button::before { content: ''; display: block; width: 9px; height: 9px; border-radius: 50%; background: #cbd2da; }
+.highlight-dots button[aria-current="true"]::before { background: var(--accent); }
+.highlight-counter { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: no-preference) {
+  .highlight-carousel.is-carousel .highlights li:not([hidden]) { animation: highlight-appear .4s ease-out; }
+  @keyframes highlight-appear { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+}
+@media (max-width: 480px) {
+  .highlight-carousel.is-carousel .fig { aspect-ratio: 4 / 3; padding: 8px; }
+  .highlight-controls { gap: 6px; }
+}
 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
 .notice h3 { margin-bottom: 8px; font-size: 16px; }
 .photo-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -328,7 +342,6 @@ footer { border-top: 1px solid var(--rule); }
 }
 @media (max-width: 480px) {
   .highlights { grid-template-columns: minmax(0, 1fr); }
-  .logo { font-size: 50px; }
   .pub { grid-template-columns: 2.6em minmax(0, 1fr); gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
