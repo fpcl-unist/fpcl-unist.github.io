@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>FPCL 콘텐츠 관리</title>
+  <style>
+    body { margin:0; background:#f4f6f8; color:#243348; font:16px/1.7 system-ui,sans-serif; }
+    #setup { max-width:660px; margin:10vh auto; padding:36px; background:white; border:1px solid #e1e5ea; border-radius:16px; }
+    .brand { color:#137ed8; font-weight:700; letter-spacing:.12em; }
+    h1 { font-size:28px; margin:12px 0; } p { margin:12px 0; }
+    a { color:#126eb8; } code { background:#f4f6f8; padding:2px 5px; }
+    .status { background:#eef5fc; padding:16px; border-radius:8px; }
+    @media(max-width:720px) { #setup { margin:24px 16px; padding:24px; } }
+  </style>
+</head>
+<body>
+  <main id="setup" aria-live="polite">
+    <div class="brand">FPCL / ADMIN</div>
+    <h1>홈페이지 콘텐츠 관리</h1>
+    <p>People · Research Highlights · Publication · Proceeding · Photo를 편집하는 공간입니다.</p>
+    <p class="status" id="status">관리 화면 연결을 확인하고 있습니다.</p>
+    <p>연결 후에는 GitHub 관리자 계정으로 로그인해 내용을 수정하고 게시할 수 있습니다. 게시 후 사이트 반영까지는 배포 시간이 필요합니다.</p>
+    <p><a href="../index.html">홈페이지로 돌아가기</a></p>
+    <noscript>관리 화면을 사용하려면 JavaScript를 켜 주세요.</noscript>
+  </main>
+  <script>window.CMS_MANUAL_INIT = true;</script>
+  <script src="vendor/json5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.3/dist/decap-cms.js"></script>
+  <script src="format.js"></script>
+  <script src="config.js"></script>
+  <script src="start.js"></script>
+</body>
+</html>
