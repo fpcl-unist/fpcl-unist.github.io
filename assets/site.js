@@ -204,7 +204,13 @@ window.FPCL = window.FPCL || {};
       if (!list) { el.textContent = 'List "' + name + '" not found. Check the data file.'; return; }
       var kind = el.getAttribute('data-kind');
       if (kind === 'pubs') renderPubs(el, list);
-      else if (kind === 'members') renderMembers(el, list);
+      else if (kind === 'members') {
+        var position = el.getAttribute('data-position');
+        var members = position ? list.filter(function (member) {
+          return String(member.position).split('(')[0].trim().toLowerCase() === position.toLowerCase();
+        }) : list;
+        renderMembers(el, members);
+      }
       else if (kind === 'alumni') renderAlumni(el, list);
       else if (kind === 'photos') renderPhotos(el, list);
       else if (kind === 'recent-photos') renderRecentPhotos(el, list, +(el.getAttribute('data-count') || 3));
