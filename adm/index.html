@@ -13,6 +13,10 @@
     a { color:#126eb8; } code { background:#f4f6f8; padding:2px 5px; }
     .status { background:#eef5fc; padding:16px; border-radius:8px; }
     @media(max-width:720px) { #setup { margin:24px 16px; padding:24px; } }
+    #edit-on-site { position:fixed; right:20px; bottom:20px; z-index:1000; padding:11px 18px; border-radius:999px; background:#137ed8;
+      color:#fff; font:600 14px/1.2 system-ui,sans-serif; text-decoration:none; box-shadow:0 6px 18px rgba(20,30,45,.25); }
+    #edit-on-site:hover { background:#0f68b5; }
+    #edit-on-site[hidden] { display:none; }
   </style>
 </head>
 <body>
@@ -25,6 +29,21 @@
     <p><a href="../index.html">홈페이지로 돌아가기</a></p>
     <noscript>관리 화면을 사용하려면 JavaScript를 켜 주세요.</noscript>
   </main>
+  <!-- Once signed in, this goes to the home page in editing mode (see /admin and assets/edit.js). -->
+  <a id="edit-on-site" href="../admin/" hidden>✎ 사이트 화면에서 바로 편집</a>
+  <script>
+    (function () {
+      var link = document.getElementById('edit-on-site');
+      function check() {
+        try {
+          var user = JSON.parse(localStorage.getItem('decap-cms-user') || 'null');
+          link.hidden = !(user && (user.token || user.access_token));
+        } catch (e) { link.hidden = true; }
+      }
+      check();
+      setInterval(check, 1000); // the login happens in a popup without reloading this page
+    })();
+  </script>
   <script>window.CMS_MANUAL_INIT = true;</script>
   <script src="vendor/json5.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.3/dist/decap-cms.js"></script>

@@ -5,11 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>FPCL 콘텐츠 관리</title>
-<!-- /admin is a shortcut to the content manager in /adm/. -->
-<meta http-equiv="refresh" content="0; url=../adm/">
-<script>location.replace('../adm/' + location.hash);</script>
+<script>
+  // /admin opens the home page in editing mode (assets/edit.js) for someone already signed in,
+  // and otherwise the sign-in screen of the content manager in /adm/.
+  (function () {
+    var signedIn = false;
+    try {
+      var user = JSON.parse(localStorage.getItem('decap-cms-user') || 'null');
+      signedIn = !!(user && (user.token || user.access_token));
+    } catch (e) { /* storage blocked: sign in first */ }
+    if (!signedIn) { location.replace('../adm/'); return; }
+    try {
+      var state = JSON.parse(sessionStorage.getItem('fpcl-edit') || '{}') || {};
+      state.on = true;
+      sessionStorage.setItem('fpcl-edit', JSON.stringify(state));
+    } catch (e) { /* the 편집 button on the page still works */ }
+    location.replace('../index.html');
+  })();
+</script>
 </head>
 <body>
-<p><a href="../adm/">관리 화면으로 이동</a></p>
+<p><a href="../index.html">홈페이지에서 편집하기</a> · <a href="../adm/">관리 화면 (로그인)</a></p>
 </body>
 </html>
