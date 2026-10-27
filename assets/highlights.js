@@ -1,5 +1,5 @@
-/* Home-page Research Highlights. Edit the six items in index.html.
-   Change data-interval on the section to adjust the interval in milliseconds. */
+/* Home-page Research Highlights. Edit content and interval through /adm/
+   or data/highlights.js (highlightSettings.interval is in milliseconds). */
 (function () {
   'use strict';
   var carousel = document.querySelector('.highlight-carousel');
@@ -10,7 +10,8 @@
   var current = 0, timer = null, hovered = false, focused = false;
   var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var playing = !motion.matches;
-  var interval = Math.max(2000, Number(carousel.dataset.interval) || 5000);
+  var settings = (window.FPCL || {}).highlightSettings || {};
+  var interval = Math.max(2000, Number(settings.interval) || 5000);
   var controls = document.createElement('div');
   controls.className = 'highlight-controls';
   function button(label, text, action) {

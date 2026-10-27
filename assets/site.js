@@ -61,7 +61,7 @@ window.FPCL = window.FPCL || {};
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
     });
   }
-  function url(path) { return /^(https?:|mailto:|#)/.test(path) ? path : ROOT + path; }
+  function url(path) { return /^(https?:|mailto:|#|\/)/.test(path) ? path : ROOT + path; }
   function here() {
     var p = location.pathname.replace(/\/index\.html$/, '/');
     return p;
@@ -196,6 +196,15 @@ window.FPCL = window.FPCL || {};
     }).join('') + '</ul>';
   }
 
+  function renderHighlights(el, list) {
+    el.innerHTML = list.map(function (slide) {
+      var authors = esc(slide.authors).replace(/Jae Hwa Lee/g, '<b>Jae Hwa Lee</b>');
+      return '<li><div class="fig"><img src="' + esc(url(slide.image)) + '" alt="' + esc(slide.alt || slide.title) + '"></div>' +
+        '<h3>' + esc(slide.title) + '</h3><p class="cite">' + authors + '<br><i>' + esc(slide.journal) + '</i>' +
+        (slide.details ? ', ' + esc(slide.details) : '') + '</p></li>';
+    }).join('');
+  }
+
   function renderLists() {
     var D = window.FPCL;
     document.querySelectorAll('[data-list]').forEach(function (el) {
@@ -204,6 +213,7 @@ window.FPCL = window.FPCL || {};
       if (!list) { el.textContent = 'List "' + name + '" not found. Check the data file.'; return; }
       var kind = el.getAttribute('data-kind');
       if (kind === 'pubs') renderPubs(el, list);
+      else if (kind === 'highlights') renderHighlights(el, list);
       else if (kind === 'members') {
         var position = el.getAttribute('data-position');
         var members = position ? list.filter(function (member) {
