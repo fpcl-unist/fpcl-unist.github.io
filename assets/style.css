@@ -191,7 +191,7 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .lab-heading h1 { color: #163b65; font-size: clamp(26px, 4vw, 32px); }
 .lab-heading .university { margin-top: 16px; color: #2c3035; font-size: 24px; font-weight: 700; line-height: 1.25; }
 .tagline { font-style: italic; font-weight: 700; font-size: clamp(18px, 2.6vw, 22px); line-height: 1.4; text-wrap: balance; }
-.about { display: flex; flex-direction: column; gap: 14px; max-width: 68ch; text-align: justify; }
+.about { display: flex; flex-direction: column; gap: 14px; text-align: justify; }
 .highlights {
   list-style: none;
   margin: 0;
@@ -250,7 +250,6 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .areas ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; }
 .topic { display: flex; flex-direction: column; gap: 14px; }
 .topic h2 { font-size: 21px; }
-.topic p { max-width: 72ch; }
 .figure { margin: 6px 0 4px; display: flex; flex-direction: column; gap: 10px; }
 .figure .imgs { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
 .figure .imgs > * { flex: 1 1 240px; min-width: 0; }
