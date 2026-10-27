@@ -1,5 +1,6 @@
 /* FPCL site script. One file for every page.
-   1) Builds the top menu and the footer (edit MENU and FOOTER below to change them on every page).
+   1) Builds the top menu, the section list (under the title and at the right edge) and the footer
+      (edit MENU and FOOTER below to change them on every page).
    2) Draws the lists kept in the data/ folder (publications, proceedings, members, photos).
    3) Shows a gray box in place of any image file that has not been added yet. */
 
@@ -106,6 +107,22 @@ window.FPCL = window.FPCL || {};
     holder.innerHTML = group.sub.map(function (s) {
       return '<a href="' + url(s[1]) + '"' + (isCurrent(s[1]) ? ' aria-current="page"' : '') + '>' + esc(s[0]) + '</a>';
     }).join('');
+    buildSideNav(holder);
+  }
+
+  // The same section list, fixed at the right edge. It fades in once the list under the title scrolls out of view.
+  function buildSideNav(subnav) {
+    var side = document.createElement('nav');
+    side.className = 'side-nav';
+    side.setAttribute('aria-label', 'Section shortcuts');
+    side.innerHTML = subnav.innerHTML;
+    document.body.appendChild(side);
+    if (!('IntersectionObserver' in window)) { side.classList.add('show'); return; }
+    // 57px is the sticky menu bar, so the list counts as hidden once it slides under the bar.
+    new IntersectionObserver(function (entries) {
+      var e = entries[0];
+      side.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 57);
+    }, { rootMargin: '-57px 0px 0px 0px' }).observe(subnav);
   }
 
   function buildFooter() {

@@ -165,6 +165,31 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .subnav a { color: var(--muted); }
 .subnav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
 
+/* Section list fixed at the right edge (built by site.js). Only on screens wide enough to keep it beside the column. */
+.side-nav {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  z-index: 10;
+  transform: translateY(-50%);
+  width: min(220px, calc((100vw - var(--column)) / 2 - 48px));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s;
+}
+.side-nav.show { opacity: 1; visibility: visible; }
+.side-nav a { color: #a3aab2; transform-origin: right center; transition: transform .15s, color .15s; }
+.side-nav a:hover, .side-nav a:focus-visible { color: var(--fg); transform: scale(1.2); }
+.side-nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+@media (max-width: 1239px) { .side-nav { display: none; } }
+
 /* Missing image placeholder (shown until the file is added) */
 .img-missing {
   display: flex;
