@@ -107,15 +107,30 @@ window.FPCL = window.FPCL || {};
     holder.innerHTML = group.sub.map(function (s) {
       return '<a href="' + url(s[1]) + '"' + (isCurrent(s[1]) ? ' aria-current="page"' : '') + '>' + esc(s[0]) + '</a>';
     }).join('');
-    buildSideNav(holder);
   }
 
-  // The same section list, fixed at the right edge. It fades in once the list under the title scrolls out of view.
-  function buildSideNav(subnav) {
+  // The same section list, fixed at the right edge, with the headings of this page under the current item.
+  // It fades in once the list under the title scrolls out of view. Runs after the data lists are drawn,
+  // so the year headings on the publication pages are included.
+  function buildSideNav() {
+    var subnav = document.getElementById('subnav');
+    if (!subnav) return;
     var side = document.createElement('nav');
     side.className = 'side-nav';
     side.setAttribute('aria-label', 'Section shortcuts');
     side.innerHTML = subnav.innerHTML;
+    var heads = pageHeadings(subnav);
+    var current = side.querySelector('[aria-current="page"]');
+    if (current && heads.length > 1) {
+      var list = document.createElement('div');
+      list.className = 'side-sub';
+      list.innerHTML = heads.map(function (h) {
+        var text = esc(h.textContent.trim());
+        return '<a href="#' + h.id + '" title="' + text + '">' + text + '</a>';
+      }).join('');
+      current.after(list);
+      followHeadings(heads, list.children, side);
+    }
     document.body.appendChild(side);
     if (!('IntersectionObserver' in window)) { side.classList.add('show'); return; }
     // 57px is the sticky menu bar, so the list counts as hidden once it slides under the bar.
@@ -123,6 +138,45 @@ window.FPCL = window.FPCL || {};
       var e = entries[0];
       side.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 57);
     }, { rootMargin: '-57px 0px 0px 0px' }).observe(subnav);
+  }
+
+  // The h2 headings of this page, each given an id to jump to. Headings that only repeat a page name
+  // in the section list (as on Research > Overview) are left out.
+  function pageHeadings(subnav) {
+    var names = [].map.call(subnav.children, function (a) { return a.textContent.trim(); });
+    return [].filter.call(document.querySelectorAll('main h2'), function (h) {
+      var text = h.textContent.trim();
+      if (!text || names.indexOf(text) !== -1) return false;
+      if (!h.id) {
+        var base = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'section';
+        var id = base, n = 2;
+        while (document.getElementById(id)) id = base + '-' + n++;
+        h.id = id;
+      }
+      return true;
+    });
+  }
+
+  // Darkens the heading being read: the last one that has passed under the menu bar
+  // (or the last one on the page once the bottom is reached). On a short screen where the side list
+  // has to scroll, it keeps that heading in view.
+  function followHeadings(heads, links, rail) {
+    var waiting = false, last = -1;
+    function update() {
+      waiting = false;
+      var active = -1;
+      heads.forEach(function (h, i) { if (h.getBoundingClientRect().top < 120) active = i; });
+      if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) active = heads.length - 1;
+      [].forEach.call(links, function (a, i) { a.classList.toggle('active', i === active); });
+      if (active !== last && active !== -1 && rail.scrollHeight > rail.clientHeight) {
+        rail.scrollTop = links[active].offsetTop - rail.clientHeight / 2;
+      }
+      last = active;
+    }
+    addEventListener('scroll', function () {
+      if (!waiting) { waiting = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
   }
 
   function buildFooter() {
@@ -266,5 +320,6 @@ window.FPCL = window.FPCL || {};
   buildSubnav();
   buildFooter();
   renderLists();
+  buildSideNav();
   watchImages();
 })();
