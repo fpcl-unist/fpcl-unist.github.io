@@ -220,7 +220,9 @@ window.FPCL = window.FPCL || {};
       document.addEventListener(type, function (e) { if (e.target.tagName === 'IMG') setTimeout(place, 0); }, true);
     });
     addEventListener('load', place);
-    hold();
+    // On a reload the browser puts the page back where it was; leave it there.
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (!nav || nav.type !== 'reload') hold();
   }
 
   function buildFooter() {
@@ -238,67 +240,86 @@ window.FPCL = window.FPCL || {};
 
   /* ===== 2. Lists drawn from the data/ folder =================================== */
 
+  // Marks for the editing mode (assets/edit.js). data-item is an entry the editor can add, move or delete;
+  // data-field is one value it can change in place (data-type: html allows <i>, <sub>, <sup>, <br>; image is a
+  // picture; date and choice open a small form). data-region is a block whose lists the editor can add to.
+  // Each holds the path into window.FPCL, such as "topics.2.blocks.1". Visitors never load the editor.
+  function item(path) { return ' data-item="' + path + '"'; }
+  function field(path, type) { return ' data-field="' + path + '"' + (type ? ' data-type="' + type + '"' : ''); }
+  function region(path) { return ' data-region="' + path + '"'; }
+
   // Bold the professor's name in author lists (J.H.Lee, J. H. Lee, with or without *).
   function boldPI(authors) {
     return String(authors).replace(/(J\.\s?H\.\s?Lee\*?)/g, '<b>$1</b>');
   }
 
   // Publications and proceedings, grouped by "group" and numbered from the total down to 1.
-  function renderPubs(el, list) {
+  function renderPubs(el, list, key) {
     var n = list.length;
     var html = '';
     var group = null;
-    list.forEach(function (p) {
+    list.forEach(function (p, i) {
+      var at = key + '.' + i;
       if (p.group !== group) {
         if (group !== null) html += '</ol></section>';
         group = p.group;
-        html += '<section><h2>' + esc(group) + '</h2><ol class="pubs">';
+        html += '<section><h2' + field(at + '.group', 'group') + '>' + esc(group) + '</h2><ol class="pubs">';
       }
-      html += '<li class="pub"><span class="num">[' + (n--) + ']</span><span>' +
-        boldPI(p.authors) + ', <span class="title">' + p.title + '</span>, <i>' + p.journal + '</i>' +
-        (p.details ? ', ' + p.details : '') +
+      html += '<li class="pub"' + item(at) + '><span class="num">[' + (n--) + ']</span><span>' +
+        '<span' + field(at + '.authors') + '>' + boldPI(p.authors) + '</span>, ' +
+        '<span class="title"' + field(at + '.title', 'html') + '>' + p.title + '</span>, ' +
+        '<i' + field(at + '.journal', 'html') + '>' + p.journal + '</i>' +
+        (p.details ? ', <span' + field(at + '.details', 'html') + '>' + p.details + '</span>' : '') +
         (p.link ? ' <a class="link" href="' + esc(p.link) + '" target="_blank" rel="noopener">[Link]</a>' : '') +
         '</span></li>';
     });
     if (group !== null) html += '</ol></section>';
-    el.outerHTML = '<p class="count">' + list.length + ' papers</p>' + html;
+    el.outerHTML = '<p class="count"' + region(key) + '>' + list.length + ' papers</p>' + html;
   }
 
-  function renderMembers(el, list) {
-    el.outerHTML = '<ul class="members">' + list.map(function (m) {
-      var topics = (m.research || []).filter(Boolean);
-      return '<li class="member">' +
-        '<div class="photo"><img src="' + url(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"></div>' +
-        '<div><p class="name">' + esc(m.name) + '</p>' +
-        '<dl class="facts"><dt>Position</dt><dd>' + esc(m.position) + '</dd>' +
-        '<dt>Email</dt><dd>' + esc(m.email) + '</dd>' +
-        '<dt>Period</dt><dd>' + esc(m.period) + '</dd></dl>' +
-        (topics.length ? '<ul class="topics">' + topics.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' : '') +
+  // list holds [member, index in the data file] pairs, since a page may show only one position.
+  function renderMembers(el, list, key) {
+    el.outerHTML = '<ul class="members">' + list.map(function (pair) {
+      var m = pair[0], at = key + '.' + pair[1];
+      var topics = (m.research || []).map(function (t, j) { return [t, j]; }).filter(function (t) { return t[0]; });
+      return '<li class="member"' + item(at) + '>' +
+        '<div class="photo"><img src="' + url(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"' + field(at + '.photo', 'image') + '></div>' +
+        '<div><p class="name"' + field(at + '.name') + '>' + esc(m.name) + '</p>' +
+        '<dl class="facts"><dt>Position</dt><dd' + field(at + '.position', 'choice') + '>' + esc(m.position) + '</dd>' +
+        '<dt>Email</dt><dd' + field(at + '.email') + '>' + esc(m.email) + '</dd>' +
+        '<dt>Period</dt><dd' + field(at + '.period') + '>' + esc(m.period) + '</dd></dl>' +
+        (topics.length ? '<ul class="topics">' + topics.map(function (t) {
+          return '<li' + item(at + '.research.' + t[1]) + field(at + '.research.' + t[1]) + '>' + esc(t[0]) + '</li>';
+        }).join('') + '</ul>' : '') +
         '</div></li>';
     }).join('') + '</ul>';
   }
 
-  function renderAlumni(el, list) {
-    el.outerHTML = '<div class="table-wrap"><table class="plain"><thead><tr><th>Name</th><th>Degree</th><th>Period</th><th>Current position</th></tr></thead><tbody>' +
-      list.map(function (a) {
-        return '<tr><td>' + esc(a.name) + '</td><td class="nowrap">' + esc(a.degree) + '</td><td class="nowrap">' + esc(a.period) + '</td><td>' + esc(a.now) + '</td></tr>';
+  function renderAlumni(el, list, key) {
+    el.outerHTML = '<div class="table-wrap"' + region(key) + '><table class="plain"><thead><tr><th>Name</th><th>Degree</th><th>Period</th><th>Current position</th></tr></thead><tbody>' +
+      list.map(function (a, i) {
+        var at = key + '.' + i;
+        return '<tr' + item(at) + '><td' + field(at + '.name') + '>' + esc(a.name) + '</td><td class="nowrap"' + field(at + '.degree') + '>' + esc(a.degree) +
+          '</td><td class="nowrap"' + field(at + '.period') + '>' + esc(a.period) + '</td><td' + field(at + '.now') + '>' + esc(a.now) + '</td></tr>';
       }).join('') + '</tbody></table></div>';
   }
 
-  function renderPhotos(el, list) {
+  function renderPhotos(el, list, key) {
     var html = '';
     var year = null;
-    list.forEach(function (p) {
+    list.forEach(function (p, i) {
+      var at = key + '.' + i;
       var y = p.date.slice(0, 4);
       if (y !== year) {
         if (year !== null) html += '</div></section>';
         year = y;
         html += '<section><h2>' + y + '</h2><div class="posts">';
       }
-      html += '<article class="post"><h3>' + esc(p.title) + '</h3>' +
-        '<p class="meta"><time datetime="' + esc(p.date) + '">' + p.date.replace(/-/g, '.') + '</time>' + (p.text ? ' &middot; ' + esc(p.text) : '') + '</p>' +
-        '<div class="imgs">' + (p.images || []).map(function (src) {
-          return '<img src="' + url(src) + '" alt="' + esc(p.title) + '" loading="lazy">';
+      html += '<article class="post"' + item(at) + '><h3' + field(at + '.title') + '>' + esc(p.title) + '</h3>' +
+        '<p class="meta"><time datetime="' + esc(p.date) + '"' + field(at + '.date', 'date') + '>' + p.date.replace(/-/g, '.') + '</time>' +
+        (p.text ? ' &middot; <span' + field(at + '.text') + '>' + esc(p.text) + '</span>' : '') + '</p>' +
+        '<div class="imgs">' + (p.images || []).map(function (src, j) {
+          return '<img src="' + url(src) + '" alt="' + esc(p.title) + '" loading="lazy"' + item(at + '.images.' + j) + field(at + '.images.' + j, 'image') + '>';
         }).join('') + '</div></article>';
     });
     if (year !== null) html += '</div></section>';
@@ -311,12 +332,14 @@ window.FPCL = window.FPCL || {};
     }).join('') + '</ul>';
   }
 
-  function renderHighlights(el, list) {
-    el.innerHTML = list.map(function (slide) {
+  function renderHighlights(el, list, key) {
+    el.innerHTML = list.map(function (slide, i) {
+      var at = key + '.' + i;
       var authors = esc(slide.authors).replace(/Jae Hwa Lee/g, '<b>Jae Hwa Lee</b>');
-      return '<li><div class="fig"><img src="' + esc(url(slide.image)) + '" alt="' + esc(slide.alt || slide.title) + '"></div>' +
-        '<h3>' + esc(slide.title) + '</h3><p class="cite">' + authors + '<br><i>' + esc(slide.journal) + '</i>' +
-        (slide.details ? ', ' + esc(slide.details) : '') + '</p></li>';
+      return '<li' + item(at) + '><div class="fig"><img src="' + esc(url(slide.image)) + '" alt="' + esc(slide.alt || slide.title) + '"' + field(at + '.image', 'image') + '></div>' +
+        '<h3' + field(at + '.title') + '>' + esc(slide.title) + '</h3><p class="cite"><span' + field(at + '.authors') + '>' + authors + '</span>' +
+        '<br><i' + field(at + '.journal') + '>' + esc(slide.journal) + '</i>' +
+        (slide.details ? ', <span' + field(at + '.details') + '>' + esc(slide.details) + '</span>' : '') + '</p></li>';
     }).join('');
   }
 
@@ -329,55 +352,68 @@ window.FPCL = window.FPCL || {};
   }
 
   // Home: the About paragraphs and the Notice box (data/home.js).
-  function renderAbout(el, list) {
-    el.outerHTML = '<div class="about">' + list.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>';
+  function renderAbout(el, list, key) {
+    el.outerHTML = '<div class="about"' + region(key) + '>' + list.map(function (p, i) {
+      return '<p' + item(key + '.' + i) + field(key + '.' + i) + '>' + esc(p) + '</p>';
+    }).join('') + '</div>';
   }
-  function renderNotices(el, list) {
-    el.outerHTML = list.map(function (n) {
-      return '<div><h3>' + esc(n.title) + '</h3><p>' + linkify(n.text) + '</p></div>';
+  function renderNotices(el, list, key) {
+    el.outerHTML = list.map(function (n, i) {
+      var at = key + '.' + i;
+      return '<div' + item(at) + '><h3' + field(at + '.title') + '>' + esc(n.title) + '</h3><p' + field(at + '.text') + '>' + linkify(n.text) + '</p></div>';
     }).join('');
   }
 
-  function renderLectures(el, list) {
-    el.outerHTML = '<div class="table-wrap"><table class="plain"><thead><tr><th>Semester</th><th>Course</th></tr></thead><tbody>' +
-      list.map(function (l) {
-        return '<tr><td class="nowrap">' + esc(l.semester) + '</td><td>' + esc(l.courses) + '</td></tr>';
+  function renderLectures(el, list, key) {
+    el.outerHTML = '<div class="table-wrap"' + region(key) + '><table class="plain"><thead><tr><th>Semester</th><th>Course</th></tr></thead><tbody>' +
+      list.map(function (l, i) {
+        var at = key + '.' + i;
+        return '<tr' + item(at) + '><td class="nowrap"' + field(at + '.semester') + '>' + esc(l.semester) + '</td><td' + field(at + '.courses') + '>' + esc(l.courses) + '</td></tr>';
       }).join('') + '</tbody></table></div>';
   }
 
-  function renderLinks(el, list) {
-    el.outerHTML = list.map(function (g) {
-      return '<section><h2>' + esc(g.group) + '</h2><ul class="plain-list">' + g.items.map(function (l) {
-        return '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.title) + '</a></li>';
+  function renderLinks(el, list, key) {
+    el.outerHTML = list.map(function (g, i) {
+      var at = key + '.' + i;
+      return '<section' + item(at) + '><h2' + field(at + '.group') + '>' + esc(g.group) + '</h2><ul class="plain-list">' + g.items.map(function (l, j) {
+        return '<li' + item(at + '.items.' + j) + '><a href="' + esc(l.url) + '" target="_blank" rel="noopener"' + field(at + '.items.' + j + '.title') + '>' + esc(l.title) + '</a></li>';
       }).join('') + '</ul></section>';
     }).join('');
   }
 
   // Professor page: the photo and contact block, then the CV sections (data/professor.js).
-  function renderProfessor(el, p) {
-    el.outerHTML = '<div class="prof"><div class="prof-photo"><img src="' + esc(url(p.photo)) + '" alt="' + esc(p.name) + '"></div>' +
-      '<div class="prof-info"><p class="prof-name">' + esc(p.name) + ' <span>' + esc(p.degree) + '</span></p>' +
-      '<p>' + esc(p.position) + '</p><p>' + esc(p.department) + '</p>' +
-      '<dl class="facts">' + (p.facts || []).map(function (f) {
-        return '<dt>' + esc(f.label) + '</dt><dd>' + esc(f.value) + '</dd>';
+  function renderProfessor(el, p, key) {
+    el.outerHTML = '<div class="prof"' + region(key) + '><div class="prof-photo"><img src="' + esc(url(p.photo)) + '" alt="' + esc(p.name) + '"' + field(key + '.photo', 'image') + '></div>' +
+      '<div class="prof-info"><p class="prof-name"><strong' + field(key + '.name') + '>' + esc(p.name) + '</strong> <span' + field(key + '.degree') + '>' + esc(p.degree) + '</span></p>' +
+      '<p' + field(key + '.position') + '>' + esc(p.position) + '</p><p' + field(key + '.department') + '>' + esc(p.department) + '</p>' +
+      '<dl class="facts">' + (p.facts || []).map(function (f, i) {
+        var at = key + '.facts.' + i;
+        return '<dt' + field(at + '.label') + '>' + esc(f.label) + '</dt><dd' + item(at) + field(at + '.value') + '>' + esc(f.value) + '</dd>';
       }).join('') + '</dl></div></div>';
   }
-  function renderCv(el, list) {
-    el.outerHTML = list.map(function (s) {
-      return '<section><h2>' + esc(s.heading) + '</h2><ul class="cv-list">' +
-        s.items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul></section>';
+  function renderCv(el, list, key) {
+    el.outerHTML = list.map(function (s, i) {
+      var at = key + '.' + i;
+      return '<section' + item(at) + '><h2' + field(at + '.heading') + '>' + esc(s.heading) + '</h2><ul class="cv-list">' +
+        s.items.map(function (text, j) {
+          return '<li' + item(at + '.items.' + j) + field(at + '.items.' + j) + '>' + esc(text) + '</li>';
+        }).join('') + '</ul></section>';
     }).join('');
   }
 
   // Equipment pages: the list (with its smaller lists) and the pictures. One picture fills the width;
   // several sit side by side (data/equipment.js).
-  function renderEquipment(el, page) {
-    var imgs = (page.images || []).map(function (i) {
-      return '<img src="' + esc(url(i.image)) + '" alt="' + esc(i.alt || '') + '" loading="lazy">';
+  function renderEquipment(el, page, key) {
+    var imgs = (page.images || []).map(function (i, k) {
+      var at = key + '.images.' + k;
+      return '<img src="' + esc(url(i.image)) + '" alt="' + esc(i.alt || '') + '" loading="lazy"' + item(at) + field(at + '.image', 'image') + '>';
     });
-    el.outerHTML = '<ul class="plain-list">' + page.items.map(function (i) {
-      var sub = (i.sub || []).length ? '<ul>' + i.sub.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>' : '';
-      return '<li>' + esc(i.text) + sub + '</li>';
+    el.outerHTML = '<ul class="plain-list"' + region(key) + '>' + page.items.map(function (i, j) {
+      var at = key + '.items.' + j;
+      var sub = (i.sub || []).length ? '<ul>' + i.sub.map(function (s, k) {
+        return '<li' + item(at + '.sub.' + k) + field(at + '.sub.' + k) + '>' + esc(s) + '</li>';
+      }).join('') + '</ul>' : '';
+      return '<li' + item(at) + '><span' + field(at + '.text') + '>' + esc(i.text) + '</span>' + sub + '</li>';
     }).join('') + '</ul>' +
       (imgs.length === 1 ? '<figure class="wide-figure">' + imgs[0] + '</figure>' :
        imgs.length ? '<div class="fig-row">' + imgs.join('') + '</div>' : '');
@@ -385,14 +421,16 @@ window.FPCL = window.FPCL || {};
 
   // Research pages: each topic is a heading followed by paragraphs and figures in order (data/research/*.js).
   // Titles, paragraphs and captions may hold <i>, <sub>, <sup> and <br>, so they are used as written.
-  function renderTopics(el, list) {
-    el.outerHTML = list.map(function (t) {
-      return '<section class="topic"><h2' + (t.id ? ' id="' + esc(t.id) + '"' : '') + '>' + t.title + '</h2>' +
-        (t.blocks || []).map(function (b) {
-          if (b.type === 'text') return '<p>' + b.text + '</p>';
-          return '<figure class="figure"><div class="imgs">' + (b.images || []).map(function (src) {
-            return '<img src="' + esc(url(src)) + '" alt="" loading="lazy">';
-          }).join('') + '</div>' + (b.caption ? '<figcaption>' + b.caption + '</figcaption>' : '') + '</figure>';
+  function renderTopics(el, list, key) {
+    el.outerHTML = list.map(function (t, i) {
+      var at = key + '.' + i;
+      return '<section class="topic"' + item(at) + '><h2' + (t.id ? ' id="' + esc(t.id) + '"' : '') + field(at + '.title', 'html') + '>' + t.title + '</h2>' +
+        (t.blocks || []).map(function (b, j) {
+          var bt = at + '.blocks.' + j;
+          if (b.type === 'text') return '<p' + item(bt) + field(bt + '.text', 'html') + '>' + b.text + '</p>';
+          return '<figure class="figure"' + item(bt) + '><div class="imgs">' + (b.images || []).map(function (src, k) {
+            return '<img src="' + esc(url(src)) + '" alt="" loading="lazy"' + item(bt + '.images.' + k) + field(bt + '.images.' + k, 'image') + '>';
+          }).join('') + '</div>' + (b.caption ? '<figcaption' + field(bt + '.caption', 'html') + '>' + b.caption + '</figcaption>' : '') + '</figure>';
         }).join('') + '</section>';
     }).join('');
   }
@@ -404,26 +442,26 @@ window.FPCL = window.FPCL || {};
       var list = D[name];
       if (!list) { el.textContent = 'List "' + name + '" not found. Check the data file.'; return; }
       var kind = el.getAttribute('data-kind');
-      if (kind === 'pubs') renderPubs(el, list);
-      else if (kind === 'highlights') renderHighlights(el, list);
+      if (kind === 'pubs') renderPubs(el, list, name);
+      else if (kind === 'highlights') renderHighlights(el, list, name);
       else if (kind === 'members') {
         var position = el.getAttribute('data-position');
-        var members = position ? list.filter(function (member) {
-          return String(member.position).split('(')[0].trim().toLowerCase() === position.toLowerCase();
-        }) : list;
-        renderMembers(el, members);
+        var members = list.map(function (member, i) { return [member, i]; }).filter(function (pair) {
+          return !position || String(pair[0].position).split('(')[0].trim().toLowerCase() === position.toLowerCase();
+        });
+        renderMembers(el, members, name);
       }
-      else if (kind === 'alumni') renderAlumni(el, list);
-      else if (kind === 'photos') renderPhotos(el, list);
+      else if (kind === 'alumni') renderAlumni(el, list, name);
+      else if (kind === 'photos') renderPhotos(el, list, name);
       else if (kind === 'recent-photos') renderRecentPhotos(el, list, +(el.getAttribute('data-count') || 3));
-      else if (kind === 'about') renderAbout(el, list);
-      else if (kind === 'notices') renderNotices(el, list);
-      else if (kind === 'lectures') renderLectures(el, list);
-      else if (kind === 'links') renderLinks(el, list);
-      else if (kind === 'professor') renderProfessor(el, list);
-      else if (kind === 'cv') renderCv(el, list);
-      else if (kind === 'equipment') renderEquipment(el, list);
-      else if (kind === 'topics') renderTopics(el, list);
+      else if (kind === 'about') renderAbout(el, list, name);
+      else if (kind === 'notices') renderNotices(el, list, name);
+      else if (kind === 'lectures') renderLectures(el, list, name);
+      else if (kind === 'links') renderLinks(el, list, name);
+      else if (kind === 'professor') renderProfessor(el, list, name);
+      else if (kind === 'cv') renderCv(el, list, name);
+      else if (kind === 'equipment') renderEquipment(el, list, name);
+      else if (kind === 'topics') renderTopics(el, list, name);
     });
   }
 
@@ -434,6 +472,9 @@ window.FPCL = window.FPCL || {};
     img.dataset.missing = '1';
     var box = document.createElement('div');
     box.className = 'img-missing';
+    ['data-item', 'data-field', 'data-type'].forEach(function (name) { // the editor can still replace it
+      if (img.hasAttribute(name)) box.setAttribute(name, img.getAttribute(name));
+    });
     var path = (img.getAttribute('src') || '').replace(ROOT, '');
     box.innerHTML = '<span>그림 추가 필요</span><code>' + esc(path) + '</code>';
     img.replaceWith(box);
@@ -445,11 +486,46 @@ window.FPCL = window.FPCL || {};
     });
   }
 
+  /* ===== 4. Editing on the page itself =========================================== */
+
+  // Someone signed in at /admin (the editor keeps the GitHub login in this browser) gets assets/edit.js.
+  // Changes not saved yet, and files saved a moment ago that the public site has not caught up with,
+  // are kept in this tab and drawn instead of the published data files.
+  var EDITING = (function () {
+    try {
+      var user = JSON.parse(localStorage.getItem('decap-cms-user') || 'null');
+      return !!(user && (user.token || user.access_token));
+    } catch (e) { return false; }
+  })();
+  function pageDataFiles() {
+    return [].map.call(document.querySelectorAll('script[src]'), function (s) {
+      return s.getAttribute('src').replace(ROOT, '');
+    }).filter(function (src) { return /^data\/.+\.js$/.test(src); });
+  }
+  function applyEdits() {
+    if (!EDITING) return;
+    var state = null;
+    try { state = JSON.parse(sessionStorage.getItem('fpcl-edit') || 'null'); } catch (e) { /* nothing kept */ }
+    if (!state || !state.files) return;
+    pageDataFiles().forEach(function (file) {
+      var kept = state.files[file];
+      if (kept) Object.keys(kept.data).forEach(function (key) { window.FPCL[key] = kept.data[key]; });
+    });
+  }
+  function loadEditor() {
+    if (!EDITING) return;
+    var s = document.createElement('script');
+    s.src = ROOT + 'assets/edit.js';
+    document.body.appendChild(s);
+  }
+
   buildHeader();
   buildSubnav();
   buildFooter();
+  applyEdits();
   renderLists();
   buildSideNav();
   holdHeading();
   watchImages();
+  loadEditor();
 })();

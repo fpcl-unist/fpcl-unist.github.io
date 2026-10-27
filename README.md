@@ -58,6 +58,8 @@ python tools/fetch_images.py
 
 **관리 화면 사용:** `https://flow.unist.ac.kr/adm/`에서 GitHub 로그인 후 메인 소개글·공지, Research Highlights, Research, People(교수·구성원), Publication, Proceeding, Photo, Lectures, Equipment, Link를 폼으로 편집할 수 있습니다. `/admin`으로 들어가도 같은 화면이 열립니다. 최초 연결 방법은 [adm/SETUP.md](adm/SETUP.md)를 보세요. 연결 후에는 아래처럼 `.js` 파일을 직접 고칠 필요 없이 관리 화면에서 게시하면 됩니다. 공개 사이트 반영까지는 GitHub Pages 배포 시간이 필요합니다. Research Overview 페이지만 HTML 파일을 직접 고칩니다.
 
+**사이트 화면에서 바로 고치기:** `/admin`에서 한 번 로그인하면, 같은 브라우저로 홈페이지를 열었을 때 아래쪽에 "✎ 편집" 버튼이 생겨요(방문자에게는 보이지 않아요). 누르면 글자를 클릭해 바로 고치고, 사진을 클릭해 바꾸고, 항목에 마우스를 올리면 나오는 작은 막대로 위·아래 이동, 복제, 추가, 세부 정보(링크·날짜·사진 설명 등), 삭제를 할 수 있어요. 다 고친 뒤 "저장"을 누르면 GitHub에 올라가고 1~2분 뒤 사이트에 반영돼요. 저장 전에 다른 곳에서 같은 파일을 먼저 고쳤으면 덮어쓸지 물어봐요. 코드는 `assets/edit.js`예요.
+
 모든 data 파일은 같은 모양이에요. **블록 `{ ... },` 하나를 복사해서 붙여 넣고 글자만 바꾸면 돼요.** 파일 맨 위 주석에 각 칸의 뜻이 적혀 있어요.
 
 ### 논문 추가 (`data/publications.js`)

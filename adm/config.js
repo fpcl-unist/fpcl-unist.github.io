@@ -35,7 +35,7 @@
         ]} : {name:'position', label:'직책', widget:'string'},
         {name:'email', label:'이메일', widget:'string'},
         {name:'period', label:'재학 / 재직 기간', widget:'string'},
-        {name:'research', label:'연구주제', widget:'list', default:[], required:false,
+        {name:'research', label:'연구주제', widget:'list', default:[], required:false, label_singular:'연구주제',
           field:{name:'topic', label:'연구주제', widget:'string'}},
         {name:'photo', label:'프로필 사진', widget:'image', choose_url:false}
       ]
@@ -47,7 +47,7 @@
       fields:[
         {name:'items', label:'목록', widget:'list', default:[], label_singular:'항목', summary:'{{fields.text}}', fields:[
           {name:'text', label:'항목', widget:'string'},
-          {name:'sub', label:'아래 작은 목록 (선택)', widget:'list', default:[], required:false,
+          {name:'sub', label:'아래 작은 목록 (선택)', widget:'list', default:[], required:false, label_singular:'작은 항목',
             field:{name:'line', label:'작은 항목', widget:'string'}}
         ]},
         {name:'images', label:'사진', widget:'list', default:[], required:false, label_singular:'사진', summary:'{{fields.alt}}',
@@ -145,7 +145,7 @@
             hint:'Education, Experience, Honor and Award 등 페이지에 보이는 순서대로입니다.',
             fields:[
               {name:'heading', label:'구역 제목', widget:'string'},
-              {name:'items', label:'목록', widget:'list', default:[], field:{name:'item', label:'항목', widget:'string'}}
+              {name:'items', label:'목록', widget:'list', default:[], label_singular:'항목', field:{name:'item', label:'항목', widget:'string'}}
             ]}
         ]),
         collection('members', 'People · 구성원', 'data/members.js', [
