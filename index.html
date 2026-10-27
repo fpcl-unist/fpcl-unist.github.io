@@ -22,41 +22,11 @@
     <p class="tagline">Understanding, predicting and controlling flows</p>
   </div>
 
-  <!-- Research Highlights. To change one, replace the picture in images/main/ and edit its title and citation. -->
-  <section class="highlight-carousel" aria-labelledby="hl-h" aria-roledescription="carousel" data-interval="5000">
+  <!-- Research Highlights are managed in data/highlights.js or through /adm/. -->
+  <section class="highlight-carousel" aria-labelledby="hl-h" aria-roledescription="carousel">
     <h2 id="hl-h">Research Highlights</h2>
-    <ul class="highlights" id="highlight-slides">
-      <li>
-        <div class="fig"><img src="images/main/pub1_fins.gif" alt="Vorticity around two self-propelled fins in 0W, 1W and 2W configurations" loading="lazy"></div>
-        <h3>Flow-mediated interactions between two self-propelled flexible fins near sidewalls</h3>
-        <p class="cite">Young Dal Jeong, <b>Jae Hwa Lee</b> &amp; Sung Goon Park<br><i>Journal of Fluid Mechanics</i>, Vol. 913, A39, 2021</p>
-      </li>
-      <li>
-        <div class="fig"><img src="images/main/pub2_iced_airfoil.jpg" alt="Streamlines over multi-element iced airfoils" loading="lazy"></div>
-        <h3>Large-eddy simulations of complex aerodynamic flows over multi-element iced airfoils</h3>
-        <p class="cite">Young Mo Lee, <b>Jae Hwa Lee</b>, Lawrence Prince Raj, Je Hyun Jo &amp; Rho shin Myong<br><i>Aerospace Science and Technology</i>, Vol. 109, 106417, 2021</p>
-      </li>
-      <li>
-        <div class="fig"><img src="images/main/pub3_vlsm_pipe.jpg" alt="Very-large-scale motions in turbulent pipe flow" loading="lazy"></div>
-        <h3>Space–time formation of very-large-scale motions in turbulent pipe flow</h3>
-        <p class="cite"><b>Jae Hwa Lee</b>, Hyung Jin Sung &amp; Ronald J. Adrian<br><i>Journal of Fluid Mechanics</i>, Vol. 881, pp. 1010-1047, 2019</p>
-      </li>
-      <li>
-        <div class="fig"><img src="images/main/pub4_flexible_foil.gif" alt="Wake vortices behind heaving flexible foils" loading="lazy"></div>
-        <h3>Wake transitions of flexible foils in a viscous uniform flow</h3>
-        <p class="cite">Min Je Kim &amp; <b>Jae Hwa Lee</b><br><i>Physics of Fluids</i>, Vol. 31, 111906, 2019</p>
-      </li>
-      <li>
-        <div class="fig"><img src="images/main/pub5_couette_rod.jpg" alt="Premultiplied spectra in Couette-Poiseuille flow with a rod-roughened wall" loading="lazy"></div>
-        <h3>Direct numerical simulation of a turbulent Couette-Poiseuille flow with a rod-roughened wall</h3>
-        <p class="cite">Young Mo Lee, Jung Hoon Kim &amp; <b>Jae Hwa Lee</b><br><i>Physics of Fluids</i>, Vol. 30, 105101, 2018</p>
-      </li>
-      <li>
-        <div class="fig"><img src="images/main/pub6_secondary_flow.jpg" alt="Secondary flows over longitudinal surface roughness" loading="lazy"></div>
-        <h3>Secondary flows in turbulent boundary layers over longitudinal surface roughness</h3>
-        <p class="cite">Hyeon Gyu Hwang &amp; <b>Jae Hwa Lee</b><br><i>Physical Review Fluids</i>, Vol. 3, 014608, 2018</p>
-      </li>
-    </ul>
+    <ul class="highlights" id="highlight-slides" data-list="highlights" data-kind="highlights"></ul>
+    <noscript>Enable JavaScript to view Research Highlights.</noscript>
   </section>
 
 
@@ -88,6 +58,7 @@
 
 <div id="site-footer"></div>
 <script src="data/photos.js"></script>
+<script src="data/highlights.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/highlights.js"></script>
 </body>
