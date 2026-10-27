@@ -250,11 +250,12 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .areas ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; }
 .topic { display: flex; flex-direction: column; gap: 14px; }
 .topic h2 { font-size: 21px; }
+.topic p { text-align: justify; }
 .figure { margin: 6px 0 4px; display: flex; flex-direction: column; gap: 10px; }
 .figure .imgs { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
 .figure .imgs > * { flex: 1 1 240px; min-width: 0; }
 .figure .imgs img { display: block; width: 100%; height: auto; }
-.caption, .figure figcaption { font-size: 14px; line-height: 1.55; color: var(--muted); }
+.caption, .figure figcaption { font-size: 14px; line-height: 1.55; color: var(--muted); text-align: center; text-wrap: balance; }
 
 /* ---------- People ---------- */
 .prof { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 28px; align-items: start; }
