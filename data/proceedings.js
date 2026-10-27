@@ -603,7 +603,7 @@ FPCL.proceedingsDomestic = [
   {
     "group": "2026",
     "authors": "S.W.Hwang, M.J.Kang, J.H.Lee, J.Kim, J.Park & J.Song",
-    "title": "Aerodynamic Des Optimization of a Paraglider Canopy via Artificial Neural Network",
+    "title": "Aerodynamic Design Optimization of a Paraglider Canopy via Artificial Neural Network",
     "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
     "details": "Pohang, Korea, Oct 21-23, 2026"
   },
