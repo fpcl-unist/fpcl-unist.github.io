@@ -1,9 +1,6 @@
 window.FPCL = window.FPCL || {};
 
-/* Students. Grouped by position on people/students.html; order within each group follows this list.
-   To add a person, copy one { ... } block, paste it where the person should appear, and change the text.
-   research is a list of topics, e.g. ["Turbulent bubbly flow"] or [] for none.
-   photo is the picture file inside the images/people/ folder. */
+/* Managed through /adm/. Newest items first; order is preserved. */
 FPCL.students = [
   {
     "name": "Sun Youb Lee",
@@ -158,99 +155,96 @@ FPCL.students = [
   }
 ];
 
-/* Researchers (post-docs). Shown on people/researchers.html. Same form as students. */
 FPCL.researchers = [
   {
-    name: "Cong-Tu Ha",
-    position: "Postdoctoral Research Associate",
-    email: "hacongtu@live.com",
-    period: "Mar. 2018 -",
-    research: [],
-    photo: "images/people/cong-tu-ha.jpg"
+    "name": "Cong-Tu Ha",
+    "position": "Postdoctoral Research Associate",
+    "email": "hacongtu@live.com",
+    "period": "Mar. 2018 -",
+    "research": [],
+    "photo": "images/people/cong-tu-ha.jpg"
   },
   {
-    name: "Sajan Tamang",
-    position: "Postdoctoral Research Associate",
-    email: "sajantamang67@gmail.com",
-    period: "Sep. 2026 -",
-    research: [],
-    photo: "images/people/sajan-tamang.jpg"
+    "name": "Sajan Tamang",
+    "position": "Postdoctoral Research Associate",
+    "email": "sajantamang67@gmail.com",
+    "period": "Sep. 2026 -",
+    "research": [],
+    "photo": "images/people/sajan-tamang.jpg"
   }
 ];
 
-/* Alumni. Shown on people/alumni.html in this order (newest first).
-   now is the current position or employer. */
 FPCL.alumni = [
   {
-    name: "Gun Wook Kim",
-    degree: "M.S. Degree",
-    period: "Mar.2024 - Feb.2026",
-    now: "LG Electronics"
+    "name": "Gun Wook Kim",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2024 - Feb. 2026",
+    "now": "LG Electronics"
   },
   {
-    name: "Min Je Kim",
-    degree: "Ph.D. Degree",
-    period: "Sep.2025 -",
-    now: "Korea Atomic Energy Research Institute (한국원자력연구원)"
+    "name": "Min Je Kim",
+    "degree": "Ph.D. Degree",
+    "period": "Mar. 2017 - Sep. 2025",
+    "now": "Korea Atomic Energy Research Institute"
   },
   {
-    name: "Seong Hwan Kim",
-    degree: "M.S. Degree",
-    period: "Mar. 2022 - Feb. 2025",
-    now: "LIG NEX1"
+    "name": "Seong Hwan Kim",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2022 - Feb. 2025",
+    "now": "LIG NEX1"
   },
   {
-    name: "Jun Nyeong Choi",
-    degree: "M.S. Degree",
-    period: "Mar. 2021 - Aug. 2023",
-    now: "LG Electronics"
+    "name": "Jun Nyeong Choi",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2021 - Aug. 2023",
+    "now": "LG Electronics"
   },
   {
-    name: "Young Dal Jeong",
-    degree: "Ph.D. Degree",
-    period: "Mar. 2017 - Aug. 2023",
-    now: "Assistant Professor at Chosun University"
+    "name": "Young Dal Jeong",
+    "degree": "Ph.D. Degree",
+    "period": "Mar. 2017 - Aug. 2023",
+    "now": "Assistant Professor at Chosun University"
   },
   {
-    name: "Young Mo Lee",
-    degree: "Ph.D. Degree",
-    period: "Sep. 2016 -",
-    now: "Agency for Defense Development (국방과학연구소)"
+    "name": "Young Mo Lee",
+    "degree": "Ph.D. Degree",
+    "period": "Sep. 2016 -",
+    "now": "Agency for Defense Development"
   },
   {
-    name: "Chang Geol Lee",
-    degree: "M.S. Degree",
-    period: "Mar. 2019 - Aug. 2021",
-    now: "Hyundai WIA"
+    "name": "Chang Geol Lee",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2019 - Aug. 2021",
+    "now": "Hyundai WIA"
   },
   {
-    name: "Yun Kyung Choi",
-    degree: "M.S. Degree",
-    period: "Mar. 2019 - Feb. 2021",
-    now: "KLA Corporation"
+    "name": "Yun Kyung Choi",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2019 - Feb. 2021",
+    "now": "KLA Corporation"
   },
   {
-    name: "Jeong Hyun Kim",
-    degree: "M.S. Degree",
-    period: "Mar. 2018 - Feb. 2021",
-    now: "Korea Institute of Machinery and Materials"
+    "name": "Jeong Hyun Kim",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2018 - Feb. 2021",
+    "now": "Korea Institute of Machinery and Materials"
   },
   {
-    name: "Hyung Jae Im",
-    degree: "M.S. Degree",
-    period: "Mar. 2016 - Aug. 2018",
-    now: "THE.WAVE.TALK"
+    "name": "Hyung Jae Im",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2016 - Aug. 2018",
+    "now": "THE.WAVE.TALK"
   },
   {
-    name: "Hyeon Gyu Hwang",
-    degree: "M.S. Degree",
-    period: "Sep. 2016 - Aug. 2018",
-    now: "HD Korea Shipbuilding & Offshore Engineering"
+    "name": "Hyeon Gyu Hwang",
+    "degree": "M.S. Degree",
+    "period": "Sep. 2016 - Aug. 2018",
+    "now": "HD Korea Shipbuilding & Offshore Engineering"
   },
   {
-    name: "Jung Hoon Kim",
-    degree: "M.S. Degree",
-    period: "Mar. 2015 - Feb. 2017",
-    now: "Korea Hydro & Nuclear Power"
+    "name": "Jung Hoon Kim",
+    "degree": "M.S. Degree",
+    "period": "Mar. 2015 - Feb. 2017",
+    "now": "Korea Hydro & Nuclear Power"
   }
 ];
