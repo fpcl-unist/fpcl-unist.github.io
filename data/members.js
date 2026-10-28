@@ -208,7 +208,7 @@ FPCL.alumni = [
   {
     "name": "Young Mo Lee",
     "degree": "Ph.D. Degree",
-    "period": "Sep. 2016 -",
+    "period": "Sep. 2016 - Feb. 2022",
     "now": "Agency for Defense Development"
   },
   {
