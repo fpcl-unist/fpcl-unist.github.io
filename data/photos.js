@@ -182,7 +182,7 @@ FPCL.photos = [
     "title": "2024년 한국전산유체공학회 추계학술대회",
     "text": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting, Yeosu, Korea, Oct 31 - Nov 1. 2024",
     "images": [
-      "images/photo/2024-11-04/1.jpg",
+      "images/uploads/20261028031338-1-rotated.jpg",
       "images/photo/2024-11-04/2.jpg"
     ]
   },
