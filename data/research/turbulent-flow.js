@@ -106,6 +106,10 @@ FPCL.topics = [
     ]
   },
   {
+    title: "Shock-Turbulence Interaction in a Turbulent Channel Flow",
+    blocks: []
+  },
+  {
     title: "Super-Hydrophobic Drag Reduction in Turbulent Pipe and Channel Flows",
     id: "super-hydrophobic-drag-reduction",
     blocks: [
@@ -137,10 +141,6 @@ FPCL.topics = [
         caption: "[Figure 9] Schematic of turbulent channel flow with spanwise alternating patterns.<br> The black and white colors indicate no-control (no-slip) and control (slip) surfaces at the wall."
       }
     ]
-  },
-  {
-    title: "Shock-Turbulence Interaction in a Turbulent Channel Flow",
-    blocks: []
   },
   {
     title: "Active Control of Pressure Fluctuations in Turbulent Cavity Flow",

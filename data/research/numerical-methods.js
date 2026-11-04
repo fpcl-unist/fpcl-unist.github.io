@@ -18,11 +18,8 @@ FPCL.topics = [
     ]
   },
   {
-    title: "Compressible Flow",
-    blocks: []
-  },
-  {
     title: "Wall-Modeled Large-Eddy Simulations",
+    id: "wall-modeled-les",
     blocks: [
       {
         type: "text",
@@ -49,10 +46,6 @@ FPCL.topics = [
     ]
   },
   {
-    title: "Interface-Sharpening Procedure for Incompressible Multi-Phase Flows",
-    blocks: []
-  },
-  {
     title: "Machine Learning in Turbulent Flows",
     id: "machine-learning",
     blocks: [
@@ -75,5 +68,15 @@ FPCL.topics = [
         caption: "[Figure 4] Schematic of the fully connected artificial neural network (ANN). Left, network structure; right, single neuron"
       }
     ]
+  },
+  {
+    title: "Compressible Flow",
+    id: "compressible-flow",
+    blocks: []
+  },
+  {
+    title: "Interface-Sharpening Procedure for Incompressible Multi-Phase Flows",
+    id: "interface-sharpening",
+    blocks: []
   }
 ];

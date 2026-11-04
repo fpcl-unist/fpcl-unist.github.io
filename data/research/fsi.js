@@ -8,24 +8,8 @@ window.FPCL = window.FPCL || {};
 
 FPCL.topics = [
   {
-    title: "Flapping Dynamics of a Flexible Filament in a Uniform Flow",
-    blocks: [
-      {
-        type: "text",
-        text: "A flexible filament (flag for 1-D) in a fluid displays a bistable response that depends on the filament length: the stretched-straight state and the self-sustained flapping state. If the filament length falls below a certain critical value, the filament maintains a stretched-straight state, regardless of the magnitude of an externally imposed perturbation. However, when the length is sufficiently long, the stretched-straight state disappears and the filament always flaps in the fluid flow (first movie below). Further increase of the filament length induces a irregular flapping state (second movie). The relavant parameters related to the problem are the mass ratio, bending rigidity of the filament and Reynolds number."
-      },
-      {
-        type: "figure",
-        images: [
-          "images/research/fsi-01.gif",
-          "images/research/fsi-02.gif"
-        ],
-        caption: "[Figure 1] Time-evolving vorticity contours around a single flag for (upper) the regular flapping state and (lower) the irregular flapping state"
-      }
-    ]
-  },
-  {
     title: "Flapping Dynamics of Coupled Flexible Flags in a Viscous Flow",
+    id: "coupled-flags",
     blocks: [
       {
         type: "text",
@@ -37,23 +21,6 @@ FPCL.topics = [
           "images/research/fsi-03.jpg"
         ],
         caption: "[Figure 2] Tail positions with time and vorticity contours around five flags arranged in a staggered formation"
-      }
-    ]
-  },
-  {
-    title: "Passive Control of a Single Flag using Two Side-by-Side Flags",
-    blocks: [
-      {
-        type: "text",
-        text: "A deformable flexible flag in a fluid flow experiences a self-induced flapping motion in a cetain environmment, and a system with flexible flapping flag has been proposed as a means of energy harvesting, which can be utilized to generate electric energy. On the contrary, because interaction of flows with flexible elongated structures can induce structural vibration that could be a potential damage to structure in engineering (e.g., marine calbes, risers and other hydrodynamic applications), it is important to minimize flapping motion of flexible body in a flow. In order to efficiently control the flapping motion of a single flag, we propose a new passive control concept for a single flag using two side-by-side flags in upstream. An in-phase flapping mode of the two side-by-side flags in upstream enhances amplitude of the single flag, whereas an out-of-phase flapping mode of the upstream flags weakens the downstream flapping motion significantly."
-      },
-      {
-        type: "figure",
-        images: [
-          "images/research/fsi-04.gif",
-          "images/research/fsi-05.gif"
-        ],
-        caption: "[Figure 3] Time-evolving vorticity contours around (left) a single flag and (right) two upstream side-by-side flags and a downstream flag for (upper) energy harvesting and (lower) vibration control"
       }
     ]
   },
@@ -119,24 +86,6 @@ FPCL.topics = [
     ]
   },
   {
-    title: "Heat Transfer Enhancement in a Channel Flow using Two Wall-Mounted Flexible Flags with a Confined Cylinder",
-    id: "heat-transfer-two-flags",
-    blocks: [
-      {
-        type: "text",
-        text: "Improving heat transfer is important for developing advanced technologies in power plants, the automotive and aerospace industries, and electronics cooling. As modern electronic devices have become more compact and their power consumption demand increases, one of the key topics for improving heat transfer is to design efficient heat sink systems that are critical to the operation of electrical devices that generate significant internal heat."
-      },
-      {
-        type: "figure",
-        images: [
-          "images/research/fsi-10.gif",
-          "images/research/fsi-11.gif"
-        ],
-        caption: "[Figure 8] Time-evolving vorticity and temperature contours around a cylinder and two wall-mounted flexible flags"
-      }
-    ]
-  },
-  {
     title: "Drag Reduction of a Downstream Caudal Fin Operating in the Wake of an Upstream Dorsal Fin via Deep Reinforcement Learning (DRL)",
     blocks: [
       {
@@ -151,6 +100,59 @@ FPCL.topics = [
           "images/research/fsi-14.gif"
         ],
         caption: "[Figure 9] Schematic of DRL framework and learning process over one episode and instantaneous vorticity contours for the constrained-control case and the DRL-control case"
+      }
+    ]
+  },
+  {
+    title: "Flapping Dynamics of a Flexible Filament in a Uniform Flow",
+    id: "flexible-filament",
+    blocks: [
+      {
+        type: "text",
+        text: "A flexible filament (flag for 1-D) in a fluid displays a bistable response that depends on the filament length: the stretched-straight state and the self-sustained flapping state. If the filament length falls below a certain critical value, the filament maintains a stretched-straight state, regardless of the magnitude of an externally imposed perturbation. However, when the length is sufficiently long, the stretched-straight state disappears and the filament always flaps in the fluid flow (first movie below). Further increase of the filament length induces a irregular flapping state (second movie). The relavant parameters related to the problem are the mass ratio, bending rigidity of the filament and Reynolds number."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/fsi-01.gif",
+          "images/research/fsi-02.gif"
+        ],
+        caption: "[Figure 1] Time-evolving vorticity contours around a single flag for (upper) the regular flapping state and (lower) the irregular flapping state"
+      }
+    ]
+  },
+  {
+    title: "Passive Control of a Single Flag using Two Side-by-Side Flags",
+    blocks: [
+      {
+        type: "text",
+        text: "A deformable flexible flag in a fluid flow experiences a self-induced flapping motion in a cetain environmment, and a system with flexible flapping flag has been proposed as a means of energy harvesting, which can be utilized to generate electric energy. On the contrary, because interaction of flows with flexible elongated structures can induce structural vibration that could be a potential damage to structure in engineering (e.g., marine calbes, risers and other hydrodynamic applications), it is important to minimize flapping motion of flexible body in a flow. In order to efficiently control the flapping motion of a single flag, we propose a new passive control concept for a single flag using two side-by-side flags in upstream. An in-phase flapping mode of the two side-by-side flags in upstream enhances amplitude of the single flag, whereas an out-of-phase flapping mode of the upstream flags weakens the downstream flapping motion significantly."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/fsi-04.gif",
+          "images/research/fsi-05.gif"
+        ],
+        caption: "[Figure 3] Time-evolving vorticity contours around (left) a single flag and (right) two upstream side-by-side flags and a downstream flag for (upper) energy harvesting and (lower) vibration control"
+      }
+    ]
+  },
+  {
+    title: "Heat Transfer Enhancement in a Channel Flow using Two Wall-Mounted Flexible Flags with a Confined Cylinder",
+    id: "heat-transfer-two-flags",
+    blocks: [
+      {
+        type: "text",
+        text: "Improving heat transfer is important for developing advanced technologies in power plants, the automotive and aerospace industries, and electronics cooling. As modern electronic devices have become more compact and their power consumption demand increases, one of the key topics for improving heat transfer is to design efficient heat sink systems that are critical to the operation of electrical devices that generate significant internal heat."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/fsi-10.gif",
+          "images/research/fsi-11.gif"
+        ],
+        caption: "[Figure 8] Time-evolving vorticity and temperature contours around a cylinder and two wall-mounted flexible flags"
       }
     ]
   },

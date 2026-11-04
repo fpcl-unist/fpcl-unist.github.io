@@ -9,6 +9,7 @@ window.FPCL = window.FPCL || {};
 FPCL.topics = [
   {
     title: "Aerodynamics of Hyperloop System",
+    id: "hyperloop",
     blocks: [
       {
         type: "text",
@@ -18,6 +19,7 @@ FPCL.topics = [
   },
   {
     title: "Aerodynamics of Coaxial Propellers in Unmanned Aerial Vehicle (UAV) System",
+    id: "coaxial-propellers",
     blocks: [
       {
         type: "text",
@@ -41,6 +43,7 @@ FPCL.topics = [
   },
   {
     title: "Aerodynamics of Multi-Element Iced Airfoils",
+    id: "iced-airfoils",
     blocks: [
       {
         type: "text",
@@ -64,6 +67,7 @@ FPCL.topics = [
   },
   {
     title: "Aerodynamic Optimization Design for a Canopy",
+    id: "canopy",
     blocks: [
       {
         type: "text",
@@ -87,6 +91,7 @@ FPCL.topics = [
   },
   {
     title: "Numerical Simulation of Spherical Ice Making with Volume Expansion",
+    id: "ice-making",
     blocks: [
       {
         type: "text",
@@ -103,6 +108,7 @@ FPCL.topics = [
   },
   {
     title: "Simulation of Frost Growth and Densification on a Cold Surface",
+    id: "frost-growth",
     blocks: [
       {
         type: "text",
