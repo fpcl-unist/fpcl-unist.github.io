@@ -104,25 +104,8 @@ FPCL.topics = [
     ]
   },
   {
-    title: "Flapping Dynamics of a Flexible Filament in a Uniform Flow",
-    id: "flexible-filament",
-    blocks: [
-      {
-        type: "text",
-        text: "A flexible filament (flag for 1-D) in a fluid displays a bistable response that depends on the filament length: the stretched-straight state and the self-sustained flapping state. If the filament length falls below a certain critical value, the filament maintains a stretched-straight state, regardless of the magnitude of an externally imposed perturbation. However, when the length is sufficiently long, the stretched-straight state disappears and the filament always flaps in the fluid flow (first movie below). Further increase of the filament length induces a irregular flapping state (second movie). The relavant parameters related to the problem are the mass ratio, bending rigidity of the filament and Reynolds number."
-      },
-      {
-        type: "figure",
-        images: [
-          "images/research/fsi-01.gif",
-          "images/research/fsi-02.gif"
-        ],
-        caption: "[Figure 1] Time-evolving vorticity contours around a single flag for (upper) the regular flapping state and (lower) the irregular flapping state"
-      }
-    ]
-  },
-  {
     title: "Passive Control of a Single Flag using Two Side-by-Side Flags",
+    id: "passive-control",
     blocks: [
       {
         type: "text",
@@ -170,6 +153,24 @@ FPCL.topics = [
           "images/research/fsi-16.gif"
         ],
         caption: "[Figure 10] Framework of bending rigidity control based on the DRL in training and testing environments and time-evolving vorticity and temperature fields for the DRL-control case"
+      }
+    ]
+  },
+  {
+    title: "Flapping Dynamics of a Flexible Filament in a Uniform Flow",
+    id: "flexible-filament",
+    blocks: [
+      {
+        type: "text",
+        text: "A flexible filament (flag for 1-D) in a fluid displays a bistable response that depends on the filament length: the stretched-straight state and the self-sustained flapping state. If the filament length falls below a certain critical value, the filament maintains a stretched-straight state, regardless of the magnitude of an externally imposed perturbation. However, when the length is sufficiently long, the stretched-straight state disappears and the filament always flaps in the fluid flow (first movie below). Further increase of the filament length induces a irregular flapping state (second movie). The relavant parameters related to the problem are the mass ratio, bending rigidity of the filament and Reynolds number."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/fsi-01.gif",
+          "images/research/fsi-02.gif"
+        ],
+        caption: "[Figure 1] Time-evolving vorticity contours around a single flag for (upper) the regular flapping state and (lower) the irregular flapping state"
       }
     ]
   }

@@ -70,23 +70,6 @@ FPCL.topics = [
     ]
   },
   {
-    title: "Interaction between Oscillating Bubbles and a Free Surface in Confined Domain",
-    id: "oscillating-bubbles",
-    blocks: [
-      {
-        type: "text",
-        text: "The interaction of vapor bubbles with nearby boundaries, such as solid walls, moving phase interfaces, and free surfaces, is a dynamically complex phenomenon with significant practical implications in engineering, science, and technology. The characteristics of bubble oscillations and high-speed liquid jets during these interactions are crucial for studying the dynamics of oscillating bubbles, as the types of liquid jets formed strongly depend on the boundary features. When a bubble interacts with a free surface, several phenomena can occur, including free surface motion and various bubble behaviors such as the formation of a water spike, a water skirt, a toroidal bubble, liquid jets, bubble migration, and bubble bursting."
-      },
-      {
-        type: "figure",
-        images: [
-          "images/research/multiphase-flow-04.gif"
-        ],
-        caption: "[Figure 4] Time evolution of bubble behavior and a free surface motion"
-      }
-    ]
-  },
-  {
     title: "Plastron Stability and Characteristics in Finite-Length Micro-Trenches",
     id: "plastron",
     blocks: [
@@ -134,6 +117,23 @@ FPCL.topics = [
           "images/research/multiphase-flow-02.gif"
         ],
         caption: "[Figure 2] Time evolution of the liquid-gas interface during a single and two tandem bubble bursting"
+      }
+    ]
+  },
+  {
+    title: "Interaction between Oscillating Bubbles and a Free Surface in Confined Domain",
+    id: "oscillating-bubbles",
+    blocks: [
+      {
+        type: "text",
+        text: "The interaction of vapor bubbles with nearby boundaries, such as solid walls, moving phase interfaces, and free surfaces, is a dynamically complex phenomenon with significant practical implications in engineering, science, and technology. The characteristics of bubble oscillations and high-speed liquid jets during these interactions are crucial for studying the dynamics of oscillating bubbles, as the types of liquid jets formed strongly depend on the boundary features. When a bubble interacts with a free surface, several phenomena can occur, including free surface motion and various bubble behaviors such as the formation of a water spike, a water skirt, a toroidal bubble, liquid jets, bubble migration, and bubble bursting."
+      },
+      {
+        type: "figure",
+        images: [
+          "images/research/multiphase-flow-04.gif"
+        ],
+        caption: "[Figure 4] Time evolution of bubble behavior and a free surface motion"
       }
     ]
   }
