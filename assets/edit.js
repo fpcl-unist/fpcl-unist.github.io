@@ -519,7 +519,11 @@
         f.options.forEach(function (o) { input.appendChild(el('option', { value: o }, o)); });
       } else if (f.widget === 'text') input = el('textarea', { rows: '3' });
       else if (f.widget === 'datetime') input = el('input', { type: 'date' });
-      else if (f.widget === 'number') input = el('input', { type: 'number' });
+      else if (f.widget === 'number') {
+        input = el('input', { type: 'number' });
+        if (f.min != null) input.min = f.min;
+        if (f.max != null) input.max = f.max;
+      }
       else input = el('input', { type: 'text' });
       input.value = value[f.name] == null ? '' : value[f.name];
       row.appendChild(input);
@@ -539,11 +543,9 @@
     actions.appendChild(button('닫기', '바꾸지 않고 닫기', function () { dialog.close(); }));
     actions.appendChild(button('적용', '바꾼 값 적용', function () {
       fields.forEach(function (f) {
-        var v = inputs[f.name].value;
-        if (f.widget === 'number') v = Number(v);
-        else v = v.trim();
-        if (v === '' && f.required === false) delete value[f.name];
-        else value[f.name] = v;
+        var v = inputs[f.name].value.trim();
+        if (v === '' && f.required === false) { delete value[f.name]; return; } // left empty: no value at all
+        value[f.name] = f.widget === 'number' ? Number(v) : v;
       });
       dialog.close();
       touch(steps(path)[0]);

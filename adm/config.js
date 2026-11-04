@@ -75,7 +75,9 @@
             {name:'figure', label:'그림', widget:'object', summary:'{{fields.caption}}', fields:[
               {name:'images', label:'그림 파일', widget:'list', default:[], hint:'여러 개면 한 줄에 나란히 표시됩니다.',
                 field:{name:'image', label:'그림 / GIF', widget:'image', choose_url:false}},
-              {name:'caption', label:'그림 설명', widget:'text', required:false, hint:'예: [Figure 1] ...'}
+              {name:'caption', label:'그림 설명', widget:'text', required:false, hint:'예: [Figure 1] ...'},
+              {name:'width', label:'그림 폭 (%)', widget:'number', value_type:'int', min:10, max:100, required:false,
+                hint:'비워 두면 본문 폭 전체입니다. 예: 50이면 절반 폭으로 가운데에 놓입니다. 휴대폰에서는 항상 전체 폭입니다.'}
             ]}
           ]}
       ]

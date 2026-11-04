@@ -357,6 +357,9 @@ section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .figure .imgs { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
 .figure .imgs > * { flex: 1 1 240px; min-width: 0; }
 .figure .imgs img { display: block; width: 100%; height: auto; }
+/* A figure with a set width (data/research/*.js, "그림 폭") is narrower and centered on wide screens;
+   on a phone it keeps the full width. */
+@media (min-width: 761px) { .figure .imgs { max-width: var(--fig-width, 100%); width: 100%; margin-inline: auto; } }
 .caption, .figure figcaption { font-size: 14px; line-height: 1.55; color: var(--muted); text-align: center; text-wrap: balance; }
 
 /* ---------- People ---------- */

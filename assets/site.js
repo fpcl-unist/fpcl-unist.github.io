@@ -428,7 +428,9 @@ window.FPCL = window.FPCL || {};
         (t.blocks || []).map(function (b, j) {
           var bt = at + '.blocks.' + j;
           if (b.type === 'text') return '<p' + item(bt) + field(bt + '.text', 'html') + '>' + b.text + '</p>';
-          return '<figure class="figure"' + item(bt) + '><div class="imgs">' + (b.images || []).map(function (src, k) {
+          // width (optional) is the share of the column the pictures take on a computer screen, in percent.
+          var width = b.width ? ' style="--fig-width: ' + Number(b.width) + '%"' : '';
+          return '<figure class="figure"' + width + item(bt) + '><div class="imgs">' + (b.images || []).map(function (src, k) {
             return '<img src="' + esc(url(src)) + '" alt="" loading="lazy"' + item(bt + '.images.' + k) + field(bt + '.images.' + k, 'image') + '>';
           }).join('') + '</div>' + (b.caption ? '<figcaption' + field(bt + '.caption', 'html') + '>' + b.caption + '</figcaption>' : '') + '</figure>';
         }).join('') + '</section>';

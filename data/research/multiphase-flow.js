@@ -3,7 +3,8 @@ window.FPCL = window.FPCL || {};
 /* Research page: one block per topic, in page order. Also editable at /admin.
    title   the topic heading. id (optional) is the name used in links such as overview.html -> page.html#id
    blocks  what comes under the heading, in order: { type: "text", text } is a paragraph and
-           { type: "figure", images: [...], caption } is a row of pictures with its caption.
+           { type: "figure", images: [...], caption } is a row of pictures with its caption; width (optional,
+           10-100) is the share of the column, in percent, the pictures take on a computer screen.
            <i>, <sub>, <sup> and <br> may be used in titles, paragraphs and captions. */
 
 FPCL.topics = [
@@ -88,7 +89,8 @@ FPCL.topics = [
         images: [
           "images/research/multiphase-flow-02.gif"
         ],
-        caption: "[Figure 2] Time evolution of the liquid-gas interface during a single and two tandem bubble bursting"
+        caption: "[Figure 2] Time evolution of the liquid-gas interface during a single and two tandem bubble bursting",
+        width: 60
       }
     ]
   },
@@ -105,7 +107,8 @@ FPCL.topics = [
         images: [
           "images/research/multiphase-flow-04.gif"
         ],
-        caption: "[Figure 4] Time evolution of bubble behavior and a free surface motion"
+        caption: "[Figure 4] Time evolution of bubble behavior and a free surface motion",
+        width: 30
       }
     ]
   }

@@ -48,7 +48,8 @@
       each(v, function (t) {
         return isText(t.title) && maybeText(t.id) && (t.blocks == null || (Array.isArray(t.blocks) && t.blocks.every(function (b) {
           return isObject(b) && (b.type === 'text' ? isText(b.text) :
-            b.type === 'figure' && texts(b.images) && maybeText(b.caption));
+            b.type === 'figure' && texts(b.images) && maybeText(b.caption) &&
+            (b.width == null || (Number.isInteger(b.width) && b.width >= 10 && b.width <= 100)));
         })));
       }, '연구 주제의 제목, 문단, 그림을 확인해 주세요.');
     }
