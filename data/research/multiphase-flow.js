@@ -20,35 +20,7 @@ FPCL.topics = [
         images: [
           "images/research/multiphase-flow-06.gif"
         ],
-        caption: ""
-      },
-      {
-        type: "text",
-        text: "[Figure 6]"
-      },
-      {
-        type: "text",
-        text: "Numerical simulation of a compressible four-phase flow induced by an underwater bubble explosion"
-      },
-      {
-        type: "text",
-        text: "near a free surface ("
-      },
-      {
-        type: "text",
-        text: "=0.25,"
-      },
-      {
-        type: "text",
-        text: "=0.25,"
-      },
-      {
-        type: "text",
-        text: "vapor"
-      },
-      {
-        type: "text",
-        text: "=0.5)"
+        caption: "[Figure 6] Numerical simulation of a compressible four-phase flow induced by an underwater bubble explosion<br>near a free surface (<i>α</i><sub><i>CO2</i></sub>=0.25, <i>α</i><sub><i>air</i></sub>=0.25, <i>α</i><sub><i>vapor</i></sub>=0.5)"
       }
     ]
   },
