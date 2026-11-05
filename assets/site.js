@@ -315,7 +315,7 @@ window.FPCL = window.FPCL || {};
         year = y;
         html += '<section><h2>' + y + '</h2><div class="posts">';
       }
-      html += '<article class="post"' + item(at) + '><h3' + field(at + '.title') + '>' + esc(p.title) + '</h3>' +
+      html += '<article class="post" id="photo-post-' + i + '"' + item(at) + '><h3' + field(at + '.title') + '>' + esc(p.title) + '</h3>' +
         '<p class="meta"><time datetime="' + esc(p.date) + '"' + field(at + '.date', 'date') + '>' + p.date.replace(/-/g, '.') + '</time>' +
         (p.text ? ' &middot; <span' + field(at + '.text') + '>' + esc(p.text) + '</span>' : '') + '</p>' +
         '<div class="imgs">' + (p.images || []).map(function (src, j) {
@@ -330,6 +330,29 @@ window.FPCL = window.FPCL || {};
     el.outerHTML = '<ul class="photo-list">' + list.slice(0, count).map(function (p) {
       return '<li><time datetime="' + esc(p.date) + '">' + p.date.replace(/-/g, '.') + '</time><a href="' + url('photo.html') + '">' + esc(p.title) + '</a></li>';
     }).join('') + '</ul>';
+  }
+
+  function renderPhotoSlides(el, list, count, key) {
+    // Stable date order; do not change the board order or the CMS data indices.
+    var recent = list.map(function (post, index) { return {post:post, index:index}; })
+      .sort(function (a, b) {
+        return String(b.post.date).localeCompare(String(a.post.date)) || a.index - b.index;
+      }).slice(0, count);
+    if (!recent.length) {
+      el.innerHTML = '<li class="photo-empty">No photo posts yet.</li>';
+      return;
+    }
+    el.innerHTML = recent.map(function (entry) {
+      var p = entry.post, at = key + '.' + entry.index;
+      var href = esc(url('photo.html#photo-post-' + entry.index));
+      var image = (p.images || [])[0];
+      var picture = image ? '<img src="' + esc(url(image)) + '" alt="' + esc(p.title) + '" loading="lazy"' + field(at + '.images.0', 'image') + '>' :
+        '<span class="photo-empty">No photo attached</span>';
+      return '<li' + item(at) + '><a class="photo-slide-image" href="' + href + '">' + picture + '</a>' +
+        '<div class="photo-slide-caption"><time datetime="' + esc(p.date) + '">' + esc(String(p.date).replace(/-/g, '.')) + '</time>' +
+        '<h3><a href="' + href + '"' + field(at + '.title') + '>' + esc(p.title) + '</a></h3>' +
+        (p.text ? '<p' + field(at + '.text') + '>' + esc(p.text) + '</p>' : '') + '</div></li>';
+    }).join('');
   }
 
   function renderHighlights(el, list, key) {
@@ -456,6 +479,7 @@ window.FPCL = window.FPCL || {};
       else if (kind === 'alumni') renderAlumni(el, list, name);
       else if (kind === 'photos') renderPhotos(el, list, name);
       else if (kind === 'recent-photos') renderRecentPhotos(el, list, +(el.getAttribute('data-count') || 3));
+      else if (kind === 'photo-slides') renderPhotoSlides(el, list, +(el.getAttribute('data-count') || 5), name);
       else if (kind === 'about') renderAbout(el, list, name);
       else if (kind === 'notices') renderNotices(el, list, name);
       else if (kind === 'lectures') renderLectures(el, list, name);

@@ -629,7 +629,7 @@
     document.documentElement.classList.add('fpcl-editing');
     document.querySelectorAll('main [data-field]').forEach(editable);
     // Hold the Research Highlights slideshow still while editing.
-    document.querySelectorAll('.highlight-controls button').forEach(function (b) { if (b.textContent === 'Pause') b.click(); });
+    document.querySelectorAll('.highlight-controls button, .photo-controls button').forEach(function (b) { if (b.textContent === 'Pause') b.click(); });
     showUploads();
     buildBar();
   }
