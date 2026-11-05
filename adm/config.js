@@ -172,7 +172,7 @@
         collection('photos', 'Photo · 사진 게시판', 'data/photos.js', [{
           name:'photos', label:'사진 게시물', label_singular:'게시물', widget:'list',
           collapsed:true, add_to_top:true, default:[], summary:'{{fields.date}} · {{fields.title}}',
-          hint:'맨 위 3개의 날짜와 제목이 홈페이지 메인에 표시됩니다.',
+          hint:'날짜 기준 최신 게시물 5개의 첫 사진이 홈페이지 메인 슬라이드에 표시됩니다. 같은 날짜는 목록 순서가 적용됩니다.',
           fields:[
             {name:'date', label:'게시 날짜', widget:'datetime', date_format:'YYYY-MM-DD', time_format:false, format:'YYYY-MM-DD', picker_utc:true},
             {name:'title', label:'제목', widget:'string'},
