@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Flow Physics and Control Laboratory | UNIST</title>
+<title>Flow Physics and Control Laboratory at UNIST</title>
 <meta name="description" content="Flow Physics and Control Laboratory (FPCL), UNIST">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,46 +16,37 @@
 <main>
   <div class="intro">
     <div class="lab-heading">
-      <h1>Flow Physics and Control Laboratory</h1>
-      <p class="university">UNIST</p>
+      <h1>Flow Physics and Control Laboratory at UNIST</h1>
     </div>
-    <p class="tagline">Understanding, predicting and controlling flows</p>
   </div>
-
-  <!-- Research Highlights are managed in data/highlights.js or through /adm/. -->
-  <section class="highlight-carousel" aria-labelledby="hl-h" aria-roledescription="carousel">
-    <h2 id="hl-h">Research Highlights</h2>
-    <ul class="highlights" id="highlight-slides" data-list="highlights" data-kind="highlights"></ul>
-    <noscript>Enable JavaScript to view Research Highlights.</noscript>
-  </section>
 
 
   <section aria-labelledby="about-h">
     <h2 id="about-h">About FPCL</h2>
-    <!-- About text and Notice come from data/home.js (or /admin). -->
+    <!-- About text and Notice come from data/home.js (or /adm/). -->
     <div data-list="about" data-kind="about"></div>
   </section>
 
 
-  <div class="pair">
-    <section class="notice" aria-labelledby="notice-h">
-      <h2 id="notice-h">Notice</h2>
-      <div data-list="notices" data-kind="notices"></div>
-    </section>
-    <section aria-labelledby="photo-h">
-      <h2 id="photo-h">Photo</h2>
-      <!-- The three newest posts in data/photos.js appear here automatically. -->
-      <div data-list="photos" data-kind="recent-photos" data-count="3"></div>
-      <a class="more" href="photo.html">All photos</a>
-    </section>
-  </div>
+  <section class="notice" aria-labelledby="notice-h">
+    <h2 id="notice-h">Notice</h2>
+    <div data-list="notices" data-kind="notices"></div>
+  </section>
+
+  <section class="photo-carousel" aria-labelledby="photo-h" aria-roledescription="carousel" data-interval="5000">
+    <h2 id="photo-h">Photo</h2>
+    <!-- First image from each of the five most recent posts; managed through Photo in /adm/. -->
+    <ul class="photo-slides" id="photo-slides" data-list="photos" data-kind="photo-slides" data-count="5"></ul>
+    <noscript>Enable JavaScript to view recent photos.</noscript>
+    <a class="more" href="photo.html">All photos</a>
+  </section>
+
 </main>
 
 <div id="site-footer"></div>
 <script src="data/photos.js"></script>
-<script src="data/highlights.js"></script>
 <script src="data/home.js"></script>
 <script src="assets/site.js"></script>
-<script src="assets/highlights.js"></script>
+<script src="assets/photo-carousel.js"></script>
 </body>
 </html>
