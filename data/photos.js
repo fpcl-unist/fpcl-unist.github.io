@@ -6,11 +6,12 @@ FPCL.photos = [
     "date": "2026-11-16",
     "title": "대한기계학회 2026년 학술대회",
     "images": [
-      "images/uploads/20261116074758-image.jpg",
-      "images/uploads/20261116074800-image.jpg",
-      "images/uploads/20261116074827-image.jpg",
-      "images/uploads/20261116074803-image.jpg",
-      "images/uploads/20261116074805-image.jpg"
+      "images/uploads/20261116075431-image.jpg",
+      "images/uploads/20261116075452-image.jpg",
+      "images/uploads/20261116075455-image.jpg",
+      "images/uploads/20261116075457-image.jpg",
+      "images/uploads/20261116075500-image.jpg",
+      "images/uploads/20261116075615-image.jpg"
     ],
     "text": "The Korean Society of Mechanical Engineers Annual Meeting, Jeju, Korea, Nov 11-14, 2026"
   },
