@@ -3,6 +3,18 @@ window.FPCL = window.FPCL || {};
 /* Managed through /adm/. Newest items first; order is preserved. */
 FPCL.photos = [
   {
+    "date": "2026-11-16",
+    "title": "대한기계학회 2026년 학술대회",
+    "images": [
+      "images/uploads/20261116074758-image.jpg",
+      "images/uploads/20261116074800-image.jpg",
+      "images/uploads/20261116074827-image.jpg",
+      "images/uploads/20261116074803-image.jpg",
+      "images/uploads/20261116074805-image.jpg"
+    ],
+    "text": "The Korean Society of Mechanical Engineers Annual Meeting, Jeju, Korea, Nov 11-14, 2026"
+  },
+  {
     "date": "2026-10-26",
     "title": "2026 한국전산유체공학회 추계학술대회",
     "text": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting, Pohang, Korea, Oct 21-23",
