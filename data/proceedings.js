@@ -595,10 +595,31 @@ FPCL.proceedingsInternational = [
 FPCL.proceedingsDomestic = [
   {
     "group": "2026",
+    "authors": "J. Park & J.H.Lee",
+    "title": "Effects of Dispersed Bubbles on Reynolds Shear Stress in Downward Turbulent Channel Flow",
+    "journal": "The Koeran Society of Mechanical Engineers Annual Meeting",
+    "details": "Jeju, Korea, Nov 11-14, 2026"
+  },
+  {
+    "group": "2026",
+    "authors": "X. Li & J.H.Lee",
+    "title": "Statistical super-resolution reconstruction of wall-modelled large-eddy simulation data of turbulent channel flow based on deep learning",
+    "journal": "The Koeran Society of Mechanical Engineers Annual Meeting",
+    "details": "Jeju, Korea, Nov 11-14, 2026"
+  },
+  {
+    "group": "2026",
+    "authors": "H.J. Bae & J.H.Lee",
+    "title": "Multi-Objective Bayesian Optimization of Plunger Velocity Profiles in HPDC",
+    "journal": "The Koeran Society of Mechanical Engineers Annual Meeting",
+    "details": "Jeju, Korea, Nov 11-14, 2026"
+  },
+  {
+    "group": "2026",
     "authors": "M.J.Kang & J.H.Lee",
-    "title": "Stable Schooling Formation Of Mother and Calf Foils with Different Body Lengths",
-    "journal": "Korean Society for Computational Fluids Engineering, Fall Annual Meeting",
-    "details": "Pohang, Korea, Oct 21-23, 2026"
+    "title": "Schooling Behavior Of Mother and Calf Foils with Different Body Lengths",
+    "journal": "The Koeran Society of Mechanical Engineers Annual Meeting",
+    "details": "Jeju, Korea, Nov 11-14, 2026"
   },
   {
     "group": "2026",
